@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SWI2DB": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

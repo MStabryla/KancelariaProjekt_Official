@@ -1,0 +1,17 @@
+.codeCountryInputContainer {
+  display: flex;
+  width:300px;
+}
+
+.codeCountryInput {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  font: inherit;
+}
+
+.inputSpacer {
+  opacity: 1;
+  transition: opacity 200ms;
+}

@@ -1,0 +1,251 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <UserSecretsId>cdefb4cb-7cc3-4c63-9a8e-bf3831e7fc5f</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="FluentFTP" Version="34.0.1" />
+    <PackageReference Include="Invio.Extensions.Authentication.JwtBearer" Version="2.0.1" />
+    <PackageReference Include="JsonModelBinder" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.12" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MimeKit" Version="2.10.1" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.8" />   
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\app\Authentication\NewFolder\**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\app\Authentication\NewFolder\**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientApp\src\app\Authentication\NewFolder\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\Authentication\NewFolder\**" />
+    <TypeScriptCompile Remove="ClientApp\src\app\Authentication\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\antiForgery.service.ts" />
+    <None Remove="ClientApp\src\app\api.service.ts" />
+    <None Remove="ClientApp\src\app\company\company.model.ts" />
+    <None Remove="ClientApp\src\app\company\payment-method.ts" />
+    <None Remove="ClientApp\src\app\department\department.model.ts" />
+    <None Remove="ClientApp\src\app\document\document.model.ts" />
+    <None Remove="ClientApp\src\app\errors\error.ts" />
+    <None Remove="ClientApp\src\app\ftp\file.model.ts" />
+    <None Remove="ClientApp\src\app\letters\letter.model.ts" />
+    <None Remove="ClientApp\src\app\message\message.model.ts" />
+    <None Remove="ClientApp\src\app\models\tableViewModel.ts" />
+    <None Remove="ClientApp\src\app\shared\models\basic-model.ts" />
+    <None Remove="ClientApp\src\app\shared\services\error-dialog-service.ts" />
+    <None Remove="ClientApp\src\app\user\user-change-email.model.ts" />
+    <None Remove="ClientApp\src\app\user\user-change-password.model.ts" />
+    <None Remove="ClientApp\src\app\user\userdetails.model.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\admin-panel\admin-panel.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\admin-panel\admin-panel.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\change-role\change-role.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\change-role\change-role.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\give-access-client\give-access-client.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\give-access-client\give-access-client.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\give-access-employee\give-access-employee.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\give-access-employee\give-access-employee.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\remove-access-client\remove-access-client.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\remove-access-client\remove-access-client.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\remove-access-employee\remove-access-employee.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\remove-access-employee\remove-access-employee.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\user-add\user-add.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\user-add\user-add.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\user-view\user-view.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\user-view\user-view.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\user.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\users\users.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\admin\users\users.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\alert\alert.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\alert\alert.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\authentication\login\login.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\authentication\logout\logout.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\companies\companies.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\companies\companies.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\company-create\company-create.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\company-create\company-create.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\company-edit\company-edit.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\company-edit\company-edit.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\company\company.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\company\company.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\payment-method-create\payment-method-create.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\payment-method-create\payment-method-create.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\payment-method-edit\payment-method-edit.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\payment-method-edit\payment-method-edit.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\payment-method-view\payment-method-view.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\payment-method-view\payment-method-view.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\payment-methods\payment-methods.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\company\payment-methods\payment-methods.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\contractors\contractorBankAccountTable\contractorBankAccountTable.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\contractors\contractorsTable\contractorsTable.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\department\department-create\department-create.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\department\department-create\department-create.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\department\department-edit\department-edit.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\department\department-edit\department-edit.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\department\department-view\department-view.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\department\department-view\department-view.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\department\departments\departments.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\department\departments\departments.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\document\document-create\document-create.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\document\document-create\document-create.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\document\document-view\document-view.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\document\document-view\document-view.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\document\documents\documents.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\document\documents\documents.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\errors\error-dialog\error-dialog.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\errors\error-dialog\error-dialog.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-admin\ftp-admin.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-admin\ftp-admin.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-directory\ftp-directory.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-directory\ftp-directory.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-file-view\ftp-file-view.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-file-view\ftp-file-view.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-file\ftp-file.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-file\ftp-file.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-upload\ftp-upload.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-upload\ftp-upload.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-view\ftp-view.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\ftp\ftp-view\ftp-view.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\global.d.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\imports\material.module.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\interfaces\userRegistration.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\invoices\invoiceSendAll\invoiceSendAll.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\letters\letter-recipient-create\letter-recipient-create.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\letters\letter-recipient-create\letter-recipient-create.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\letters\letters-create\letters-create.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\letters\letters-create\letters-create.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\letters\letters-view\letters-view.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\letters\letters-view\letters-view.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\letters\letters\letters.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\letters\letters\letters.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\message\message-view\message-view.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\message\message-view\message-view.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\message\messages-create\messages-create.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\message\messages-create\messages-create.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\message\messages\messages.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\message\messages\messages.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\Base.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\Contractor.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\contractors\ContractorBankAccount.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\Form.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\invoices\InvoiceMailTemplate.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\payments\Payment.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\tableParams.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\payments\paymentsCsvSettelment\paymentsCsvSettelment.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\payments\paymentsEdit\paymentsEdit.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\payments\paymentsTable\paymentsTable.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\components\dataTable\dataTable.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\components\table\table.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\components\table\table.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\InvoiceSendedsAll.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\registrationResponse.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\models\userRegistration.model.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\main\main.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\main\main.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\menu\menu.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\components\askForSomethingDialog\askForSomethingDialog.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\components\customFormDialog\customFormDialog.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\custom-encoder.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\custom-validators\checkTypeValidator.service.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\custom-validators\requiredFileType.service.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\helpers\dropzone.directive.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\helpers\model-helper.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\moment-utc-date-adapter.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\services\authentication.service.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\services\customErrorHandler.service.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\user\user-change-password\user-change-password.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\user\user-change-password\user-change-password.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\user\user-edit\user-edit.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\user\user-edit\user-edit.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\user\user-email-change\user-email-change.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\user\user-email-change\user-email-change.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\user\userpanel\userpanel.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\user\userpanel\userpanel.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SWI2DB\SWI2DB.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="temp\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>
+

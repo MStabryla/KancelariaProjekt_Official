@@ -1,0 +1,26 @@
+<div role="group" class="codeCountryInputContainer" [formGroup]="parts">
+  <input class="codeCountryInput"
+         formControlName="postalcode"
+         aria-label="postalcode"
+         #postalcode
+         (keyup.arrowright)="FocusInput(postoffice)"
+         (input)="handleInput(parts.controls.postalcode)"
+         [style.width.ch]="(postalcode.value.length>4?postalcode.value.length:4)">
+  <span class="inputSpacer">&nbsp;</span>
+  <input class="codeCountryInput"
+         formControlName="postoffice"
+         aria-label="postoffice"
+         #postoffice
+         (keyup.arrowright)="FocusInput(country)"
+         (keyup.arrowleft)="FocusInput(postalcode)"
+         (input)="handleInput(parts.controls.postoffice)"
+         [style.width.ch]="(postoffice.value.length>3?postoffice.value.length:3)">
+  <span class="inputSpacer">&nbsp;</span>
+  <input class="codeCountryInput"
+         formControlName="country"
+         aria-label="country"
+         #country
+         (keyup.arrowleft)="FocusInput(postoffice)"
+         (input)="handleInput(parts.controls.country)"
+         [style.width.ch]="(country.value.length>3?country.value.length:3)">
+</div>

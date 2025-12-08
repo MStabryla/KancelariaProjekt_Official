@@ -1,0 +1,112 @@
+<mat-card>
+  <mat-card-title>{{'LETTERS.LETTERS.LETTERS_CREATE' | translate}}</mat-card-title>
+  <form [formGroup]="createFormGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field class="main-select">
+      <mat-label>{{'LETTERS.LETTERS.SENDER_RECIPER_LABEL' | translate}}</mat-label><br />
+      <mat-select matInput formControlName="outLetter" placeholder="Z Odbiorca/Nadawca">
+        <mat-option class="margin" value="true">{{'LETTERS.LETTERS.RECIPIENT' | translate}}</mat-option>
+        <mat-option class="margin" value="false">{{'LETTERS.LETTERS.SENDER' | translate}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.NOTES_LABEL' | translate}}</mat-label>
+        <input type="text" matInput formControlName="notes" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.LETTER_NUMBER_LABEL' | translate}}</mat-label>
+        <input type="text" matInput formControlName="registeredNumbr" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.ADDED_DATE_LABEL' | translate}}</mat-label>
+        <input matInput formControlName="added" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="select-form">
+      <div>
+        <span>
+          <mat-form-field class="letter-recipient">
+            <mat-label>{{createFormGroup.value.outLetter ? ('LETTERS.LETTERS.RECIPIENT' | translate) : ('LETTERS.LETTERS.SENDER' | translate)}}</mat-label>
+            <input type="text" matInput formControlName="letterRecipient" (keypress)="getLetterRecipients($event)" placeholder="Wpisz nazwę {{ createFormGroup.value.outLetter ? ('LETTERS.LETTERS.RECIPIENT_NAME_LABEL' | translate ) : ('LETTERS.LETTERS.SENDER_NAME_LABEL' | translate )}}" [matAutocomplete]="auto" />
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option matInput *ngFor="let option of letterRecipients" [value]="option">
+                {{option ? option.name : ''}}
+              </mat-option>
+            </mat-autocomplete>
+            <mat-progress-spinner *ngIf="loadingLetterRecipients" mode="indeterminate" class="spinner" diameter="20"></mat-progress-spinner>
+          </mat-form-field>
+        </span>
+        <button class="letter-recipient-create-button mat-button" (click)="startCreatingLetterRecipient()"><mat-icon>add</mat-icon></button>
+      </div>
+      <div *ngIf="creatingLetterRecipient">
+        <mat-form-field class="letter-recipient letter-recipient-create">
+          <mat-label>{{'LETTERS.LETTERS.NEW_ADRESSAT_LABEL' | translate}}</mat-label>
+          <input type="text" matInput formControlName="letterRecipientCreate" placeholder="Wprowadź adresata" />
+        </mat-form-field>
+        <button class="letter-recipient-create-button mat-button" (click)="createLetterRecipient()"><mat-icon>done</mat-icon></button>
+      </div>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.PAYED_LABEL' | translate}}</mat-label><br />
+        <mat-select matInput formControlName="isPaid" placeholder="Zapłacony">
+          <mat-option class="margin" value="true">Tak</mat-option>
+          <mat-option class="margin" value="false">Nie</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.REAGISTERD_LABEL' | translate}}</mat-label><br />
+        <mat-select matInput formControlName="isRegistered" placeholder="Zarejestrowany">
+          <mat-option class="margin" value="true">Tak</mat-option>
+          <mat-option class="margin" value="false">Nie</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.IS_EMALI_LABEL' | translate}}</mat-label><br />
+        <mat-select matInput formControlName="isEmail" placeholder="Przesłany mailem">
+          <mat-option class="margin" value="true">Tak</mat-option>
+          <mat-option class="margin" value="false">Nie</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.IS_NORMAL_LABEL' | translate}}</mat-label><br />
+        <mat-select matInput formControlName="isNormal" placeholder="Normalny">
+          <mat-option class="margin" value="true">Tak</mat-option>
+          <mat-option class="margin" value="false">Nie</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.IS_COURIER_LABEL' | translate}}</mat-label><br />
+        <mat-select matInput formControlName="isCourier" placeholder="Przesłany kurierem">
+          <mat-option class="margin" value="true">Tak</mat-option>
+          <mat-option class="margin" value="false">Nie</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{'LETTERS.LETTERS.WITH_CONFIRM_LABEL' | translate}}</mat-label><br />
+        <mat-select matInput formControlName="withConfirm" placeholder="Z potwierdzeniem">
+          <mat-option class="margin" value="true">Tak</mat-option>
+          <mat-option class="margin" value="false">Nie</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="file-picker">
+        <mat-label>{{'LETTERS.LETTERS.FILE_LABEL' | translate}}</mat-label>
+        <input matInput type="text" [value]="file && file.name ? file.name : ''" disabled />
+        <span class="file">
+          <input #fileInput type="file" name="file" (change)="fileSelected($event)" />
+          <button for="file" class="mat-button" matButton (click)="searchFiles(fileInput)" type="button">{{'LETTERS.LETTERS.SERCH_FILES_CLICK' | translate}}</button>
+        </span>
+      </mat-form-field>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button class="btn text-center" type="submit">{{'ADD' | translate}}</button>
+    </mat-card-actions>
+  </form> 
+</mat-card>

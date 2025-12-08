@@ -1,0 +1,17 @@
+
+<mat-toolbar>
+  <mat-toolbar-row style="justify-content: space-around;background-color:lightgray">
+    <button class="toolbarButton" mat-icon-button (click)="add()" [disabled]="selectedRow==null">
+      {{'CONTRACTORS.CONTRACTORBANKACCOUNTTABLE.ADD' | translate }}<mat-icon>post_add</mat-icon>
+    </button>
+    <button mat-icon-button (click)="edit()" [disabled]="selectedRow==null">
+      <mat-icon>edit_note</mat-icon>
+      <span>{{'CONTRACTORS.CONTRACTORBANKACCOUNTTABLE.ADD' | translate }}</span>
+    </button>
+    <button mat-icon-button (click)="delate()" [disabled]="selectedRow==null">
+      <mat-icon>remove_circle</mat-icon>
+      <span>{{'CONTRACTORS.CONTRACTORBANKACCOUNTTABLE.ADD' | translate }}</span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<swi-dataTable (selectRow)="selectBankAccout($event)" [data]="data"></swi-dataTable>

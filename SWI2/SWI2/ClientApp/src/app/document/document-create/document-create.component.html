@@ -1,0 +1,89 @@
+<mat-card>
+  <mat-card-title>{{ 'DOCUMENTS.DOCUMENT_CREATE.LABEL' | translate}}</mat-card-title>
+  <form [formGroup]="createFormGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>{{ 'DOCUMENTS.DOCUMENT_CREATE.FORM.NOTES_LABEL' | translate}}</mat-label>
+      <input type="text" matInput formControlName="notes" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'DOCUMENTS.DOCUMENT_CREATE.FORM.NOTES_LABEL' | translate}}</mat-label>
+      <input type="text" matInput formControlName="comment" />
+    </mat-form-field>
+    <div class="select-form">
+      <mat-form-field class="company">
+        <mat-label>{{ 'COMPANY_LABEL' | translate}}Firma</mat-label>
+        <input type="text" matInput formControlName="company" (keypress)="getCompanies($event)" [placeholder]="'DOCUMENTS.DOCUMENT_CREATE.FORM.COMPANY_PLACEHOLDER' | translate" [matAutocomplete]="auto" />
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option matInput *ngFor="let option of companies" [value]="option">
+            {{option ? option.name : ''}}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-progress-spinner *ngIf="loadingCompanies" mode="indeterminate" class="spinner" diameter="20"></mat-progress-spinner>
+      </mat-form-field>
+      <div>
+        <span>
+          <mat-form-field class="document-type">
+            <mat-label>{{ 'DOCUMENTS.DOCUMENT_CREATE.FORM.DOCUMENT_TYPE_LABEL' | translate}}</mat-label>
+            <mat-select matInput formControlName="documentTypeId" placeholder="Typ Dokumentu">
+              <mat-option matInput *ngFor="let option of documentTypes" [value]="option && option.id ? option.id : ''">
+                {{option && option.name ? option.name : ''}} <mat-icon class="document-type-delete" *ngIf="option.canBeDeleted && userRole == 'Administrator'" (click)="deleteDocumentType(option.id)">delete</mat-icon>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+        <button class="document-type-create-button mat-button"  (click)="startCreatingDocumentType()"><mat-icon>add</mat-icon></button>
+      </div>
+      <div *ngIf="creatingDocumentType">
+        <mat-form-field  class="document-type document-type-create">
+          <mat-label>{{ 'DOCUMENTS.DOCUMENT_CREATE.FORM.NEW_DOCUMENT_TYPE_LABEL' | translate}}</mat-label>
+          <input type="text" matInput formControlName="createDocumentType" placeholder="Wprowadź nazwę" />
+        </mat-form-field>
+        <button class="document-type-create-button mat-button" (click)="createDocumentType()"><mat-icon>done</mat-icon></button>
+      </div>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>{{ 'DOCUMENTS.DOCUMENT_CREATE.FORM.PROTOCOL_LABEL' | translate}}</mat-label><br />
+        <mat-select matInput formControlName="isProtocol" placeholder="Od/do" >
+          <mat-option class="margin" value="true">{{ 'YES' | translate}}</mat-option>
+          <mat-option class="margin" value="false">{{ 'NO' | translate}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'DOCUMENTS.DOCUMENT_CREATE.FORM.FROM_TO_LABEL' | translate}}</mat-label><br />
+        <mat-select matInput formControlName="outDocument" placeholder="Od/do">
+          <mat-option class="margin" value="true">{{ 'FROM' | translate}}</mat-option>
+          <mat-option class="margin" value="false">{{ 'TO' | translate}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="file-picker">
+        <mat-label>{{ 'DOCUMENTS.DOCUMENT_CREATE.FORM.DOCUMENT_FILES_LABEL' | translate}}</mat-label>
+        <input matInput type="text" [value]="file && file.name ? file.name : ''" disabled/>
+        <span class="file">
+          <input #fileInput type="file" name="file" (change)="fileSelected($event)" />
+          <button for="file" class="mat-button" matButton (click)="searchFiles(fileInput)" type="button">{{ 'DOCUMENTS.DOCUMENT_CREATE.FORM.SERCH_FILES_CLICK' | translate}}</button>
+        </span>
+      </mat-form-field>
+    </div>
+    
+    <!--<div>
+      <label>Plik Dokumentu</label>
+      <span class="file">
+        <input #fileInput type="file" name="file" (change)="fileSelected($event)"/>
+        <button for="file" class="mat-button" matButton (click)="searchFiles(fileInput)">Przeszukaj pliki</button>
+      </span>
+      <span class="file-selected" *ngIf="file !== null">
+        {{file && file.name ? file.name : ''}}
+      </span>
+    </div>-->
+    <div class="errors" *ngIf="showErrors">
+      
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button class="btn text-center" type="submit">{{ 'ADD' | translate}}</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

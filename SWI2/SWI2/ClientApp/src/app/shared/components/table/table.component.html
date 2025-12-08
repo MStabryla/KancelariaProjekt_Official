@@ -1,0 +1,101 @@
+<div class="loading" *ngIf="isLoadingResults">
+  <mat-spinner></mat-spinner>
+</div>
+<mat-table [dataSource]="dataSource" matSort matSortActive="{{sortActive}}" matSortDisableClear matSortDirection="asc">
+  <ng-container matColumnDef="select" *ngIf="displaySelections">
+    <th scope="col" mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <div *ngFor="let column of headerRow">
+    <ng-container matColumnDef="{{column.name}}">
+      <div *ngIf="!displayFilters;else filters">
+        <mat-header-cell *matHeaderCellDef class="cell" mat-sort-header [disabled]="(column.type | typeof) == 'array'">
+          {{ column.description | translate }}
+        </mat-header-cell>
+      </div>
+      <ng-template #filters>
+
+        <mat-header-cell *matHeaderCellDef class="cell" mat-sort-header [disabled]="(column.type | typeof) == 'array'">
+
+          <div *ngIf="(column.type | typeof) == 'object';else normalForm" class="inputfillter numericRange">
+            <mat-form-field class="selectdisplayfix" appearance="outline" [formGroup]="filter" (click)="$event.stopPropagation()">
+              <mat-label>{{column.description  | translate }}</mat-label>
+              <mat-select formControlName="{{column.name}}">
+                <!--[(value)]="column.value"-->
+                <mat-option></mat-option>
+                <div *ngFor="let selection of column.type | keyvalue">
+                  <mat-option *ngIf="(selection.value | typeof) == 'number'"  [value]="selection.value">{{selection.key}}</mat-option>
+                </div>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <ng-template #normalForm>
+            <div *ngIf="!column.ifRange;else rangeForm" class="inputfillter">
+              <mat-form-field appearance="outline" [formGroup]="filter" (click)="$event.stopPropagation()">
+                <mat-label>{{column.description  | translate }}</mat-label>
+                <codeCoutry-input *ngIf="column.type =='codeCoutry-input';else adressFormControll" formControlName="{{column.name}}"></codeCoutry-input>
+                <ng-template #adressFormControll>
+                  <adress-input *ngIf="column.type =='adress-input';else normalFormControll" formControlName="{{column.name}}"></adress-input>
+                </ng-template>
+                <ng-template #normalFormControll>
+                  <input matInput type="{{column.type}}" placeholder="Wyszukaj" formControlName="{{column.name}}">
+                </ng-template>
+              </mat-form-field>
+            </div>
+          </ng-template>
+
+
+          <ng-template #rangeForm>
+            <div *ngIf="column.type != 'date';else dateForm" class="inputfillter numericRange">
+              <mat-form-field appearance="outline" [formGroup]="filter" (click)="$event.stopPropagation()" style="width: 50% !important">
+                <mat-label>{{column.description  | translate }}</mat-label>
+                <input matInput placeholder="Od" type="{{column.type}}" formControlName="{{column.name + ' >'}}">
+              </mat-form-field>
+              <mat-form-field appearance="outline" [formGroup]="filter" (click)="$event.stopPropagation()" style="width: 50% !important">
+                <mat-label></mat-label>
+                <input matInput placeholder="Do" type="{{column.type}}" formControlName="{{column.name + ' <'}}">
+              </mat-form-field>
+            </div>
+          </ng-template>
+
+          <ng-template #dateForm>
+            <div class="inputfillter">
+              <mat-form-field appearance="outline" [formGroup]="filter" (click)="$event.stopPropagation()">
+                <mat-label>{{column.description  | translate }}</mat-label>
+                <mat-date-range-input [rangePicker]="dateFilterPicker">
+                  <input matStartDate placeholder="Wyszukaj od" formControlName="{{column.name + ' >'}}">
+                  <input matEndDate placeholder="do" formControlName="{{column.name + ' <'}}">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="dateFilterPicker"></mat-datepicker-toggle>
+                <mat-date-range-picker #dateFilterPicker></mat-date-range-picker>
+              </mat-form-field>
+            </div>
+          </ng-template>
+
+        </mat-header-cell>
+      </ng-template>
+
+      <mat-cell *matCellDef="let element" class="cell">
+        {{column.type == 'date'? toISOSDateString(element[column.name]) : (column.type | typeof) == 'object' ? column.type[element[column.name]] : column.type == 'array' ? element[column.name] : (column.type | typeof) == 'array' ? (element[column.name] | mapone:column.type) : column.type == 'boolean' ? column.boolFilter(element[column.name]) : element[column.name]}}
+      </mat-cell>
+    </ng-container>
+  </div>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+  <mat-row *matRowDef="let row; columns: displayedColumns" (click)="displaySelections && selection.toggle(row)" (dblclick)="getElement(row)" class="row"></mat-row>
+</mat-table>
+
+<mat-paginator [length]="totalElementsLength" [pageSize]="5" [pageSizeOptions]="[5,10,20,50]" [showFirstLastButtons]="true"></mat-paginator>

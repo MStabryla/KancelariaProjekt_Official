@@ -1,0 +1,14 @@
+label {
+  font-weight: bold;
+}
+
+.int-item {
+  cursor: pointer;
+}
+.grid-elem {
+    display:grid;
+    grid-template-columns: auto auto auto;
+}
+.grid-elem div{
+    margin: 0 4px;
+}

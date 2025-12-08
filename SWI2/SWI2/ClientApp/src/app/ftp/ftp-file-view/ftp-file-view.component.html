@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>{{data.name}}</mat-card-title>
+  <label>{{ 'FTP.FTP_FILE_VIEW.FOLDER_PATH_LABEL' | translate}}</label>
+  <p>{{data.path}}</p>
+  <label>{{ 'CREATION_DATE' | translate}}</label>
+  <p>{{data && data.created && data.created.getMilliseconds() != 0 ? data.created.toLocaleTimeString() + " " + data.created.toLocaleDateString() : ""}}</p>
+  <label>{{ 'FTP.FTP_FILE_VIEW.MODIFICATION_DATE_LABEL' | translate}}</label>
+  <p>{{data && data.modified && data.modified.getMilliseconds() != 0 ? data.modified.toLocaleTimeString() + " " + data.modified.toLocaleDateString() : ""}}</p>
+  <label>{{ 'FTP.FTP_FILE_VIEW.SIZE_LABEL' | translate}}</label>
+  <p>{{data.size}} {{sizeUnit}}</p>
+</mat-card>

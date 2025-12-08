@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>{{'USER_PANEL.USER_EMAIL_CHANGE.CHANGE_PASSWORD_LABEL' | translate}}</mat-card-title>
+  <form [formGroup]="change" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>{{'USER_PANEL.USER_EMAIL_CHANGE.CURRENT_PASSWORD_LABEL' | translate}}</mat-label>
+      <input type="password" matInput formControlName="password" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'USER_PANEL.USER_EMAIL_CHANGE.NEW_EMAIL_ADRESS_LABEL' | translate}}</mat-label>
+      <input type="text" matInput formControlName="email" />
+    </mat-form-field>
+    <div>
+      <button mat-dialog-close mat-raised-button class="btn text-center" type="submit">{{'SAVE' | translate}}</button>
+    </div>
+  </form>
+</mat-card>

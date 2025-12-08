@@ -1,0 +1,39 @@
+#subpage {
+  margin: 0 auto 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+  #subpage > div {
+    height: auto;
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    font-size: x-large;
+    line-height: 1.2;
+  }
+
+@media (max-width: 1000px) {
+  #subpage > div {
+    font-size: medium;
+  }
+
+  .icon {
+    display: none;
+  }
+}
+
+* {
+  color: white;
+}
+
+@media (max-width: 360px) {
+  #subpage > div {
+    font-size: smaller;
+    padding: 35px;
+  }
+
+    #subpage > div > div {
+      width: 100%;
+    }
+}

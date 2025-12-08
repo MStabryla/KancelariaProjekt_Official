@@ -1,0 +1,10 @@
+<mat-card>
+  <h1 mat-dialog-title>{{'MESSAGES.MESSAGE_TEMPLATE.LABEL' | translate}}</h1>
+  <div mat-dialog-content>
+    <swi-table (elementDblClick)="dbClickHandler($event)" [sortActive]="sortActive" [requestUrl]="requestUrl" [headerRow]="headerRow" [validators]="validators" [selection]="selection" [displaySelections]="true" [displayFilters]="true" [refreshTable]="refreshTable.asObservable()"></swi-table>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="null" cdkFocusInitial>{{'BACK' | translate}}</button>
+    <button mat-button (click)="delateTemplates()" [disabled]="selection.selected.length == 0" cdkFocusInitial>{{'DELETE' | translate}}</button>
+  </div>
+</mat-card>

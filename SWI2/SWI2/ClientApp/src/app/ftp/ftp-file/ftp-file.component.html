@@ -1,0 +1,23 @@
+<div class="file-item {{file.type == 'dir' ? ('FTP.FTP_FILE.FOLDER_LABEL' | translate) : ('FTP.FTP_FILE.FILE_LABEL' | translate)}}">
+  <span class="file-head" (click)="clicked()">
+    <mat-icon *ngIf="file.type == 'dir' && !file.dirOpen">folder</mat-icon>
+    <mat-icon *ngIf="file.type == 'dir' && file.dirOpen">folder_open</mat-icon>
+    <mat-icon *ngIf="file.type == 'file'">insert_drive_file</mat-icon>
+    <span class="file-name" *ngIf="file && !renaming">{{file.name}}</span>
+  </span>
+  
+  <span *ngIf="file && renaming" class="file-renaming">
+    <input type="text" name="newName"  [(ngModel)]="renamingValue" (keydown)="onRenameKeydown($event)" /> <mat-icon class="file-panel-button" (click)="renameConfirm()">done</mat-icon>
+  </span>
+  <div class="file-panel">
+    <mat-icon class="file-panel-button" (click)="createDirectory()" *ngIf="file.type === 'dir' && folderState >= 1" [title]="'FTP.FTP_FILE.CREATE_FOLDER_LABLE'">create_new_folder</mat-icon>
+    <mat-icon class="file-panel-button" (click)="upload()" *ngIf="file.type === 'dir'  && folderState >= 1" [title]="'FTP.FTP_FILE.ADD_FILE_LABLE' | translate">publish</mat-icon>
+    <a *ngIf="file.type === 'file'" [href]="downloadUrl()" [download]="file.name" title="Pobierz"><mat-icon class="file-panel-button">get_app</mat-icon></a>
+    <mat-icon *ngIf="file.type !== 'dir' || folderState >= 2" class="file-panel-button" (click)="rename()" [title]="'FTP.FTP_FILE.CHANGE_NAME_LABLE' | translate">create</mat-icon>
+    <mat-icon *ngIf="file.type !== 'dir' || folderState >= 2" class="file-panel-button" (click)="delete()" [title]="('DELETE' | translate) +  file.type == 'dir' ? ('FTP.FTP_FILE.FOLDER_LABEL' | translate) : ('FTP.FTP_FILE.FILE_LABEL' | translate)">delete</mat-icon>
+  </div>
+  <div class="folder-child" *ngIf="creatingFolder">
+    <mat-icon>folder</mat-icon>
+    <span class="file-renaming"><input type="text" name="newFolder" [(ngModel)]="creatingFolderValue" (keydown)="onCreateDirectorKeydown($event)" /> <mat-icon class="file-panel-button" (click)="createDirectoryConfirm()">done</mat-icon></span>
+  </div>
+</div>

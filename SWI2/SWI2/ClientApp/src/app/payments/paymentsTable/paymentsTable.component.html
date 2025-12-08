@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <mat-toolbar-row style="justify-content: space-around;background-color:lightgray">
+    <button class="toolbarButton" mat-icon-button (click)="openAdd()">
+      {{'ADD' | translate}}<mat-icon>post_add</mat-icon>
+    </button>
+    <button class="toolbarButton" [matMenuTriggerFor]="editMenu" mat-icon-button>
+      {{'MODIFY' | translate}}<mat-icon>create</mat-icon>
+    </button>
+    <mat-menu #editMenu>
+      <button mat-menu-item [disabled]="selection.selected.length !=1" (click)="openEdit()">
+        <mat-icon>edit_note</mat-icon>
+        <span>{{'EDIT' | translate}}</span>
+      </button>
+      <button mat-menu-item (click)="delate()">
+        <mat-icon>remove_circle</mat-icon>
+        <span>{{'DELETE' | translate}}</span>
+      </button>
+    </mat-menu>
+    <button class="toolbarButton" mat-icon-button (click)="csvSettelment()">
+      {{'PEYMENTS.PAYMENT_TABLE.SETTELD_BY_CSV_LABEL' | translate}}<mat-icon>table_rows</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<swi-table (elementDblClick)="dblClickPayment($event)" [selection]="selection" [refreshTable]="refreshTable.asObservable()" [sortActive]="sortActive" [requestUrl]="requestUrl" [headerRow]="headerRow" [validators]="validators" [displaySelections]="true" [displayFilters]="true"></swi-table>

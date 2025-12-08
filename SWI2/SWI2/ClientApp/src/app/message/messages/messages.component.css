@@ -1,0 +1,14 @@
+.messages-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color:white;
+  color:black!important;
+}
+.messages-type-select{
+    width:100%;
+}
+.toolbar {
+  justify-content: space-around;
+  background-color: lightgray;
+}
+

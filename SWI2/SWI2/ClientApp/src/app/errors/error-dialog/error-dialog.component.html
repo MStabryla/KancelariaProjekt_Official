@@ -1,0 +1,8 @@
+<mat-card>
+  <span style="color:red;"><mat-card-title>Error {{data.code}}</mat-card-title></span>
+  <p>{{data.message}}</p>
+  <p>{{data.error}}</p>
+  <mat-card-actions>
+    <button mat-button (click)="close()" class="error-but">OK</button>
+  </mat-card-actions>
+</mat-card>

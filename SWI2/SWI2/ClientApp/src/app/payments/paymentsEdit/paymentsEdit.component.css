@@ -1,0 +1,20 @@
+.cardRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cellRow {
+  display: flex;
+  flex-direction: row;
+}
+  .cardCell {
+  display: flex;
+  flex-direction: column;
+}
+
+.marginTop {
+  margin-top: 10px;
+}
+.parentWidth {
+  width: 100%;
+}

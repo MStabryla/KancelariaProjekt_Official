@@ -1,0 +1,96 @@
+.cardRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.cellSpaceBetween {
+  justify-content: space-between;
+}
+
+.cardColumn {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cardCellColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.marginTop {
+  margin-top: 10px;
+}
+
+.marginLeft {
+  margin-left: 10px;
+}
+
+.parentWidth {
+  width: 100%;
+}
+
+.csvReadedData {
+  display: flex;
+  flex-direction: column;
+}
+
+#csvDataHeder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  #csvDataHeder > * {
+    flex: 1;
+  }
+
+#csvDataTable {
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+#machingPaymentsTable {
+  display: flex;
+  flex-direction: column;
+}
+
+  #machingPaymentsTable > .mat-card {
+    padding: 5px;
+  }
+
+.paymentMain > * {
+  flex: 1;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexWrap {
+  flex-wrap: wrap;
+}
+
+.flexRowSpaceBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+:host ::ng-deep .flexRow .mat-form-field-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.paymenForInvoice {
+  width: 220px;
+}
+.contractorBankAccount > mat-form-field {
+  flex: 1;
+}

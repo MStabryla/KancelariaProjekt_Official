@@ -1,0 +1,8 @@
+.toolbar {
+  justify-content: space-around;
+  background-color: lightgray;
+}
+
+.mat-icon-button {
+  width: auto;
+}

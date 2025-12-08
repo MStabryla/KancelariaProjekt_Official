@@ -1,0 +1,6 @@
+<div class="dropzone">
+  <input class="fileInput" id="input-file-id" multiple type="file" />
+  <label for="input-file-id" class="md-button md-raised md-primary">{{file ? file.name : 'FILE_UPLOAD_LABEL' | translate }}</label>
+</div>
+
+<mat-progress-bar *ngIf="progerssValue > 0" class="progerssMargin" color="primary" mode="buffer" [value]="progerssValue" [bufferValue]="progressBufferValue"></mat-progress-bar>

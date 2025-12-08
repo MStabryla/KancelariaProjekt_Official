@@ -1,0 +1,14 @@
+label{
+    font-weight: bold;
+}
+.int-item {
+  cursor: pointer;
+}
+.inline{
+    display:inline;
+    float:right;
+}
+.pm-desc{
+    font-size:8px;
+}
+

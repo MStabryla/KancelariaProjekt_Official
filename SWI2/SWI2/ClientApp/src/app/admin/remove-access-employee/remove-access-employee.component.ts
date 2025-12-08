@@ -1,0 +1,75 @@
+import { SelectionModel } from '@angular/cdk/collections';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, Inject } from '@angular/core';
+import { Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Subject } from 'rxjs';
+import { FormModel } from '../../models/Form.model';
+import { ApiService } from '../../shared/services/api.service';
+import { ErrorDialogService } from '../../shared/services/error-dialog-service';
+import { UserModel } from '../user.model';
+
+@Component({
+    selector: 'swi-remove-access-employee',
+    templateUrl: './remove-access-employee.component.html',
+    styleUrls: ['./remove-access-employee.component.css']
+})
+/** remove-access-employee component*/
+export class RemoveAccessEmployeeComponent {
+  sortActive = "created";
+  requestUrl = "api/departmentpanel/employee/" + this.data.id;
+  detailsComponent = null;
+  headerRow = [
+    { description: "ADMIN.REMOVE_ACCESS_EMPLOYEE.COMPANYS_TABLE_COMPANY_DESCRIPTION", name: "companyName", type: "text", ifRange: false } as FormModel,
+    { description: "ADMIN.REMOVE_ACCESS_EMPLOYEE.COMPANYS_TABLE_NAME_DESCRIPTION", name: "name", type: "text", ifRange: false } as FormModel,
+  ];
+  validators = [Validators.nullValidator];
+  selection = new SelectionModel<any>(true, []);
+  refreshTable: Subject<void> = new Subject<void>();
+
+  isLoading = false;
+  howManyQueries: number;
+
+  constructor(private _api: ApiService,
+    private errorD: ErrorDialogService,
+    private dialogRef: MatDialogRef<UserModel>,
+    @Inject(MAT_DIALOG_DATA) public data: UserModel) {
+
+  }
+  dbClickHandler(data: any) {
+
+  }
+
+  confirm() {
+    if (this.selection.selected.length > 0)
+      this.howManyQueries = this.selection.selected.length;
+    const errorArray = [];
+    this.isLoading = true;
+    this.selection.selected.forEach((x) => {
+      this._api.delete("api/employeepanel/access/" + this.data.id + "/" + x.id).toPromise().then((x) => {
+        this.howManyQueries--;
+        if (this.howManyQueries <= 0) {
+          this.isLoading = false;
+          if (errorArray.length === 0) {
+            this.dialogRef.close({ op: "ok", data: this.selection.selected })
+          }
+          else {
+            this.dialogRef.close({ op: "error", data: errorArray })
+          }
+        }
+      }).catch((x: HttpErrorResponse) => {
+        errorArray.push(x);
+        this.howManyQueries--;
+        if (this.howManyQueries <= 0) {
+          this.isLoading = false;
+          if (errorArray.length === 0) {
+            this.dialogRef.close({ op: "ok", data: this.selection.selected })
+          }
+          else {
+            this.dialogRef.close({ op: "error", data: errorArray })
+          }
+        }
+      })
+    })
+  }
+}

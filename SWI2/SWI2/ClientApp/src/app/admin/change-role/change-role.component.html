@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-card-title>{{ 'ADMIN.CHANGE_ROLE.LABEL' | translate }} {{data.userName}}</mat-card-title>
+  <div class="change-role-options">
+    <button mat-button class="change-role-option" (click)="submit('Client')">{{ 'ADMIN.CHANGE_ROLE.CHNAGE_ROLE_USER' | translate }}</button>
+    <button mat-button class="change-role-option" (click)="submit('Employee')">{{ 'ADMIN.CHANGE_ROLE.CHNAGE_ROLE_EMPLOYEE' | translate }}</button>
+  </div>
+</mat-card>

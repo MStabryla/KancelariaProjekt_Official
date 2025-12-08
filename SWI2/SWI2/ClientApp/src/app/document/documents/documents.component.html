@@ -1,0 +1,12 @@
+<mat-toolbar>
+  <mat-toolbar-row class="toolbar">
+    <button class="toolbarButton" mat-icon-button (click)="add()">
+      {{'ADD' | translate}}<mat-icon>post_add</mat-icon>
+    </button>
+    <button *ngIf="userRole =='Administrator'" (click)="delete()" [disabled]="selection.selected.length < 1" mat-icon-button>
+      <mat-icon>remove_circle</mat-icon>
+      <span>{{'DELETE' | translate}}</span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<swi-table (elementDblClick)="dbClickHandler($event)" [sortActive]="sortActive" [requestUrl]="requestUrl" [headerRow]="headerRow" [validators]="validators" [selection]="selection" [displaySelections]="true" [displayFilters]="true" [refreshTable]="refreshTable.asObservable()"></swi-table>

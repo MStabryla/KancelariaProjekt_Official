@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-title>{{data.name}}</mat-card-title>
+  <mat-card-subtitle>{{data.id}}</mat-card-subtitle>
+  <label>{{ 'COMPANY.PAYMENT_METHOD_VIEW.ACCOUNT_NUMBER_LABEL' | translate }}</label>
+  <p>{{data.accountNumber}}</p>
+  <label>{{ 'COMPANY.PAYMENT_METHOD_VIEW.CURRENCY_LABEL' | translate }}</label>
+  <p>{{data.currency}}</p>
+  <mat-card-actions>
+    <button mat-button (click)="edit()"><mat-icon class="int-item">create</mat-icon> {{ 'COMPANY.PAYMENT_METHOD_VIEW.EDIT' | translate }}</button>
+    <button mat-button (click)="delete()"><mat-icon class="int-item">delete</mat-icon> {{ 'COMPANY.PAYMENT_METHOD_VIEW.DELETE' | translate }}</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>
+    {{ 'FTP.FTP_VIEW.LABEL' | translate}}
+  </mat-card-title>
+  <div class="user-folder">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <span>{{ 'FTP.FTP_VIEW.USER_FOLDER_LABEL' | translate}}</span>
+      </mat-expansion-panel-header>
+      <swi-ftp-directory [dirModel]="homeModel" [root]='true' [folderState]="1"></swi-ftp-directory>
+    </mat-expansion-panel>
+  </div>
+  <div class="dep-folder" *ngIf="userRole === 'Client' || userRole === 'Employee'">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <span> {{ 'FTP.FTP_VIEW.OTHERS_LABEL' | translate}}</span>
+      </mat-expansion-panel-header>
+      <swi-ftp-directory  *ngFor="let item of companies" [dirModel]="item" [root]='true' [folderState]="0"></swi-ftp-directory>
+    </mat-expansion-panel>
+  </div>
+</mat-card>

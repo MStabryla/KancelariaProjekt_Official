@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>{{'DEPARTMENTS.DEPARTMENT_CREATE.LABEL' | translate}}</mat-card-title>
+  <form [formGroup]="createFormGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>{{'DEPARTMENTS.DEPARTMENT_CREATE.FORM.NAME' | translate}}</mat-label>
+      <input type="text" matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'DEPARTMENTS.DEPARTMENT_CREATE.FORM.TYPE' | translate}}</mat-label>
+      <input type="text" matInput formControlName="type" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'DEPARTMENTS.DEPARTMENT_CREATE.FORM.FOLDER_NAME' | translate}}</mat-label>
+      <input type="text" matInput formControlName="folderName" />
+    </mat-form-field>
+    <div>
+      <button mat-raised-button class="btn text-center" type="submit">{{ 'ADD' | translate}}</button>
+    </div>
+  </form>
+</mat-card>

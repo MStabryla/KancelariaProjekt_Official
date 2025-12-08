@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title>{{ 'COMPANY.PAYMENT_METHOD_CREATE.LABEL' | translate }}</mat-card-title>
+  <form [formGroup]="createFormGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.PAYMENT_METHOD_CREATE.NAME_LABEL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.PAYMENT_METHOD_CREATE.ACCOUNT_NUMBER_LABEL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="accountNumber" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.PAYMENT_METHOD_CREATE.CURRENCY_LABEL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="currency" [matAutocomplete]="paymentCurrencyAuto" />
+      <mat-autocomplete #paymentCurrencyAuto="matAutocomplete" [displayWith]="displayPaymentCurrencyAutocomplet">
+        <mat-option *ngFor="let paymentCurrency of paymentCurrencyOptions | async" [value]="paymentCurrency">
+          {{paymentCurrency + ' | ' + (paymentCurrency | currencySymbol)}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button class="btn text-center" type="submit">{{ 'COMPANY.PAYMENT_METHOD_CREATE.ADD' | translate }}</button>
+    </div>
+  </form>
+</mat-card>

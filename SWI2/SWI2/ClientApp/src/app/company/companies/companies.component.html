@@ -1,0 +1,10 @@
+<div>
+  <mat-toolbar *ngIf="userRole === 'Administrator'">
+    <mat-toolbar-row class="toolbar">
+      <button class="toolbarButton" mat-icon-button (click)="add()">
+        Dodaj firmę<mat-icon>store</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <swi-table (elementDblClick)="dbClickHandler($event)" [refreshTable]="refreshTable.asObservable()" [sortActive]="sortActive" [requestUrl]="requestUrl" [headerRow]="headerRow" [validators]="validators" [displaySelections]="false" [displayFilters]="true"></swi-table>
+</div>

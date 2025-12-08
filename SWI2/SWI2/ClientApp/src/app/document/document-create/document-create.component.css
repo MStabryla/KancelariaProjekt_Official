@@ -1,0 +1,89 @@
+.margin {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.select-form mat-form-field {
+  display: inherit;
+}
+
+.company mat-select {
+  position: absolute;
+  left: 0;
+}
+
+.company input {
+  width: calc(100% - 30px)
+}
+
+.document-type {
+  display: inline-block !important;
+  width: calc(100% - 70px);
+}
+
+.document-type-create-button {
+  display: inline-block;
+  padding: 4px;
+  border: none;
+  width: auto;
+  height: 100%;
+}
+
+.document-type-delete {
+  cursor: pointer;
+  float: right;
+  margin: 5px;
+}
+
+.file {
+  position: relative;
+  cursor: pointer;
+}
+
+  .file input {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+  }
+
+  .file button {
+    position: absolute;
+    top: -100%;
+    right: 0;
+    background-color: #fafafa;
+  }
+
+input[type="file"] {
+  cursor: pointer;
+  color: red;
+}
+
+label {
+  font-weight: bold;
+}
+
+.file-browser {
+  color: white;
+  border: dashed 1px #3f51b5;
+  background-color: #3f51b5;
+  border-radius: 10px;
+  padding: 1px 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.spinner {
+  position: absolute;
+  right: 20px;
+  top: -7px;
+}
+
+.file-picker {
+  width: 100%;
+}

@@ -1,0 +1,68 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{'INVOICES.INVOICE_MAIL_TEMPLATE.LABEL' | translate}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="mailTemplateForm" (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>{{'INVOICES.INVOICE_MAIL_TEMPLATE.LANGUAGE_LABEL' | translate}}</mat-label>
+          <mat-select formControlName="mailLanguage" (selectionChange)="updateForm($event.source.value)">
+            <mat-option *ngFor="let language of languages" [value]="language.id" >
+              {{language.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>{{'INVOICES.INVOICE_MAIL_TEMPLATE.TITLE_LABEL' | translate}}</mat-label>
+          <input type="text" matInput formControlName="title" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <textarea matInput
+                    placeholder="Treść"
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    formControlName="message">
+          </textarea>
+        </mat-form-field>
+      </div>
+      <mat-card-actions>
+        <button mat-raised-button class="btn text-center" type="submit">Edytuj</button>
+      </mat-card-actions>
+    </form>
+    <h4>{{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.LABEL' | translate}}</h4>
+    <div class="cellrow">
+      <p>[[my_name]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.COMPANY_NAME_LABEL' | translate}}</p>
+      <p>
+        [[contractor_name]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.CONTRACTOR_NAME_LABEL' | translate}}
+      </p>
+      <p>
+        [[contractor_balance]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.CONTRACTOR_BALANCE_LABEL' | translate}}
+      </p>
+      <p>
+        [[invoice_number]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.INVOICE_NUMBER_LABEL' | translate}}
+      </p>
+      <p>
+        [[issue_place]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.ISSUE_PLACE_LABEL' | translate}}
+      </p>
+      <p>
+        [[invoice_date]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.CREATION_DATE_LABEL' | translate}}
+      </p>
+      <p>
+        [[payment_date]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.PAYMENT_DATE_LABEL' | translate}}
+      </p>
+      <p>
+        [[currency]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.CURRENCY_LABEL' | translate}}
+      </p>
+      <p>
+        [[total_worth]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.BRUTTO_VALUE_LABEL' | translate}}
+      </p>
+      <p>[[net_worth]] - {{'INVOICES.INVOICE_MAIL_TEMPLATE.MARKERS.NETTO_VALUE_LABEL' | translate}}</p>
+    </div>
+  </mat-card-content>
+</mat-card>

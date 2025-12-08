@@ -1,0 +1,112 @@
+<mat-card>
+  <div mat-dialog-title>
+    <h1>{{data.action =='edit' ? ('PEYMENTS.PAYMENT_EDIT.EDIT_PAYMENT_LABE' | translate) : ('PEYMENTS.PAYMENT_EDIT.ADD_PAYMENT_LABE' | translate) }} </h1>
+    <mat-paginator [hidden]="dataSource.data.length==1" [pageSize]="1" [hidePageSize]="true"></mat-paginator>
+  </div>
+  <div mat-dialog-content>
+    <form [formGroup]="paymentForm">
+      <div class="cardCell">
+        <div class="cardRow">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'CONTRACTOR' | translate}}</mat-label>
+            <input type="text"
+                   aria-label="contractor"
+                   matInput
+                   formControlName="contractor"
+                   [matAutocomplete]="contractorAuto">
+            <mat-autocomplete #contractorAuto="matAutocomplete" [displayWith]="displayContractorAutocomplet">
+              <mat-option *ngFor="let contractor of contractorsOptions | async" [value]="contractor">
+                {{contractor.name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PEYMENTS.PAYMENT_EDIT.BANK_ACCOUNT_LABEL' | translate}}</mat-label>
+            <input type="text"
+                   aria-label="contractorBankAccount"
+                   matInput
+                   formControlName="contractorBankAccount"
+                   [matAutocomplete]="contractorBankAccountAuto"
+                   [readonly]="contractorBankAccounts == null">
+            <mat-autocomplete #contractorBankAccountAuto="matAutocomplete" [displayWith]="displayContractorBankAccountAutocomplet">
+              <mat-option *ngFor="let contractorBankAccount of contractorBankAccountsOptions | async" [value]="contractorBankAccount">
+                {{contractorBankAccount.bankName}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+        <div class="cardRow">
+          <mat-card formArrayName="paymentsForInvoices" class="parentWidth">
+            <mat-card-title>{{'PEYMENTS.PAYMENT_EDIT.INVOICES_LABEL' | translate}}</mat-card-title>
+            <mat-divider></mat-divider>
+            <div class="cardCell marginTop">
+              <div *ngFor="let entry of paymentForm.get('paymentsForInvoices')['controls']; let i=index">
+                <div *ngIf="entry.enabled" [formGroupName]="i">
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'PEYMENTS.PAYMENT_EDIT.INVOICE_NUMBER_LABEL' | translate}}</mat-label>
+                    <input matInput formControlName="invoice" required [matAutocomplete]="invoiceAuto" (focus)="changeInvoiceFocus(i)" [readonly]="invoices ==null">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'PEYMENTS.PAYMENT_EDIT.PAYMENT_VALUE_FOR_INVOICE_LABEL' | translate}}</mat-label>
+                    <input matInput type="number" formControlName="paymentValueForInvoice"  required>
+                  </mat-form-field>
+                  <button type="button" mat-mini-fab *ngIf="enabledInvoicesLength > 1" (click)="removeInvoice(i, (invoicesChanges[page].length > i ? true: false))">
+                    <mat-icon>delete forever</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <mat-card-actions>
+              <button type="button" mat-raised-button (click)="addInvoice(paymentForm.get('paymentsForInvoices')['controls'].length)">
+                <mat-icon>add box</mat-icon>
+                {{'PEYMENTS.PAYMENT_EDIT.ADD_APPEAL_LABEL' | translate}}
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-autocomplete #invoiceAuto="matAutocomplete" [displayWith]="displayInvoiceAutocomplet">
+            <mat-option *ngFor="let invoice of invoicesOptionsList[InvoiceDictionaryIndex] | async" [value]="invoice">
+              {{invoice.number + ' | ' + invoice.bruttoWorth}}
+            </mat-option>
+          </mat-autocomplete>
+        </div>
+
+<div class="cardRow marginTop">
+  <mat-form-field appearance="outline">
+    <mat-label>{{'PEYMENTS.PAYMENT_EDIT.PAYMENT_TITLE_LABEL' | translate}}</mat-label>
+    <input type="text" matInput formControlName="topic">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>{{'PEYMENTS.PAYMENT_EDIT.PAYMENT_VALUE_LABEL' | translate}}</mat-label>
+    <input type="number" matInput formControlName="paymentValue">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>{{'CURRENCY' | translate}}</mat-label>
+    <input type="text" matInput formControlName="currency" [matAutocomplete]="paymentCurrencyAuto">
+    <mat-autocomplete #paymentCurrencyAuto="matAutocomplete" [displayWith]="displayPaymentCurrencyAutocomplet">
+      <mat-option *ngFor="let paymentCurrency of paymentCurrencyOptions | async" [value]="paymentCurrency">
+        {{paymentCurrency + ' | ' + (paymentCurrency | currencySymbol)}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>{{'PEYMENTS.PAYMENT_EDIT.PAYMENT_DATE_LABEL' | translate}}</mat-label>
+    <input matInput [matDatepicker]="paymentDatePicker" formControlName="paymentDate" required>
+    <mat-datepicker-toggle matSuffix [for]="paymentDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #paymentDatePicker>
+      <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>{{'BACK' | translate}}</button>
+        <button mat-raised-button color="primary" matDatepickerApply>{{'CHOOSE' | translate}}</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field>
+</div>
+      </div>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [disabled]="!paymentForm.valid||!paymentForm.dirty" *ngIf="data.action =='edit'" (click)="editPayment()">{{'EDIT' | translate}}</button>
+    <button mat-button *ngIf="data.action =='add'" (click)="addPayment()">{{'ADD' | translate}}</button><!--[disabled]="!paymentForm.valid"-->
+    <button mat-button [mat-dialog-close]="null" cdkFocusInitial>{{'BACK' | translate}}</button>
+  </div>
+</mat-card>

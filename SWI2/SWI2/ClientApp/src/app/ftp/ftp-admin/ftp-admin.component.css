@@ -1,0 +1,10 @@
+label {
+  font-weight: bold;
+}
+.system-folder{
+    max-height:75vh;
+    overflow-y:scroll;
+}
+.cancel{
+    cursor:pointer;
+}

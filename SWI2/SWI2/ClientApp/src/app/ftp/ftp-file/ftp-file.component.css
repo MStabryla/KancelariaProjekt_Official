@@ -1,0 +1,35 @@
+.file-name {
+  position: relative;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.folder, .file-head {
+  cursor: pointer;
+}
+.file-panel {
+  display: inline-block;
+  margin-left: 10px;
+  visibility: hidden;
+}
+.file-panel-button {
+  transform: translateY(5px);
+  cursor: pointer;
+}
+.file-item input {
+  padding: 0px;
+}
+.file-item:hover .file-panel{
+  visibility: visible;
+}
+.file-renaming {
+  position: relative;
+  margin-top: -5px;
+  margin-left: 5px;
+}
+.folder-child {
+  margin-left: 15px;
+}
+a, a:hover, a:any-link {
+    color:inherit;
+
+}

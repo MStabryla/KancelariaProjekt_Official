@@ -1,0 +1,105 @@
+<mat-card>
+  <mat-card-title>{{company.name}}</mat-card-title>
+  <mat-card-subtitle>{{company.id}}</mat-card-subtitle>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ 'COMPANY.COMPANY.LABEL' | translate }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ 'COMPANY.COMPANY.ADRESS_LABEL' | translate }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <label>
+        {{ 'COMPANY.COMPANY.COUNTRY_LABEL' | translate }}
+      </label>
+      <p>{{company.country}}</p>
+      <label>
+        {{ 'COMPANY.COMPANY.CITY_LABEL' | translate }}
+      </label>
+      <p>{{company.city}}</p>
+      <label>
+        {{ 'COMPANY.COMPANY.STREET_LABEL' | translate }}
+      </label>
+      <p>{{company.street}} {{company.housenumber}}<span *ngIf="company.apartamentNumber !== '0'">/{{company.apartamentNumber}}</span> </p>
+      <label>
+        {{ 'COMPANY.COMPANY.POSTCODE_LABEL' | translate }}
+      </label>
+      <p>{{company.postalcode}}</p>
+    </mat-expansion-panel>
+    <br />
+    <label>
+      {{ 'COMPANY.COMPANY.NIP_LABEL' | translate }}
+    </label>
+    <p>{{company.nip}}</p>
+    <label>
+      {{ 'COMPANY.COMPANY.CREATION_PLACE_LABEL' | translate }}
+    </label>
+    <p>{{company.creationPlace}}</p>
+    <label>
+      {{ 'COMPANY.COMPANY.WNA_ACCOUNT_LABEL' | translate }}
+    </label>
+    <p>{{company.defaultWNAAccount}}</p>
+    <label>
+      {{ 'COMPANY.COMPANY.MA_ACCOUNT_LABEL' | translate }}
+    </label>
+    <p>{{company.defaultMAAccount}}</p>
+    <label>
+      {{ 'COMPANY.COMPANY.MAVAT_ACCOUNT_LABEL' | translate }}
+    </label>
+    <p>{{company.defaultMAVatAccount}}</p>
+    <mat-card-actions>
+      <button *ngIf=" userRole != 'Employee'" mat-button (click)="editCompany()"><mat-icon>create</mat-icon>{{ 'COMPANY.COMPANY.EDIT' | translate }} </button>
+    </mat-card-actions>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ 'COMPANY.COMPANY.PAYMENT_METHODS_LABEL' | translate }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item *ngFor="let payment of paymentMethods">
+        <div class="int-item" (click)="openPay(payment)">
+          <span matLine class="d-block">{{payment.name}}</span>
+          <span matLine class="pm-desc">{{payment.accountNumber}}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <mat-card-actions>
+      <button mat-button (click)="createPay()"><mat-icon>add</mat-icon> {{ 'COMPANY.COMPANY.PAYMENT_METHODS_ADD' | translate }}</button>
+      <button mat-button (click)="openPayList()"><mat-icon>list_alt</mat-icon> {{ 'COMPANY.COMPANY.PAYMENT_METHODS_LIST' | translate }}</button>
+    </mat-card-actions>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ 'COMPANY.COMPANY.DEPARTAMENTS' | translate }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item *ngFor="let department of departments">
+        <h4 class="int-item" (click)="openDep(department)">{{department.name}}</h4> <!--(click)="openPay(department)"-->
+      </mat-list-item>
+    </mat-list>
+    <mat-card-actions>
+      <button mat-button (click)="createDep()"><mat-icon>add</mat-icon> {{ 'COMPANY.COMPANY.DEPARTAMENTS_ADD' | translate }}</button>
+      <button mat-button (click)="openDepList()"><mat-icon>list_alt</mat-icon> {{ 'COMPANY.COMPANY.DEPARTAMENTS_LIST' | translate }}</button>
+    </mat-card-actions>
+  </mat-expansion-panel>
+  <!--<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Pozostałe
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-card-actions>
+      <button mat-button (click)="goToInvoices()"><mat-icon>list_alt</mat-icon>Faktury</button>
+      <button mat-button (click)="goToContractors()"><mat-icon>list_alt</mat-icon> Kontrahenci firmy</button>
+      <button mat-button (click)="goToPayments()"><mat-icon>list_alt</mat-icon> Płatności</button>
+    </mat-card-actions>
+  </mat-expansion-panel>-->
+</mat-card>

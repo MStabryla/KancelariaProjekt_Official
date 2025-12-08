@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>{{data.userName}}</mat-card-title>
+  <mat-card-subtitle>{{data.id}}</mat-card-subtitle>
+  <label>{{ 'ADMIN.USER_VIEW.USER_ROLE' | translate }}</label>
+  <p>{{data.userRole}}</p>
+  <label>{{ 'ADMIN.USER_VIEW.USER_PHONENUMBER' | translate }}</label>
+  <p>{{data.phoneNumber}}</p>
+  <label>{{ 'ADMIN.USER_VIEW.USER_EMIAL' | translate }}</label>
+  <p>{{data.email}}</p>
+  <label>{{ 'ADMIN.USER_VIEW.USER_CREATION_DATE' | translate }}</label>
+  <p>{{data.created}}</p>
+  <mat-card-actions>
+    <button mat-button (click)="giveAccess()" *ngIf="data.userRole === 'Client' || data.userRole === 'Employee'"><mat-icon class="int-item">lock_open</mat-icon>{{ 'ADMIN.USER_VIEW.GIVE_ACCESS' | translate }}</button>
+    <button mat-button (click)="removeAccess()" *ngIf="data.userRole === 'Client' || data.userRole === 'Employee'"><mat-icon class="int-item">lock</mat-icon>{{ 'ADMIN.USER_VIEW.REMOVE_ACCESS' | translate }}</button>
+    <button mat-button (click)="changeRole()" *ngIf="checkChangeRole(data.userRole)"><mat-icon class="int-item">account_box</mat-icon>{{ 'ADMIN.USER_VIEW.CHANGE_ROLE' | translate }}</button>
+    <button mat-button *ngIf="data.isActive" (click)="blockUser()"><mat-icon class="int-item">block</mat-icon>{{ 'ADMIN.USER_VIEW.LOCK_USER' | translate }}</button>
+    <button mat-button *ngIf="!data.isActive" (click)="unlockUser()"><mat-icon class="int-item">done</mat-icon>{{ 'ADMIN.USER_VIEW.UNLOCK_USER' | translate }}</button>
+  </mat-card-actions>
+</mat-card>

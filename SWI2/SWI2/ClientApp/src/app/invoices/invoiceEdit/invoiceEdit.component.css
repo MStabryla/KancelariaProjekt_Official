@@ -1,0 +1,49 @@
+:host ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.cardRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cardCell {
+  display: flex;
+  flex-direction: column;
+}
+
+.formMargin {
+  margin: 0 10px;
+}
+
+.mat-dialog-container {
+  overflow-x: hidden;
+}
+
+.calculatorTableCell {
+  width: 150px;
+}
+
+#mainChanges {
+  max-height: 400px;
+  flex-wrap: wrap;
+  width: 66%;
+}
+#mainChanges > * {
+    width:48%;
+}
+#contractorChanges {
+  width: 33%;
+}
+h1 {
+  font: bold 80% sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #999;
+  border-radius: 0.25em;
+  color: #FFF;
+  margin: 0 0 1em;
+  padding: 0.5em 0;
+  width:80%;
+}

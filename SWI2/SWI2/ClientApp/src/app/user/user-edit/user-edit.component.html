@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>{{'USER_PANEL.USER_CHANGE_PASSWORD.EDIT_USER_LABEL' | translate}}</mat-card-title>
+  <form [formGroup]="editFG" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>{{'USER_PANEL.USER_CHANGE_PASSWORD.USER_NAME_LABEL' | translate}}</mat-label>
+      <input type="text" matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'USER_PANEL.USER_CHANGE_PASSWORD.USER_SURNAME_LABEL' | translate}}</mat-label>
+      <input type="text" matInput formControlName="surname" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'USER_PANEL.USER_CHANGE_PASSWORD.FOLDER_NAME_LABEL' | translate}}</mat-label>
+      <input type="text" matInput formControlName="folderName" />
+    </mat-form-field>
+    <div>
+      <button mat-dialog-close mat-raised-button class="btn text-center" type="submit">{{'SAVE' | translate}}</button>
+    </div>
+  </form>
+</mat-card>

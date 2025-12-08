@@ -1,0 +1,292 @@
+<mat-card>
+  <form [formGroup]="invoiceForm">
+    <div mat-dialog-content style="max-height: none; overflow:initial;">
+      <mat-card-title class="cardRow" style=" justify-content: space-around;">
+        <h1 mat-dialog-title>{{ ('INVOICES.INVOICE_EDIT.INVICE_NUMBER_LABEL' | translate) + invoiceForm.get('number').value + (dataSource.data[page].correcting != '' || data.action == 1 ? (' ' + ('INVOICES.INVOICE_EDIT.CORRECT_LABEL' | translate )): '')}}</h1>
+        <mat-paginator [hidden]="dataSource.data.length==1" [pageSize]="1" [hidePageSize]="true"></mat-paginator>
+      </mat-card-title>
+
+      <mat-card-content>
+        <mat-card class="cardRow">
+          <div class="cardCell" id="mainChanges">
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.NUMBER_LABEL' | translate}}</mat-label>
+              <input matInput formControlName="number" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" *ngIf="invoiceForm.controls.correcting.value !=''">
+              <mat-label disabled>{{'INVOICES.INVOICE_EDIT.FORM.CORRECT_LABEL' | translate}}</mat-label>
+              <input matInput formControlName="correcting">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.CREATION_PLACE_LABEL' | translate}}</mat-label>
+              <input matInput formControlName="creationPlace" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.CREATION_DATE_LABEL' | translate}}</mat-label>
+              <input matInput [matDatepicker]="createdDatePicker" formControlName="created" required>
+              <mat-datepicker-toggle matSuffix [for]="createdDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #createdDatePicker>
+                <mat-datepicker-actions>
+                  <button mat-button matDatepickerCancel>{{'BACK' | translate}}</button>
+                  <button mat-raised-button color="primary" matDatepickerApply>{{'CHOOSE' | translate}}</button>
+                </mat-datepicker-actions>
+              </mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.CREATION_DATE_NAME_LABEL' | translate}}</mat-label>
+              <input type="text"
+                     aria-label="sellDateName"
+                     matInput
+                     formControlName="sellDateName"
+                     [matAutocomplete]="sellDateNameAuto">
+              <mat-autocomplete #sellDateNameAuto="matAutocomplete" [displayWith]="displayAutocomplet">
+                <mat-option *ngFor="let sellDateName of sellDateNameOptions | async" [value]="sellDateName">
+                  {{sellDateName.name}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{invoiceForm.controls.sellDateName.value ? invoiceForm.controls.sellDateName.value.name : '' }}</mat-label>
+              <input matInput [matDatepicker]="sellDatePicker" formControlName="sellDate" required>
+              <mat-datepicker-toggle matSuffix [for]="sellDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #sellDatePicker>
+                <mat-datepicker-actions>
+                  <button mat-button matDatepickerCancel>{{'BACK' | translate}}</button>
+                  <button mat-raised-button color="primary" matDatepickerApply>{{'CHOOSE' | translate}}</button>
+                </mat-datepicker-actions>
+              </mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.PAYMENT_DATE_LABEL' | translate}}</mat-label>
+              <input matInput [matDatepicker]="paymentDatePicker" formControlName="paymentDate" required>
+              <mat-datepicker-toggle matSuffix [for]="paymentDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #paymentDatePicker>
+                <mat-datepicker-actions>
+                  <button mat-button matDatepickerCancel>{{'BACK' | translate}}</button>
+                  <button mat-raised-button color="primary" matDatepickerApply>{{'CHOOSE' | translate}}</button>
+                </mat-datepicker-actions>
+              </mat-datepicker>
+            </mat-form-field>
+
+            <div>
+              <label class="formMargin">{{'INVOICES.INVOICE_EDIT.FORM.ISTRANSFER_LABEL' | translate}}</label>
+              <mat-radio-group formControlName="isTransferType">
+                <mat-radio-button class="formMargin" [value]="true">{{'INVOICES.INVOICE_EDIT.FORM.PAYMENT_BY_CARD_LABEL' | translate}}</mat-radio-button>
+                <mat-radio-button class="formMargin" [value]="false">{{'INVOICES.INVOICE_EDIT.FORM.PAYMENT_BY_CASH_LABEL' | translate}}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+            <mat-form-field appearance="outline" *ngIf="invoiceForm.get('isTransferType').value">
+              <mat-label disabled>{{'INVOICES.INVOICE_EDIT.FORM.BANK_LABEL' | translate}}</mat-label>
+              <input type="text"
+                     aria-label="paymentBank"
+                     matInput
+                     formControlName="paymentBank"
+                     [matAutocomplete]="paymentBankAuto">
+              <mat-autocomplete #paymentBankAuto="matAutocomplete" (optionSelected)="paymentBankAutoChnged($event.option.value)">
+                <mat-option *ngFor="let bankAccount of paymentBankOptions | async" [value]="bankAccount.name">
+                  {{bankAccount.name}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" *ngIf="invoiceForm.get('isTransferType').value">
+              <mat-label disabled>{{'INVOICES.INVOICE_EDIT.FORM.ACCOUNT_NUMBER_LABEL' | translate}}</mat-label>
+              <input type="text" aria-label="paymentAccountNumber" matInput formControlName="paymentAccountNumber" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label disabled>{{'INVOICES.INVOICE_EDIT.FORM.CURRENCY_LABEL' | translate}}</mat-label>
+              <input type="text" aria-label="paymentCurrency" matInput formControlName="paymentCurrency" [matAutocomplete]="paymentCurrencyAuto">
+              <mat-autocomplete #paymentCurrencyAuto="matAutocomplete" [displayWith]="displayPaymentCurrencyAutocomplet" >
+                <mat-option *ngFor="let paymentCurrency of paymentCurrencyOptions | async" [value]="paymentCurrency">
+                  {{paymentCurrency + ' | ' + (paymentCurrency | currencySymbol)}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label disabled>{{'INVOICES.INVOICE_EDIT.FORM.RATE_LABEL' | translate}}</mat-label>
+              <input type="number" aria-label="rate" matInput formControlName="rate">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" style="font-size: medium;">
+              <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.NOTE_LABEL' | translate}}</mat-label>
+              <textarea matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        formControlName="note">
+             </textarea>
+            </mat-form-field>
+          </div>
+
+          <div class="cardCell" id="contractorChanges">
+
+            <div class="cardCell" formGroupName="invoiceContractor">
+              <mat-form-field appearance="outline"
+                              (focusout)="focusOutContractorSelect()">
+                <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.CHOOSE_CONTRACTOR_LABEL' | translate}}</mat-label>
+                <input type="text"
+                       aria-label="contractor"
+                       matInput
+                       formControlName="contractor"
+                       [matAutocomplete]="contractorAuto">
+                <mat-autocomplete #contractorAuto="matAutocomplete" [displayWith]="displayAutocomplet" (optionSelected)="contractorAutoChnged($event.option.value)">
+                  <mat-option *ngFor="let contractor of contractorsOptions | async" [value]="contractor">
+                    {{contractor.name}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label disabled>{{'NAME' | translate}}Nazwa</mat-label>
+                <input matInput formControlName="name" required>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>{{'ADRESS' | translate}}</mat-label>
+                <adress-input formControlName="adress"></adress-input>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label disabled>{{'CODECOUNTRY' | translate}}</mat-label>
+                <codeCoutry-input formControlName="codeCoutry"></codeCoutry-input>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label disabled>{{'NIP' | translate}}</mat-label>
+                <input matInput formControlName="nip" required>
+              </mat-form-field>
+            </div>
+          </div>
+
+        </mat-card>
+
+
+        <mat-autocomplete #entrieAuto="matAutocomplete" [displayWith]="displayAutocomplet">
+          <mat-option *ngFor="let entrie of entriesDictionaryOptionsList[entriesDictionaryOptionsIndex] | async" [value]="entrie">
+            {{entrie.name}}&nbsp;| Vat: &nbsp;{{entrie.vat}}
+          </mat-option>
+        </mat-autocomplete>
+
+        <mat-card formArrayName="invoiceEntries">
+          <mat-card-title>{{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.LABEL' | translate}}</mat-card-title>
+          <mat-divider></mat-divider>
+          <div *ngFor="let entry of invoiceForm.get('invoiceEntries')['controls']; let i=index">
+            <div *ngIf="entry.enabled">
+              <mat-divider *ngIf="invoiceForm.get('invoiceEntries')['controls'].length > 1 && i > 0"></mat-divider>
+              <br>
+              <div [formGroupName]="i" class="cardRow">
+                <div>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'NAME' | translate}}Nazwa</mat-label>
+                    <input type="text"
+                           aria-label="name"
+                           matInput
+                           formControlName="name"
+                           [matAutocomplete]="entrieAuto"
+                           (focus)="ChangeEntryFocus(i)">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.QUANTITY_LABEL' | translate}}</mat-label>
+                    <input matInput type="number" formControlName="quantity" required>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.NETTO_PRICE_LABEL' | translate}}</mat-label>
+                    <input matInput type="number" formControlName="price" required>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.VAT_RATE_LABEL' | translate}}</mat-label>
+                    <input matInput formControlName="vat" required [matAutocomplete]="vatAuto">
+                    <mat-autocomplete #vatAuto="matAutocomplete" [displayWith]="displayVatAutocomplet">
+                      <mat-option [value]="0">0%</mat-option>
+                      <mat-option [value]="5">5%</mat-option>
+                      <mat-option [value]="8">8%</mat-option>
+                      <mat-option [value]="23">23%</mat-option>
+                      <mat-option [value]="-200">{{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.NOT_SUBJECTED_LABEL' | translate}}</mat-option>
+                      <mat-option [value]="-100">{{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.FREE_LABEL' | translate}}</mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.GTU_LABEL' | translate}}</mat-label>
+                    <input matInput formControlName="gtu">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'NETTO_VALUE' | translate}}</mat-label>
+                    <input matInput value="{{invoiceForm.get('invoiceEntries')['controls'][i].controls.price.value*invoiceForm.get('invoiceEntries')['controls'][i].controls.quantity.value | number:'1.0-2'}}" readonly>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'VAT_VALUE' | translate}}</mat-label>
+                    <input matInput value="{{invoiceForm.get('invoiceEntries')['controls'][i].controls.quantity.value*invoiceForm.get('invoiceEntries')['controls'][i].controls.price.value*(invoiceForm.get('invoiceEntries')['controls'][i].controls.vat.value!=-100&&invoiceForm.get('invoiceEntries')['controls'][i].controls.vat.value!=-200?invoiceForm.get('invoiceEntries')['controls'][i].controls.vat.value:0)/100 | number:'1.0-2'}}" readonly>
+                  </mat-form-field>
+                </div>
+                <button type="button" mat-mini-fab *ngIf="enabledInvoicesLength > 1" (click)="removeEntry(i,true)">
+                  <mat-icon>delete forever</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <mat-divider></mat-divider>
+          <mat-card-actions>
+            <button type="button" mat-raised-button (click)="addEntry()">
+              <mat-icon>add box</mat-icon>
+              {{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.ADD_LABEL' | translate}}
+            </button>
+            <button type="button" mat-raised-button [disabled]="ifCanAddEntryToDictionary ? null : true" (click)="addEntryToDictionary()">
+              <mat-icon>add box</mat-icon>
+              {{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.ADD_TO_DICTIONARY_LABEL' | translate}}
+            </button>
+            <button type="button" mat-raised-button [disabled]="(ifCanEditEntryToDictionary && (EditedEntryDictionary | json) !='{}') ? null : true" (click)="editEntryDictionary()">
+              <mat-icon>edit_note</mat-icon>
+              {{'INVOICES.INVOICE_EDIT.FORM.ENTRIES.EDIT_LABEL' | translate}}
+            </button>
+          </mat-card-actions>
+        </mat-card>
+        <br>
+        <mat-card class="cardRow">
+          <table aria-label="calculatorTable" mat-table [dataSource]="calculator" style="width: 100%;">
+            <ng-container matColumnDef="vatRate">
+              <th scope="col" mat-header-cell *matHeaderCellDef class="calculatorTableCell">{{'INTEREST_VALUE' | translate}} </th>
+              <td mat-cell *matCellDef="let element" class="calculatorTableCell"> {{element.vatRate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="nettoValue">
+              <th scope="col" mat-header-cell *matHeaderCellDef class="calculatorTableCell">{{'NETTO_VALUE' | translate}} </th>
+              <td mat-cell *matCellDef="let element" class="calculatorTableCell"> {{element.nettoValue}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="vatValue">
+              <th scope="col" mat-header-cell *matHeaderCellDef class="calculatorTableCell">{{'VAT_VALUE' | translate}} </th>
+              <td mat-cell *matCellDef="let element" class="calculatorTableCell"> {{element.vatValue}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="bruttoValue">
+              <th scope="col" mat-header-cell *matHeaderCellDef class="calculatorTableCell">{{'BRUTTO_VALUE' | translate}}</th>
+              <td mat-cell *matCellDef="let element" class="calculatorTableCell"> {{element.bruttoValue}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedCalculatorColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedCalculatorColumns;"></tr>
+          </table>
+        </mat-card>
+      </mat-card-content>
+
+    </div>
+    <div mat-dialog-actions style="justify-content:flex-end;">
+      <button mat-button [mat-dialog-close]="invoiceForm.value" cdkFocusInitial>{{'CLOSE' | translate}}<mat-icon>close</mat-icon></button>
+      <div>
+        <button mat-button (click)="InsertInvoices()" [disabled]="invoiceForm.valid ? null : true" *ngIf="data.action!=0">
+          <div *ngIf="data.action==1"><div *ngIf="dataSource.data.length>1;else editOneCorrection">Wystaw Korekty</div><ng-template #editOneCorrection>{{'INVOICES.INVOICE_EDIT.FORM.ADD_AS_CORRECT_LABEL' | translate}}</ng-template><mat-icon>content_copy</mat-icon></div>
+          <div *ngIf="data.action==2"><div *ngIf="dataSource.data.length>1;else editOneDupicate">Wystaw jako nowe</div><ng-template #editOneDupicate>{{'INVOICES.INVOICE_EDIT.FORM.ADD_AS_NEW_LABEL' | translate}}</ng-template><mat-icon>copy_all</mat-icon></div>
+          <div *ngIf="data.action==3">Dodaj<mat-icon>add_circle</mat-icon></div>
+        </button>
+        <button mat-button (click)="UpdateInvoices()" [disabled]="isChanges || invoiceForm.dirty ? null : true" *ngIf="data.action==0">{{'EDIT' | translate}}<mat-icon>edit_note</mat-icon></button>
+      </div>
+    </div>
+  </form>
+</mat-card>

@@ -1,0 +1,181 @@
+<mat-card>
+  <div mat-dialog-title>
+    <h1>{{'PEYMENTS.PAYMENT_CSV.LABEL' | translate}}</h1>
+  </div>
+  <div mat-dialog-content class="cardColumn marginTop">
+    <h2>{{'PEYMENTS.PAYMENT_CSV.SPECIFICATION_FORM_LABEL' | translate}}</h2>
+    <form [formGroup]="paymentsMachingSpecificationForm" class="cardCell">
+      <app-file-upload class="marginTop" formControlName="file" [progerssValue]="progerssValue" [progressBufferValue]="progressBufferValue"></app-file-upload>
+      <section class="cardRow marginTop">
+        <label>{{'PEYMENTS.PAYMENT_CSV.IF_SERIES_LABEL' | translate}}</label>
+        <mat-radio-group formControlName="ifSeriesSettelement">
+          <mat-radio-button [value]="true" class="marginLeft">{{'PEYMENTS.PAYMENT_CSV.SETTELMENT_BY_SERIES_LABEL' | translate}}</mat-radio-button>
+          <mat-radio-button [value]="false" class="marginLeft">{{'PEYMENTS.PAYMENT_CSV.SETTELMENT_BY_FILTRATION_LABEL' | translate}}</mat-radio-button>
+        </mat-radio-group>
+      </section>
+      <section class="cardCellColumn marginTop" *ngIf="paymentsMachingSpecificationForm.controls.ifSeriesSettelement.value">
+        <mat-checkbox formControlName="ifFromTheLastSetteld">{{'PEYMENTS.PAYMENT_CSV.SETTELMENT_FROM_LAST_SETTELD_INVOICE_LABEL' | translate}}</mat-checkbox>
+      </section>
+      <section class="cardCellColumn marginTop" *ngIf="!paymentsMachingSpecificationForm.controls.ifSeriesSettelement.value">
+        <mat-checkbox formControlName="byTitle">{{'PEYMENTS.PAYMENT_CSV.SERCH_BY_TITLE_LABEL' | translate}}</mat-checkbox>
+        <mat-checkbox formControlName="byAddressee">{{'PEYMENTS.PAYMENT_CSV.SERCH_BY_ADREESE_LABEL' | translate}}</mat-checkbox>
+        <mat-checkbox formControlName="byValue">{{'PEYMENTS.PAYMENT_CSV.SERCH_BY_PAYENT_VALUE_LABEL' | translate}}</mat-checkbox>
+      </section>
+      <section class="cardRow marginTop">
+        <label>{{'PEYMENTS.PAYMENT_CSV.IF_ADD_NEW_CONTRACTOR_BANK_ACCOUNTS' | translate}}</label>
+        <mat-radio-group formControlName="ifAddNewContractorBankAccounts">
+          <mat-radio-button [value]="true" class="marginLeft">{{'ADD' | translate}}</mat-radio-button>
+          <mat-radio-button [value]="false" class="marginLeft">{{'PEYMENTS.PAYMENT_CSV.ASSIGN_TO_UNKNOWN_LABEL' | translate}}</mat-radio-button>
+        </mat-radio-group>
+      </section>
+    </form>
+  </div>
+  <section class="csvReadedData" *ngIf="csvPaymentSendingStage == 1 || csvPaymentSendingStage == 2;else csvError">
+    <section id="csvDataHeder">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PEYMENTS.PAYMENT_CSV.ACCOUNT_NUMBER_LABEL' | translate}}</mat-label>
+        <input matInput type="text" [(ngModel)]="companyAccountNumber" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'CURRENCY' | translate}}</mat-label>
+        <input matInput type="text" [(ngModel)]="currency" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PEYMENTS.PAYMENT_CSV.RAPORT_START_DATE_LABEL' | translate}}</mat-label>
+        <input matInput type="text" [(ngModel)]="csvRaportStartDate" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PEYMENTS.PAYMENT_CSV.RAPORT_END_DATE_LABEL' | translate}}</mat-label>
+        <input matInput type="text" [(ngModel)]="csvRaportEndDate" readonly>
+      </mat-form-field>
+    </section>
+    <section id="csvDataTable">
+      <form [formGroup]="matchedPaymentsForm">
+        <mat-card formArrayName="payments">
+          <mat-card-content id="machingPaymentsTable">
+            <mat-card *ngFor="let payment of matchedPaymentsForm.controls.payments['controls']; let i=index" [formGroupName]="i" class="flexRowSpaceBetween">
+              <mat-card-content class="flexColumn" style="flex:20">
+                <section class="flexRow flexWrap paymentMain">
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'PEYMENTS.PAYMENT_CSV.PAYMENT_TITLE' | translate}}</mat-label>
+                    <input matInput type="text" formControlName="topic">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'PEYMENTS.PAYMENT_CSV.PAYMENT_ADRESSE_LABEL' | translate}}</mat-label>
+                    <input matInput type="text" formControlName="addressee">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'PEYMENTS.PAYMENT_CSV.PAYMENT_VALUE_LABEL' | translate}}</mat-label>
+                    <input matInput type="text" formControlName="paymentValue">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'PEYMENTS.PAYMENT_CSV.PAYMENT_CURRENCY_LABEL' | translate}}</mat-label>
+                    <input type="text"
+                           aria-label="contractor"
+                           matInput
+                           formControlName="currency"
+                           [matAutocomplete]="currencyAuto"
+                           (focus)="ChangePaymentFocus(i)">
+                    <mat-autocomplete #currencyAuto="matAutocomplete">
+                      <mat-option *ngFor="let currency of currencyOptions | async" [value]="currency">
+                        {{currency}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{'PEYMENTS.PAYMENT_CSV.PAYMENT_DATE_LABEL' | translate}}</mat-label>
+                    <input matInput [matDatepicker]="paymentDatePicker" formControlName="paymentDate">
+                    <mat-datepicker-toggle matSuffix [for]="paymentDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #paymentDatePicker>
+                      <mat-datepicker-actions>
+                        <button mat-button matDatepickerCancel>{{'BACK' | translate}}</button>
+                        <button mat-raised-button color="primary" matDatepickerApply>{{'CHOOSE' | translate}}</button>
+                      </mat-datepicker-actions>
+                    </mat-datepicker>
+                  </mat-form-field>
+                  <div formGroupName="contractorBankAccount" class="flexRow contractorBankAccount">
+                    <mat-form-field appearance="outline" *ngIf="csvPaymentSendingStage == 2">
+                      <mat-label>{{'CONTRACTOR' | translate}}Kontrahent</mat-label>
+                      <input type="text"
+                             aria-label="contractor"
+                             matInput
+                             formControlName="contractor"
+                             [matAutocomplete]="contractorAuto"
+                             (focus)="ChangePaymentFocus(i)"
+                             (change)="ContractorChange(i)">
+                      <mat-autocomplete #contractorAuto="matAutocomplete" [displayWith]="displayContractorAutocomplet" (optionSelected)="contarctorAutoChnged(i,$event)">
+                        <mat-option *ngFor="let contractor of contractorOptions | async" [value]="contractor">
+                          {{contractor.name}}
+                        </mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>{{'PEYMENTS.PAYMENT_CSV.CONTRACTOR_ACCOUNT_NUMBER_LABEL' | translate}}</mat-label>
+                      <input type="text"
+                             aria-label="accountNumber"
+                             matInput
+                             formControlName="accountNumber"
+                             [matAutocomplete]="accountNumberAuto"
+                             (focus)="ChangePaymentFocus(i)">
+                      <mat-autocomplete #accountNumberAuto="matAutocomplete" [displayWith]="displayAccountNumberAutocomplet" (optionSelected)="bankAccountAutoChnged(i,$event)">
+                        <mat-option *ngFor="let bankAccount of bankAccountOptions | async" [value]="bankAccount">
+                          {{bankAccount.accountNumber}}
+                        </mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                  </div>
+                </section>
+                <mat-card class="flexRow" style="margin-top:5px;padding: 0;width: auto; min-height: 60px;" *ngIf="csvPaymentSendingStage == 2 && isObject(payment.controls.contractorBankAccount.controls.contractor.value) && payment.controls.contractorBankAccount.controls.contractor.value.id !=0">
+                  <mat-card-content formArrayName="paymentsForInvoices" style="flex:20;" class="flexRow flexWrap">
+                    <div *ngFor="let paymentsForInvoice of payment.controls.paymentsForInvoices.controls; let j=index" [formGroupName]="j" class="flexColumn paymenForInvoice">
+                      <mat-form-field appearance="outline">
+                        <mat-label>{{'PEYMENTS.PAYMENT_CSV.INVOICE_NUMBER_LABEL' | translate}}</mat-label>
+                        <input type="text"
+                               aria-label="invoice"
+                               matInput
+                               formControlName="invoice"
+                               [matAutocomplete]="invoiceAuto"
+                               (focus)="ChangeInvoiceFocus(i,j)">
+                        <mat-autocomplete #invoiceAuto="matAutocomplete" [displayWith]="invoiceAutocomplet">
+                          <mat-option *ngFor="let invoice of invoiceOptions | async" [value]="invoice">
+                            {{invoice.number}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>{{'PEYMENTS.PAYMENT_CSV.PAYMANT_VALUE_FOR_INVOICE_LABEL' | translate}}</mat-label>
+                        <input matInput type="number" formControlName="paymentValueForInvoice">
+                      </mat-form-field>
+                    </div>
+                  </mat-card-content>
+                  <mat-card-actions style="margin-right: 5px;flex: 1;display: flex;justify-content: end;">
+                    <button type="button" mat-mini-fab (click)="AddDefaultPaymentForInvoice(i)">
+                      <mat-icon>add_circle</mat-icon>
+                    </button>
+                  </mat-card-actions>
+                </mat-card>
+              </mat-card-content>
+              <mat-card-actions style="padding: 0; margin-top: -5px;flex: 1; display: flex; justify-content: end;">
+                <button type="button" mat-mini-fab (click)="removePayment(i)">
+                  <mat-icon>delete forever</mat-icon>
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-card-content>
+        </mat-card>
+
+      </form>
+    </section>
+  </section>
+  <ng-template #csvError>
+    <section class="csvReadedData" *ngIf="csvPaymentSendingStage == -1">
+      <div style="color:red;text-align:center">{{'PEYMENTS.PAYMENT_CSV.FILE_READ_ERROR' | translate}}</div>
+    </section>
+  </ng-template>
+  <div mat-dialog-actions>
+    <button mat-button *ngIf="csvPaymentSendingStage == 0" [disabled]="!paymentsMachingSpecificationForm.controls.file.valid" (click)="readCsv()">{{'PEYMENTS.PAYMENT_CSV.READ_FILE_CLICK' | translate}}</button>
+    <button mat-button *ngIf="csvPaymentSendingStage == 1" [disabled]="!paymentsMachingSpecificationForm.valid" (click)="findMachingInvoices()">{{'PEYMENTS.PAYMENT_CSV.SERCH_MACHING_INVOICES_CLICK' | translate}}</button>
+    <button mat-button *ngIf="csvPaymentSendingStage == 2" [disabled]="!matchedPaymentsForm.valid" (click)="sendPayments()">{{'PEYMENTS.PAYMENT_CSV.ADD_PAYMENT_CLICK' | translate}}</button>
+    <button mat-button [mat-dialog-close]="null" cdkFocusInitial>Cofnij</button>
+  </div>
+</mat-card>

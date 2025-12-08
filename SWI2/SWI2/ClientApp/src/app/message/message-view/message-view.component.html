@@ -1,0 +1,14 @@
+<mat-card class="message-view">
+  <mat-card-title>{{data.title}}</mat-card-title>
+  <mat-card-subtitle>
+    {{("MESSAGES.MESSAGE_VIEW.SENDED_LABEL" | translate) + ': ' + data && data.posted && data.posted.getMilliseconds() != 0 ? data.posted.toLocaleTimeString() + " " + data.posted.toLocaleDateString() : ""}}<br />
+    <span *ngIf="messageType === 'sended'">{{data && data.readed && data.readed.getMilliseconds() != 0 ? ("MESSAGES.MESSAGE_VIEW.READED_LABEL" | translate) + ' ' + data.readed.toLocaleTimeString() + " " + data.readed.toLocaleDateString() : ("MESSAGES.MESSAGE_VIEW.NOT_READED_LABEL" | translate)}}</span>
+  </mat-card-subtitle>
+  <div class="message-users">
+    <div>{{('FROM' | translate) + ' ' + data.messageReceiverName ? data.messageReceiverName : ''}}</div>
+    <div>{{('TO' | translate) + ' ' + data.messageSenderName ? data.messageSenderName : ''}}</div>
+  </div>
+  <div class="message-content">
+    <p>{{data.content}}</p>
+  </div>
+</mat-card>

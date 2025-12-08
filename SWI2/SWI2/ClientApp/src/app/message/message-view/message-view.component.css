@@ -1,0 +1,10 @@
+.message-users {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.message-content{
+    padding:15px 0;
+}
+.message-view{
+    margin:5px;
+}

@@ -1,0 +1,8 @@
+table {
+  width: 100%;
+}
+.row {
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 0.3s;
+}

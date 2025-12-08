@@ -1,0 +1,11 @@
+label {
+  font-weight: bold;
+}
+
+.int-item {
+  cursor: pointer;
+}
+.int-item:link {
+  color:inherit;
+  cursor: pointer;
+}

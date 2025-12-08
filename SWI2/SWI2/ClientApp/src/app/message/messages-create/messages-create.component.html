@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{'MESSAGES.MESSAGE_CREATE.NEW_MESSAGE_LABEL' | translate}}</mat-card-title>
+    <button mat-raised-button class="btn text-center" (click)="openTempalates()">{{messageTamplate ? ('MESSAGES.MESSAGE_CREATE.TEMLATE_CHOOSED_LABEL' | translate)  +  ' ' + messageTamplate.id : ('MESSAGES.MESSAGE_CREATE.CHOOSE_TEMPLATE_LABEL' | translate) }}</button>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="createFormGroup" (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field>
+          <mat-label>{{'FROM' | translate}}</mat-label>
+          <input type="text" disabled matInput [value]="userName" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="message-receiver">
+          <mat-label>{{'TO' | translate}}</mat-label>
+          <input type="text" matInput formControlName="messageReceiver" placeholder="Wpisz nazwę użytkownika" [matAutocomplete]="auto" />
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option matInput *ngFor="let option of messageReceivers" [value]="option">
+              {{option ? option.name : ''}}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-progress-spinner *ngIf="loadingMessageReceivers" mode="indeterminate" class="spinner" diameter="20"></mat-progress-spinner>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>{{'MESSAGES.MESSAGE_CREATE.TITLE_LABEL' | translate}}</mat-label>
+          <input type="text" matInput formControlName="title" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <textarea matInput placeholder="Treść" formControlName="content"></textarea>
+        </mat-form-field>
+      </div>
+      <mat-card-actions>
+        <button mat-raised-button class="btn text-center" type="submit">{{'MESSAGES.MESSAGE_CREATE.SEND_CLICK' | translate}}</button>
+        <button mat-raised-button class="btn text-center" (click)="addTemplate()" *ngIf="messageTamplate == null">{{'MESSAGES.MESSAGE_CREATE.ADD_TEMPLATE_CLICK' | translate}}</button>
+        <button mat-raised-button class="btn text-center" (click)="editTemplate()" *ngIf="messageTamplate != null">{{'MESSAGES.MESSAGE_CREATE.EDIT_TEMPALTE_CLICK' | translate}}</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

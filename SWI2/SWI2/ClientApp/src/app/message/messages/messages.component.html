@@ -1,0 +1,33 @@
+<div class="messages-grid">
+  <div>
+    <mat-toolbar>
+      <mat-toolbar-row class="toolbar">
+        <button class="toolbarButton" mat-icon-button (click)="add()">
+          {{'MESSAGES.MESSAGES.NEW_MESSAGE_LABEL' | translate}}<mat-icon>textsms</mat-icon>
+        </button>
+        <button *ngIf="actMessageType !== 'trashbox'" (click)="delete()" [disabled]="selection.selected.length < 1" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+          <span>{{'DELETE' | translate}}</span>
+        </button>
+        <button *ngIf="actMessageType === 'trashbox'" (click)="restore()" [disabled]="selection.selected.length < 1" mat-icon-button>
+          <mat-icon>restore_from_trash</mat-icon>
+          <span>{{'MESSAGES.MESSAGES.RECOVER_LABEL' | translate}}</span>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-form-field class="messages-type-select">
+      <mat-label>{{'MESSAGES.MESSAGES.MESSAGES_LABEL' | translate}}</mat-label>
+      <mat-select [(value)]="actMessageType" (selectionChange)="changeMessageType()">
+        <mat-option value="received">{{'MESSAGES.MESSAGES.RECIVED_LABEL' | translate}}</mat-option>
+        <mat-option value="sended">{{'MESSAGES.MESSAGES.SENDED_LEABLE' | translate}}</mat-option>
+        <mat-option value="trashbox">{{'MESSAGES.MESSAGES.BIN_LABEL' | translate}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <swi-table (elementDblClick)="dbClickHandler($event)" [sortActive]="sortActive" [requestUrl]="requestUrl[actMessageType]" [headerRow]="headerRow" [validators]="validators" [selection]="selection" [displaySelections]="true" [displayFilters]="true" [refreshTable]="refreshTable.asObservable()"></swi-table>
+  </div>
+  <div>
+    <swi-message-view [data]="actMessage" [messageType]="actMessageType"></swi-message-view>
+  </div>
+</div>
+
+

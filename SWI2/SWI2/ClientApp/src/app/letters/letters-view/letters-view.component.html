@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-title>{{('LETTERS.LETTERS_VIEW.LABEL' | translate) + data.id}}</mat-card-title>
+  <label>{{'LETTERS.LETTERS_VIEW.NOTES_LABEL' | translate}}</label>
+  <p>{{data.notes}}</p>
+  <label>{{'LETTERS.LETTERS_VIEW.FROM_TO_LABEL' | translate}}</label>
+  <p>{{data.outLetter ? ( 'FORM'  | translate) : ( 'TO'  | translate)}}</p>
+  <label>{{'LETTERS.LETTERS_VIEW.REAGISTERD_NUMBER_LABEL' | translate}}</label>
+  <p>{{data.registeredNumbr}}</p>
+  <div class="grid-elem">
+    <div>
+      <label>{{'LETTERS.LETTERS_VIEW.PAYED_LABEL' | translate}}</label>
+      <p>{{data.isPaid ? ( 'YES'  | translate) : ( 'NO'  | translate)}}</p>
+    </div>
+    <div>
+      <label>{{'LETTERS.LETTERS_VIEW.REAGISTERD_LABEL' | translate}}</label>
+      <p>{{data.isRegistered ? ( 'YES'  | translate) : ( 'NO'  | translate)}}</p>
+    </div>
+    <div>
+      <label>{{'LETTERS.LETTERS_VIEW.IS_EMALI_LABEL' | translate}}</label>
+      <p>{{data.isEmail ? ( 'YES'  | translate) : ( 'NO'  | translate)}}</p>
+    </div>
+    <div>
+      <label>{{'LETTERS.LETTERS_VIEW.IS_NORMAL_LABEL' | translate}}</label>
+      <p>{{data.isNormal ? ( 'YES'  | translate) : ( 'NO'  | translate)}}</p>
+    </div>
+    <div>
+      <label>{{'LETTERS.LETTERS_VIEW.IS_COURIER_LABEL' | translate}}</label>
+      <p>{{data.isCourier ? ( 'YES'  | translate) : ( 'NO'  | translate)}}</p>
+    </div>
+    <div>
+      <label>{{'LETTERS.LETTERS_VIEW.WITH_CONFIRM_LABEL' | translate}}</label>
+      <p>{{data.withConfirm ? ( 'YES'  | translate) : ( 'NO'  | translate)}}</p>
+    </div>
+  </div>
+  <label>{{'LETTERS.LETTERS_VIEW.CREATED_LABEL' | translate}}</label>
+  <p>{{data.created}}</p>
+  <mat-card-actions>
+    <button mat-button (click)="download()" [disabled]="!checkIfFileExist" [title]="checkIfFileExist ? data.id + '.' + data.letterFileType : 'List nie zawiera pliku'"><mat-icon class="int-item">get_app</mat-icon>{{'LETTERS.LETTERS_VIEW.DOWNLAOD_FILE_CLICK' | translate}}</button>
+    <button *ngIf="userRole === 'Administrator'" mat-button (click)="delete()"><mat-icon class="int-item">delete</mat-icon> {{'DELETE' | translate}}</button>
+  </mat-card-actions>
+
+</mat-card>

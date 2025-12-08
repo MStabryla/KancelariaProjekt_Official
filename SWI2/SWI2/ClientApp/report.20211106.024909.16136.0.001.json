@@ -1,0 +1,460 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20211106.024909.16136.0.001.json",
+    "dumpEventTime": "2021-11-06T02:49:09Z",
+    "dumpEventTimeStamp": "1636163349246",
+    "processId": 16136,
+    "cwd": "C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\SWI2\\SWI2\\ClientApp",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\SWI2\\SWI2\\ClientApp\\node_modules\\@ngtools\\webpack\\src\\type_checker_worker.js",
+      "9d93e901-158a-4cf9-ba1b-2f0582ffcfeb"
+    ],
+    "nodejsVersion": "v12.15.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.15.0",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.15.0/node-v12.15.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.15.0/node-v12.15.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.15.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.19043",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 6946328,
+        "nice": 0,
+        "sys": 2495578,
+        "idle": 97485078,
+        "irq": 356406
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 24402203,
+        "nice": 0,
+        "sys": 4817984,
+        "idle": 77706593,
+        "irq": 121421
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 14697343,
+        "nice": 0,
+        "sys": 3585343,
+        "idle": 88644093,
+        "irq": 107140
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 12138062,
+        "nice": 0,
+        "sys": 3080875,
+        "idle": 91707843,
+        "irq": 70437
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 9641968,
+        "nice": 0,
+        "sys": 1850656,
+        "idle": 95434156,
+        "irq": 41171
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 9947015,
+        "nice": 0,
+        "sys": 2177359,
+        "idle": 94802406,
+        "irq": 57968
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 10941687,
+        "nice": 0,
+        "sys": 2443265,
+        "idle": 93541828,
+        "irq": 54203
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 11586718,
+        "nice": 0,
+        "sys": 1802812,
+        "idle": 93537234,
+        "irq": 32515
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "a8:5e:45:30:03:d5",
+        "address": "fe80::2999:abf6:645c:e381",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 13
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "a8:5e:45:30:03:d5",
+        "address": "192.168.1.2",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "SWI2",
+        "internal": false,
+        "mac": "00:00:00:00:00:00",
+        "address": "10.0.10.35",
+        "netmask": "255.255.255.255",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "DESKTOP-PQDPUGD"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff792c31759",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff792c35b7c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28316"
+    },
+    {
+      "pc": "0x00007ff792c34b38",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24152"
+    },
+    {
+      "pc": "0x00007ff792d2446b",
+      "symbol": "v8::base::CPU::has_sse+37723"
+    },
+    {
+      "pc": "0x00007ff793528d9e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff793510de1",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff7933de6ac",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff7933e9a50",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff7933e6584",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff7933dbe13",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff7933da5e4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2356"
+    },
+    {
+      "pc": "0x00007ff7933fb8b5",
+      "symbol": "v8::internal::Factory::NewFillerObject+53"
+    },
+    {
+      "pc": "0x00007ff793167b89",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+4057"
+    },
+    {
+      "pc": "0x00007ff793954d3d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+567949"
+    },
+    {
+      "pc": "0x00007ff7938d5ffb",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+48459"
+    },
+    {
+      "pc": "0x00000087b410becf",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2168283136,
+    "totalCommittedMemory": 2168283136,
+    "usedMemory": 2112309688,
+    "availableMemory": 64093472,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 33554432,
+        "capacity": 16759808,
+        "used": 529120,
+        "available": 16230688
+      },
+      "old_space": {
+        "memorySize": 2075504640,
+        "committedMemory": 2075504640,
+        "capacity": 2056196440,
+        "used": 2054855200,
+        "available": 1341240
+      },
+      "code_space": {
+        "memorySize": 7241728,
+        "committedMemory": 7241728,
+        "capacity": 5682944,
+        "used": 5682944,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 1314816,
+        "committedMemory": 1314816,
+        "capacity": 977920,
+        "used": 977920,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 49999872,
+        "committedMemory": 49999872,
+        "capacity": 49884688,
+        "used": 49884688,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 405504,
+        "committedMemory": 405504,
+        "capacity": 347520,
+        "used": 347520,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16759808,
+        "used": 0,
+        "available": 16759808
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 2863.2,
+    "kernelCpuSeconds": 324.375,
+    "cpuConsumptionPercent": 3.11591,
+    "maxRss": 2382704640,
+    "pageFaults": {
+      "IORequired": 15698003,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 499899,
+      "writes": 233
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\Tajron\\AppData\\Roaming",
+    "ASPNETCORE_ENVIRONMENT": "Development",
+    "ASPNETCORE_HTTPS_PORT": "5001",
+    "ASPNETCORE_URLS": "https://localhost:5001;http://localhost:5000",
+    "BROWSERSLIST_IGNORE_OLD_DATA": "1",
+    "COLOR": "0",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPLUS_ForceENC": "1",
+    "COMPLUS_NoGuiFromShim": "1",
+    "COMPUTERNAME": "DESKTOP-PQDPUGD",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "dp0": "C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\SWI2\\SWI2\\ClientApp\\node_modules\\.bin\\",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "EDITOR": "notepad.exe",
+    "ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO": "1",
+    "ForceIdentityAuthenticationType": "Embedded",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "HOME": "C:\\Users\\Tajron",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\Tajron",
+    "INIT_CWD": "C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\SWI2\\SWI2\\ClientApp",
+    "LOCALAPPDATA": "C:\\Users\\Tajron\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-PQDPUGD",
+    "MSBuildLoadMicrosoftTargetsReadOnly": "true",
+    "MYSQLCONNECTOR_ASSEMBLIESPATH": "C:\\Program Files (x86)\\MySQL\\Connector NET 8.0\\Assemblies\\v4.5.2",
+    "NODE": "C:\\Program Files\\nodejs\\node.exe",
+    "NODE_EXE": "C:\\Program Files\\nodejs\\\\node.exe",
+    "NPM_CLI_JS": "C:\\Users\\Tajron\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js",
+    "npm_command": "run-script",
+    "npm_config_cache": "C:\\Users\\Tajron\\AppData\\Local\\npm-cache",
+    "npm_config_globalconfig": "C:\\Users\\Tajron\\AppData\\Roaming\\npm\\etc\\npmrc",
+    "npm_config_init_module": "C:\\Users\\Tajron\\.npm-init.js",
+    "npm_config_metrics_registry": "https://registry.npmjs.org/",
+    "npm_config_node_gyp": "C:\\Users\\Tajron\\AppData\\Roaming\\npm\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js",
+    "npm_config_noproxy": "",
+    "npm_config_prefix": "C:\\Users\\Tajron\\AppData\\Roaming\\npm",
+    "npm_config_userconfig": "C:\\Users\\Tajron\\.npmrc",
+    "npm_config_user_agent": "npm/7.20.3 node/v12.15.0 win32 x64 workspaces/false",
+    "npm_execpath": "C:\\Users\\Tajron\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js",
+    "npm_lifecycle_event": "start",
+    "npm_lifecycle_script": "ng serve \"--port\" \"62779\"",
+    "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_package_json": "C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\SWI2\\SWI2\\ClientApp\\package.json",
+    "npm_package_name": "client-app",
+    "npm_package_version": "0.0.0",
+    "NPM_PREFIX_NPM_CLI_JS": "C:\\Users\\Tajron\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js",
+    "NUMBER_OF_PROCESSORS": "8",
+    "OneDrive": "C:\\Users\\Tajron\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\Tajron\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\SWI2\\SWI2\\ClientApp\\node_modules\\.bin;C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\SWI2\\SWI2\\node_modules\\.bin;C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\SWI2\\node_modules\\.bin;C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\KancelariaProjekt\\node_modules\\.bin;C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\SWI2\\node_modules\\.bin;C:\\Users\\Tajron\\Desktop\\praca\\swi-2\\node_modules\\.bin;C:\\Users\\Tajron\\Desktop\\praca\\node_modules\\.bin;C:\\Users\\Tajron\\Desktop\\node_modules\\.bin;C:\\Users\\Tajron\\node_modules\\.bin;C:\\Users\\node_modules\\.bin;C:\\node_modules\\.bin;C:\\Users\\Tajron\\AppData\\Roaming\\npm\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\lib\\node-gyp-bin;C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Users\\Tajron\\AppData\\Local\\Programs\\Python\\Python37;C:\\Users\\Tajron\\AppData\\Roaming\\Python\\Python38\\Scripts;C:\\Program Files\\ffmpeg\\bin;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server Migration Assistant for MySQL\\bin\\;C:\\Program Files\\MATLAB\\R2021a\\bin;C:\\Program Files (x86)\\dotnet\\;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\Tajron\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Tajron\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Tajron\\AppData\\Roaming\\npm;C:\\Program Files\\ffmpeg\\bin;C:\\Users\\Tajron\\.dotnet\\tools",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.PY;.PYW",
+    "PkgDefApplicationConfigFile": "C:\\Users\\Tajron\\AppData\\Local\\Microsoft\\VisualStudio\\16.0_abda3dd4\\devenv.exe.config",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 13, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "9e0d",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\PowerShell\\Modules\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "Python": "C:\\Users\\Tajron\\AppData\\Local\\Programs\\Python\\Python37",
+    "ServiceHubLogSessionKey": "C874027A",
+    "SESSIONNAME": "Console",
+    "SignInWithHomeTenantOnly": "False",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\Tajron\\AppData\\Local\\Temp",
+    "ThreadedWaitDialogDpiContext": "-4",
+    "TMP": "C:\\Users\\Tajron\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-PQDPUGD",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-PQDPUGD",
+    "USERNAME": "Tajron",
+    "USERPROFILE": "C:\\Users\\Tajron",
+    "VisualStudioDir": "C:\\Users\\Tajron\\Documents\\Visual Studio 2019",
+    "VisualStudioEdition": "Microsoft Visual Studio Community 2019",
+    "VisualStudioVersion": "16.0",
+    "VS160COMCOMNTOOLS": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\Tools\\",
+    "VS160PROCOMNTOOLS": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\Tools\\",
+    "VSAPPIDDIR": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\",
+    "VSAPPIDNAME": "devenv.exe",
+    "VSLANG": "1033",
+    "VSSKUEDITION": "Community",
+    "WEBPACK_DEV_SERVER": "true",
+    "windir": "C:\\WINDOWS",
+    "_prog": "node"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\powrprof.dll",
+    "C:\\WINDOWS\\SYSTEM32\\UMPDC.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll"
+  ]
+}

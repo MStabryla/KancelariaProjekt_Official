@@ -1,0 +1,5 @@
+<swi-ftp-file [file]="dirModel" [fileTableRef]="root ? null : dirModel" [folderState]="folderState" (clickedEvent)="getChildren($event !== null ? true : null)" (refreshEvent)="getParentChildren()" ></swi-ftp-file>
+<div class="folder-child" *ngFor="let fileData of dirModel.children" [style.display]="isExpanded ? 'block' : 'none'">
+  <swi-ftp-directory *ngIf="fileData && fileData.type === 'dir'" [dirModel]="fileData" (parentRefresh)="getChildren($event)" [folderState]="folderState + 1"></swi-ftp-directory >
+  <swi-ftp-file *ngIf="fileData && fileData.type !== 'dir'" [file]="fileData" [fileTableRef]="dirModel" (clickedEvent)="getDetails($event)" (refreshEvent)="getChildren(true)" [folderState]="folderState + 1"></swi-ftp-file>
+</div>

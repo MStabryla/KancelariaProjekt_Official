@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>{{ 'FTP.FTP_FILE_UPLOAD.LABEL' | translate}} {{data.name}}</mat-card-title>
+  <div class="dropzone">
+    <input type="file" multiple id="files" name="files" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)" (change)="onChange($event)" />
+    <div class="dropzone-center">
+      <mat-icon class="dropzone-img">get_app</mat-icon>
+      <p>{{ 'FTP.FTP_FILE_UPLOAD.PUT_FILES_HER_LABEL' | translate}} </p>
+      <label for="files" class="drop-zone-browser">{{ 'FTP.FTP_FILE_UPLOAD.SERCH_FILES_LABEL' | translate}} </label>
+    </div>
+
+  </div>
+  <div class="file-list">
+    <p class="file-list-item" *ngFor="let item of fileList; let i = index">
+    {{item.name}} <span class="file-list-item-size">{{sizeView(item)}}</span><span class="file-list-item-size" *ngIf="sending">{{progress[i]}} %</span>
+    </p>
+  </div>
+  <mat-card-actions>
+    <button mat-button (click)="uploadFiles()" *ngIf="fileList.length > 0"><mat-icon>publish</mat-icon> {{ 'SAVE' | translate}}</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,774 @@
+{
+  "MENU": {
+    "SELECTED_COMPANY_LABEL": "it_Wybierz firmę",
+    "LOGIN_TO_LABEL": "it_Zaloguj do SWI2",
+    "DOCUMENTS_LABEL": "it_Dokumenty",
+    "LISTS_LABEL": "it_Listy",
+    "ADMIN_PANEL_LABEL": "Panel Administratora",
+    "INVOICE_LABEL": "Faktury",
+    "PAYMENTS_LABEL": "Płatności kontrahentów",
+    "CONTRACTORS_LABEL": "Kontrahenci",
+    "FILES_LABEL": "Pliki",
+    "MESSAGES_LABEL": "Wiadomości",
+    "COMPANYS_LABEL": "Firmy",
+    "SERVICES_LABEL": "USŁUGI",
+    "NEWS_LABEL": "it_AKTUALNOŚCI",
+    "CLIENTS_LABEL": "it_KLIENCI",
+    "STAFF_LABEL": "it_PERSONEL",
+    "BRANCHES_LABEL": "it_FILIE",
+    "SOFTWARE_LABEL": "it_OPROGRAMOWANIE",
+    "USER_PANEL_LABEL": "Panel użytkownika",
+    "LOGOUT_LABEL": "Wylogowanie",
+    "LOGIN_LABEL": "Logowanie",
+    "REGISTRATION_LABEL": "Rejestracja"
+  },
+  "SUBPAGE": {
+    "RANGE_OF_SERVICES": {
+      "ELEMENTS": [
+        {
+          "HEADER": "Zakres usług",
+          "CONTENT": "<p>Świadczymy kompleksową obsługę firm w zakresie: rachunkowości, podatków, ubezpieczeń społecznych oraz kadr i płac.</p><p>Do podstawowych czynności należy między innymi:</p><ul><li>prowadzenie ksiąg rachunkowych,</li><li>prowadzenie książki przychodów i rozchodów,</li><li>prowadzenie ewidencji ryczałtowych,</li><li>prowadzenie ewidencji sprzedaży i zakupów VAT,</li><li>obsługa transakcji „unijnych”,</li><li>prowadzenie ewidencji środków trwałych wraz z ich amortyzacją,</li><li>obliczanie miesięcznych zaliczek podatkowych na podatek dochodowy(dawniej CIT 2; PIT 5), za pracowników(PIT 4) oraz sporządzanie deklaracji VAT 7,</li><li>obsługę plików JPK,</li><li>obsługę kadr i płac,</li><li>wykonywanie deklaracji ZUS,</li><li>wykonywanie deklaracji INTRASTAT,</li><li>sporządzanie bilansu rocznego oraz wypełnianie rocznych zeznań podatkowych w tym informacji o dochodach pracowników CIT 8; PIT 3x; PIT 11; PIT 40 itp.),</li><li>reprezentowanie przed Urzędem Skarbowym w zakresie niezbędnym w związku ze świadczonymi usługami.</li></ul>"
+        }
+      ]
+    },
+    "DISTRIBUTION": {
+      "ELEMENTS": [
+        {
+          "HEADER": "Odpowiedzialność i dyskrecja",
+          "CONTENT": "<h1>Odpowiedzialność i dyskrecja</h1><p>Podstawową cechą naszej Kancelarii jest rzetelność, pełna dyskrecja, solidność oraz odpowiedzialność za prawidłowe prowadzenie księgowości Klienta oraz za rzetelne i terminowe naliczanie kwot podatków, zgodnie z obowiązującymi w tej materii przepisami prawa.</p><p>Posiadamy uprawnienia do prowadzenia usługowego ksiąg handlowych wydane przez Ministerstwo Finansów (nr licencji 1856/96).</p><p>Ponadto jesteśmy ubezpieczeni od odpowiedzialności cywilnej w pełnym zakresie świadczonych usług w zakresie obowiązkowym oraz dodatkowym dobrowolnym.</p>"
+        }
+      ]
+    },
+    "UPDATES": {
+      "ELEMENTS": [
+        {
+          "HEADER": "Aktualności finansowe",
+          "CONTENT": "<p>Wszelakie aktualności związane z księgowością, które dotycza naszych klientów, są publikowane na platformie.</p>"
+        }
+      ]
+    },
+    "OUR_CLIENTS": {
+      "ELEMENTS": [
+        {
+          "HEADER": "Nasi klienci",
+          "CONTENT": "<p>W swojej historii obsługiwaliśmy przedsiębiorstwa od maleńkich jednoosobowych na karcie podatkowej po duże przedsiębiorstwa z kapitałem zagranicznym. Obsługujemy podmioty gospodarcze (w tym jednoosobowe firmy obywateli UE), fundacje, stowarzyszenia, przedstawicieli wolnych zawodów (specjalizując się w obsłudze lekarzy i farmaceutów),&nbsp; oraz jednostki oświatowe, ponadto również osoby fizyczne (w tym zagraniczne) uzyskujące dochody z najmu. Do naszych Klientów zaliczamy między innymi (wg kolejności alfabetycznej – ci którzy wyrazili zgodę):</p><ul><li><strong>4Engin Sp. z o.o.</strong></li><li><strong>4Engin Sp. z o.o. Sp. komandytowa</strong></li><li><strong>5b Sp. z o.o.</strong></li><li><strong>7R Logistic SA<br></strong></li><li><strong>7R Logistic Brzesko Sp. z o.o.<br></strong></li><li><strong>7R Logistic Gdańsk Co. 3 Sp. z o.o.</strong></li><li><strong>7R Logistic Gdańsk Kowale 3 Sp. z o.o.&nbsp; S.K.A.<br></strong></li><li><strong>7R Logistic Gdańsk Kowale Sp. z o.o.<br></strong></li><li><strong>7R Logistic Gdańsk Sp. z o.o.<br></strong></li><li><strong>7R Logistic Kraków Kokotów Sp. z o.o.<br></strong></li><li><strong>7R Logistic Małopole </strong><strong>Sp. z o.o.</strong></li><li><strong>7R Logistic Małopole CO 4 Sp. z o.o.</strong></li><li><strong>7R Logistic Modlnica CO 2 Sp. komandytowa.</strong></li><li><strong>7R Logistic Modlnica Sp. z o.o.</strong></li><li><strong>7r Logistic Silesia Sp. z o.o.</strong></li><li><strong>7R OZE Sp. z o.o.</strong></li><li><strong>7R Solution Sp. z o.o.</strong></li><li><strong>Abilus Group Sp. z o.o.</strong></li><li><strong>Accompany Sp. z o.o.</strong></li><li><strong>ad i media Group </strong><strong>Sp. z o.o.</strong></li><li><strong>Ad Maiora Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>Adriafin Poland Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>Advert Sp. z o.o.</strong></li><li><strong><strong>Agap Sp. z o.o.</strong></strong></li><li><b>AI Properties Sp. o.o. </b>- 100% kapitału izraelskiego.</li><li><strong>aim</strong> <strong>Sp. z o.o.</strong></li><li><b>AIR Management Sp. o.o. </b>- 100% kapitału izraelskiego.</li><li><strong>Analytics LTD Sp. z o.o.</strong></li><li><strong>AnDo </strong><strong>Sp. z o.o.</strong></li><li><strong>Andrzej Garapich</strong> Sp. z o.o.</li><li><strong>Anmarin </strong><strong>Sp. z o.o. </strong></li><li><strong>Alice Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>AppNetMedia </strong><strong> Sp. z o.o.</strong></li><li><strong>Argos Sp. z o.o.</strong></li><li><strong>Art Evolution&nbsp;®ecords Sp. z o.o. </strong>- jazzowa wytwórnia płytowa</li><li><strong>Asia America Leather Corporation Poland Sp. z o.o. KEGAR</strong> – 49% udziału kapitału niemieckiego – pełniliśmy dwa lata na miejscu funkcję głównego księgowego.</li><li><strong>Astral Finance&nbsp;Sp. z o.o.</strong></li><li><strong>Aura Property Sp. z o.o.</strong> – 100% kapitału irlandzkiego.</li><li><strong>Aura Property Sp. z o.o. Sp. kom</strong> – 100% kapitału irlandzkiego.</li><li><strong>Axpol BTP Sp. z.o.o.</strong> – 50% kapitału francuskiego.</li><li><b>B.Montasje Sp. z o.o.</b></li><li><strong>B&amp;P Sp. z o.o. </strong>- 100% kapitału izraelskiego.</li><li><strong>Bapisa Sp. z o.o.</strong></li><li><strong>Belflor Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>BGM Sp. z o.o.</strong></li><li><strong>Born to run&nbsp;Sp. z o.o.</strong></li><li><strong>Bovellacci Polska Sp. z.o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>Brand Maniac Sp.z o.o.</strong></li><li><strong>Capri Sp. z.o.o.</strong></li><li><strong>Carint Sp. z o.o. NZOZ Cardiomed.</strong></li><li><strong>Ch… </strong> – 99% kapitału holenderskiego – znana firma owocowa specjalizująca się w sprzedaży bananów.</li><li><strong>Ch…</strong> – wykonywaliśmy rejestry i deklaracje VAT do celów dokumentacji transakcji wewnątrzunijnych dla zagranicznego podmiotu.</li><li><strong>Claudio Nardi Architects Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>Consorfrut Polska Sp. z.o.o.</strong> – 100% kapitału hiszpańskiego.</li><li><strong>CO&nbsp; Sp. z.o.o.</strong></li><li><strong>Contralog&nbsp; Sp. z.o.o.</strong> – 100% kapitału francuskiego.</li><li><strong>Contralog&nbsp; Sp. z.o.o.</strong> <strong>Sp. komandytowa </strong>- 100% kapitału francuskiego.</li><li><strong>Cox Fitzsimons &amp; Wilkes Limited </strong> – 100% kapitału irlandzkiego.</li><li><strong>Cupcake Corner Bakery </strong><strong>Sp. z.o.o.</strong> – kapitału mieszany z przewagą amerykańskiego.</li><li><strong>Dafne 21</strong>&nbsp;<strong>Sp. z o.o.</strong></li><li><strong>Devicor Medical Polska Sp. z o.o.</strong></li><li><strong>Dom Aukcyjny RestARTE Sp. z o.o.</strong></li><li><strong>DPEngineering&nbsp;Sp. z o.o.</strong></li><li><strong><strong><strong>Dragon Winch Fundacja</strong></strong></strong></li><li><strong>Dragon Winch Sp. z o.o.</strong></li><li><strong>Dystrybucja AA</strong><strong>&nbsp;Sp. z o.o.</strong></li><li><strong>EA Construction Sp. z o.o.</strong></li><li><strong>Eston Sp. z o.o.</strong></li><li><strong>Euromoney Consulting</strong> <strong>Hodana&nbsp;i&nbsp;Holtzer&nbsp;Spółka&nbsp;Jawna </strong> – firma pomagająca w uzyskaniu dotacji z UE <a href=\"http://www.euromoney.net.pl/\" target=\"_blank\">www.euromoney.net.pl</a></li><li><strong>Europejsko-Azjatycka Fundacja Edukacji Biznesowej</strong></li><li><strong>F.B.D.E. Design Sp. z.o.o.</strong></li><li><strong>Fabryka Nowych Technologi Sp. z.o.o.</strong></li><li><strong>FinFast </strong><strong>Sp. z.o.o.</strong></li><li><strong>Finiata </strong><strong>Sp. z.o.o. </strong>- 100% kapitału włoskiego.</li><li><strong>Fitchoice.eu</strong> <strong>Sp. z.o.o.</strong></li><li><strong>Forma Development </strong><strong>Sp. z.o.o.</strong></li><li><strong>Forma Development </strong><strong><strong>Sp. z.o.o. Sp. </strong>kom</strong></li><li><strong>Forma Development Sp. zoo Prusa Sp. kom.</strong></li><li><strong>FP Multimedia Sp. z.o.o.</strong> – 70% kapitału francuskiego.</li><li><strong>FP Multimedia Sp. z.o.o. Sp. komandytowa</strong> – 70% kapitału francuskiego.</li><li><strong>Frankort &amp; Koning Polska Sp. z o.o. </strong> – 80% kapitału holenderskiego.</li><li><strong>Frankort &amp; Koning Beheer Sp. z o.o. </strong> – 100% kapitału holenderskiego.</li><li><strong>Frankort &amp; Koning Sp. z o.o. Sp. komandytowa</strong> – 76% kapitału holenderskiego.</li><li><strong>Frog MS Delko Sp. z o.o.</strong></li><li><strong>FRK Bud Sp. z o.o.</strong> – 100% kapitału irlandzkiego.</li><li><strong>FRK Bud Sp. z o.o.</strong><strong>&nbsp; Sp. komandytowa</strong> – 100% kapitału irlandzkiego.</li><li><strong>FSM Sp. z o.o. </strong>- 100% kapitału chińskiego</li><li><strong>Fundacja Art Evolution</strong></li><li><strong>Fundacja Dobrego Słowa</strong></li><li><strong>Fundacja&nbsp;Małopolskie Centrum Hipoterapii&nbsp;„Zagroda Możliwości”</strong></li><li><strong>Fundacja Mam Marzenie</strong></li><li><strong>Fundacja Teresy i Andrzeja Wełmińskich<br></strong></li><li><strong>Gamma <strong>Sp. z o.o</strong></strong></li><li><strong><strong>Glass House Sp. z o.o.</strong></strong></li><li><strong>GS Srl </strong>-&nbsp;100% kapitału włoskiego, obsługujemy VAT w Polsce.</li><li><strong>Handel skórami Sp. z o.o.</strong> -&nbsp;100% kapitału włoskiego.</li><li><strong>Hard Drinks Valentini Sp. z o.o.</strong> -&nbsp;100% kapitału włoskiego.</li><li><strong>Hasco Services &amp; Consulting Sp. z o.o.</strong></li><li><strong>HB Polska Sp. z o.o.</strong></li><li><strong>Helios -</strong> Stowarzyszenie na rzecz efektywności energetycznej i rozwoju odnawialnych źródeł energii<strong><br></strong></li><li><strong>HV System Sp. z o.o.</strong></li><li><strong>HM Grupa Sp. z o.o.</strong></li><li><strong>Hurtownia Soczewek Okolook Sp. z o.o.<br></strong></li><li><strong>IACo. Poland Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>iLOOP Mobile INC S.A.</strong><strong> Oddział w Polsce</strong> – 100% kapitału amerykańskiego.</li><li><strong>Image Sensing Systems Europe Limited Sp. z o. o. Oddział w Polsce</strong> – 100% kapitału brytyjskiego.</li><li><strong>Inicjatywa Mikro </strong><strong>Sp. z o.o.</strong> – firma zajmująca się udzielaniem pożyczek dla przedsiębiorstw z Polsko-Amerykańskiego Funduszu Wspierania Przedsiębiorczości,</li><li><strong>Intechnika Sp. z.o.o.</strong></li><li><strong>Izba Gospodarcza Reklamy Wielkoformatowej w Warszawie</strong></li><li><strong>Jon Alfred Sp. z.o.o.</strong></li><li><strong>JP Stal Sp. z.o.o.</strong></li><li><strong>Limpol Sp. z o.o.</strong></li><li><strong>Lubicz Properties Sp. z o.o.</strong> – 100% kapitału izraelskiego.</li><li><strong>Luxottica Poland Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>Kalisto </strong><strong>Sp. z o.o.</strong></li><li><strong>Katane Sp. z o.o.</strong> – 100% kapitału włoskiego, wytwórca lodów i sprzedawca specjałów włoskich.</li><li><strong>Karsmet </strong><strong>Sp. z o.o.</strong></li><li><strong>Karsmet </strong><strong>Sp. z o.o.&nbsp;</strong><strong> Sp. </strong><strong>komandytowa</strong></li><li><strong>Kasolik, Pawlus-Łapa Adwokacka Spółka Partnerska</strong></li><li><strong>Kenexa&nbsp; Sp. z o.o.</strong> – 100% kapitału amerykańskiego.</li><li><strong>KG Home&nbsp;</strong><strong>Sp. z o.o.</strong></li><li><strong>KGM Hurtownia opału </strong><strong>Sp. z o.o.</strong></li><li><strong>Klasztor OO. Franciszkanów w Krakowie.</strong></li><li><strong>Klasztor OO. Franciszkanów w Kaliszu.</strong></li><li><strong>Konstruktor&nbsp; Sp. z o.o.</strong></li><li><strong>KPRI Asfalty </strong><strong>Sp. z o.o.</strong></li><li><strong>Kreafruits&nbsp; Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>Leniar&nbsp;Sp. z o.o.</strong></li><li><strong>Leniar &amp;&nbsp;<strong>Leniar&nbsp;&nbsp;</strong>Sp. z o.o.&nbsp;</strong><strong>Sp.&nbsp;</strong><strong>komandytowa</strong></li><li><strong>M Media </strong><strong>Sp. z o.o.</strong></li><li><strong>M Media Sale Sp. z o.o.</strong></li><li><strong>M Pictures </strong><strong>Sp. z o.o. </strong>- dotychczasowy współorganizator festiwalu OFF+Camera.</li><li><strong>Mattone Investimenti </strong><strong>Sp. z o.o.</strong> – firma developerska</li><li><strong>Mec Italia </strong><strong>Sp. z o.o.</strong></li><li><strong>Melanda</strong><strong> Sp. z o.o. </strong>- 100% kapitału brytyjskiego.</li><li><strong>Mobilvi </strong><strong>Sp. z o.o.</strong></li><li><strong>Mutti Polska Sp. z o.o. </strong> – 100% kapitału włoskiego.</li><li><strong>Mutti SPA SA&nbsp;Oddział&nbsp;w Polsce&nbsp;</strong>- 100% kapitału włoskiego.</li><li><strong>Muzeum Armii Krajowej</strong><strong>.</strong></li><li><strong>MWM Investments Sp. z o.o.</strong></li><li><strong>MWM Investments Sp. z o.o. </strong><strong>Sp. komandytowo.</strong></li><li><strong>Musica Combinatoria – Musico</strong><strong>&nbsp;</strong>- 100% kapitału włoskiego.</li><li><strong>New Europe </strong><strong>Sp. z o.o.</strong></li><li><strong>New Time Logistic Sp.z o.o.</strong></li><li><strong>Nikliński, Nowicki Sp. z. o.o.</strong></li><li><strong>Nikliński, Nowicki Sp. z. o.o.</strong><strong> </strong><strong>Sp. komandytowo-akcyjna</strong></li><li><strong>Novem</strong><strong> Sp. z o.o.<br></strong></li><li><strong>Nowe Forum Sp. z o.o.</strong></li><li><strong>ODS Optical Disc Service Sp. z o.o.</strong> – 100% kapitału niemieckiego.</li><li><strong>Oddzwoń.pl Sp. z o.o.</strong></li><li><strong>ON Road Sp.z o.o.</strong></li><li><strong>Organic Mission a.s. </strong> – spółka akcyjna z kapitałem słowacko-węgierskim.</li><li><strong>OT2S </strong><strong>Sp. z o.o.</strong></li><li><strong>Parkcash&nbsp;</strong><strong>Sp. z o.o.</strong></li><li><strong>Petroiform </strong><strong> Sp. z o.o.</strong></li><li><strong>Pióro&nbsp;</strong><strong>Sp. z o.o.</strong></li><li><strong>Plastic Worx Sp. z.o.o.</strong> – 75% kapitału belgijskiego.</li><li><strong>PlayJam Sp. z o.o. </strong>- 100% kapitału brytyjskiego.</li><li><strong>Polskie Badania Internetu Sp. z o.o.</strong></li><li><strong><strong>Poltima Sp. z o.o.</strong><span style=\"font-weight: normal\">&nbsp; -&nbsp;</span><span style=\"font-weight: normal\">100% kapitału włoskiego.</span></strong></li><li><strong>Preciturn Group Francja S.A. </strong></li><li><strong>Print&nbsp;</strong><strong>Sp. z o.o.</strong></li><li><strong>Pronet&nbsp;</strong><strong>Sp. z o.o.</strong></li><li><strong>Prowincja krakowska OO. Franciszkanów.</strong></li><li><strong>Quiselle Limpol Sp. z o.o. </strong><strong>Sp. komandytowo-akcyjna</strong></li><li><strong>Re.It</strong><strong> Sp. z o.o.</strong><strong><span style=\"font-weight: normal\">&nbsp; -&nbsp;</span><span style=\"font-weight: normal\">100% kapitału włoskiego.</span></strong></li><li><strong>Rakowicka Properties Sp. z o.o.</strong> – 100% kapitału izraelskiego.</li><li><strong>Rebaf </strong><strong></strong><strong>Sp. z o.o. </strong></li><li><strong>Rebaf </strong><strong>Sp. z o.o.&nbsp; Sp. komandytowo-akcyjna</strong><strong></strong></li><li><strong>Region Hovestadens Feriefond DK </strong>- stowarzyszenie duńskie.</li><li><strong>Renowacja G. Kolbiarz sp. j.</strong></li><li><strong>RMG Sp. z o.o.</strong></li><li><strong>Robin Food </strong><strong>Sp. z o.o. </strong>- 70% kapitału holenderskiego.</li><li><strong>Saria Małopolska Sp. z o.o.</strong> – 75% udziału kapitału zagranicznego; firma jest częścią niemieckiego koncernu Rethmann była prowadzona przez naszą firmę przez trzy lata. W okresie tym skomputeryzowaliśmy dział sprzedaży i księgowości, wykształciliśmy pracowników w dziale księgowości do prowadzenia samodzielnie tak dużego przedsiębiorstwa, a obecnie sprawujemy rolę kontrolno-doradczą.</li><li><strong>Sb-Electric Sp.z o.o.</strong></li><li><strong>SellPlus Sp. z o.o.</strong></li><li><strong>Sevpol&nbsp;Sp. z o.o.</strong></li><li><strong>Scale Effect </strong><strong>Sp. z o.o.</strong></li><li><strong>SITA Bauelemente GmbH</strong> Przedstawicielstwo w Polsce</li><li><strong>Skałeczna Investmens Sp. z o.o.</strong> – 100% kapitału izraelskiego.</li><li><strong>SKIPJAQ Sp. z o.o. </strong>- 100% kapitału amerykańskiego.</li><li><strong>Sklep Wielobranżowy Wróblowie&nbsp;</strong><strong>Sp. z o.o.</strong></li><li><strong>Smoleńsk 22 Sp. z o.o.</strong> – 100% kapitału izraelskiego.</li><li><strong>Smoleńsk 33 Sp. z o.o.</strong> – 100% kapitału izraelskiego.</li><li><strong>Socrates </strong><strong>Sp. z o.o. </strong>- spółka prowadząca licea dla dorosłych.</li><li><strong>Softnautica </strong><strong>Sp. z o.o. </strong>- spółka informatyczna tworząca specjalistyczne oprogramowanie dla firm.</li><li><strong>Sotis Assessment &amp; Diagnostics Sp. z o.o.</strong></li><li><strong>Sotis </strong><strong>Sp. j.</strong></li><li><strong>Sotis </strong><strong><strong>Sp. z o.o.</strong></strong></li><li><strong>Sportkonsulting Sp. z o.o.</strong></li><li><strong>Sportkonsulting </strong><strong><strong>Sp. z o.o. i Wspólnicy</strong> Sp. </strong><strong>komandytowa.</strong></li><li><strong>Stalbox Sp. z o.o.</strong></li><li><strong>Stalbox Sp. z o.o. Sp. </strong><strong>komandytowa</strong></li><li><strong>Starkl Ogrodnik Polska Sp. z o.o. </strong> – 100% kapitału austriackiego.</li><li><strong>Stowarzyszenie Muzyki Polskiej</strong> – organizator Festiwalu Muzyki Polskiej.</li><li><strong>Stowarzyszenie Polska YMCA.</strong></li><li><strong>Street Media Sp. z o.o.<br></strong></li><li><strong>Społeczne Gimnazjum nr 1 im. Zbigniewa Herberta w Krakowie.</strong></li><li><strong>Społeczna Szkoła Podstawowa nr 1</strong> – im. J. Piłsudskiego w Krakowie (pierwsza niepaństwowa placówka oświatowa w Polsce).</li><li><strong>Społeczne Towarzystwo Oświatowe SKT nr 41.</strong></li><li><strong>Supra Sp. z o.o.</strong></li><li><strong>Świt Fruits Sp. z o.o. </strong> – 100% kapitału włoskiego.</li><li><strong>Take IT Now</strong>&nbsp;Sp. z o.o.</li><li><strong>Talentos</strong>&nbsp;Sp. z o.o.</li><li><strong>Tectonic Interactive Limited Sp. z o.o.</strong>, Oddział w Polsce – 100% kapitału brytyjskiego.</li><li><strong>TG Ventinor Agencja Zatrudnienia Sp. z o.o.</strong> – 100% kapitału norweskiego</li><li><strong>TG Ventinor PL Sp. z o.o.</strong> – 100% kapitału norweskiego</li><li><strong>TIM-IMEX Sp. z o.o.</strong></li><li><strong>TK-Grup</strong><strong> </strong> – grupa powiązanych kapitałowo spółek budowlanych.</li><li><strong>Towarzystwo Oświaty i Wychowania Pro Partia Et Pro Domo Suma</strong></li><li><strong>Towarzystwo Wiedza i Kultura</strong></li><li><strong>Tremco Ilbruck Sp. z o.o. </strong><strong> </strong>- 100% kapitału amerykańskiego.</li><li><strong>TUZ-DRUK </strong><strong>Sp.z o.o.</strong></li><li><strong>Tytho BV </strong><strong> </strong> – 100% kapitału holenderskiego, prowadzimy sprawy kadrowe i VAT.</li><li><span style=\"color: #000000\"><span style=\"font-family: Times New Roman,serif\"><span style=\"font-size: medium\"><b>Uniqlo Europe LTD&nbsp;</b></span></span></span> – 100% kapitału brytyjskiego.</li><li><strong>Universal Exports KR Sp. z o.o.</strong></li><li><strong>Urslab Sp.z o.o.</strong></li><li><strong>Vcars Sp. z o.o.</strong></li><li><strong>Villa Cracovia&nbsp; Sp. z o.o.</strong> – 100% kapitału włoskiego.</li><li><strong>Volantis Systems Limited Sp. z o.o. Oddział w Polsce</strong> – 100% kapitału brytyjskiego.</li><li><strong>VP Trans</strong><strong> Sp. z.o.o.</strong></li><li><strong>Wałowa 6-8 Sp. z.o.o.</strong></li><li><strong>Worldwide Agency For Your Product Sp. z o.o.</strong></li><li><strong>www.klimatyzacja.us Sp. z.o.o.</strong></li><li><strong>Wyższe Seminarium Duchowne OO. Franciszkanów.</strong></li><li><strong>YBM Sp. z o.o.</strong></li><li><strong>Youpol&nbsp;Sp. z.o.o.</strong></li><li><strong>Zagi &amp; Siudi</strong> – Dorota Zagórska i Mariusz Siudek – srebrni medaliści mistrzostw Europy w jeździe figurowej na lodzie.</li><li><strong>ZUB Sp. z o.o.</strong></li></ul><p>Duże firmy wydawnicze:</p><ul><li><strong>Belcaro Sp. z o.o.</strong></li><li><strong>Pasaż Sp. z o.o.</strong></li><li><strong>PMR Corporation Sp. z o.o.</strong></li><li><strong>Pracownia AA.</strong></li><li><strong>Wydawnictwo AA.</strong></li><li><strong>Wydawnictwo Aromat Słowa </strong><strong> Sp. z o.o.</strong></li></ul><p>Oraz znane firmy podróżnicze:</p><p><ul><li><strong>Przygody4x4&nbsp;</strong><strong>&nbsp;</strong><strong>Sp. z o.o. -&nbsp;</strong><b>https://przygody4x4.pl</b></li><li><strong>Anndo, Piotr Wachel – Tuareg4x4 -&nbsp;</strong><b>https://tuareg4x4.pl</b></li></ul><strong>&nbsp;</strong></p>"
+        }
+      ]
+    },
+    "SERVICES": {
+      "ELEMENTS": [
+        {
+          "HEADER": "Usługi jednorazowe",
+          "CONTENT": "<p>Sporządzamy wszelkie umowy cywilno-prawne: spółki cywilne, najem i dzierżawa, pożyczka, darowizna, renta, użyczenie.</p><p>Zakładamy wszelkie podmioty gospodarcze w tym spółki prawa handlowego.</p><p>Wdrażanie w firmie Klienta rozporządzenia RODO, oraz stały nadzór przez naszego Inspektora.</p><p>Wszelkie inne nietypowe sprawy po uzgodnieniu z Klientem.</p>"
+        },
+        {
+          "HEADER": "Usługi okresowe",
+          "CONTENT": "<ul><li>godzina pracy pracownika Kancelarii – od 150 zł,</li><li>godzina pracy Zarządu Kancelarii – od 250 zł,</li><li>pełnienie funkcji Inspektora dnach osobowych – od 100 zł,</li><li>wypełnianie zeznań rocznych i informacji podatkowych:<ul><li>PIT 8b, 11 – od 25 zł,</li><li>PIT 27, 28, 37 (bez odliczeń) – od 35 zł,</li><li>PIT 28, 37 (z odliczeniami) – od 50 zł,</li><li>PIT 36 (bez odliczeń) – od 50 zł,</li><li>PIT 37 (z odliczeniami) – od 60 zł,</li><li>pozostałe druki (np. IFT1, NIP 3, GUS NBP) – od 50 zł,</li></ul></li><li>remanenty stałe i zarządzone przez organa skarbowe – od 2,50 zł za pozycje,</li><li>zamknięcie roczne książki przychodów i rozchodów – od 100 zł,</li><li>zamknięcie roczne ksiąg rachunkowych z bilansem, rzis (sprawozdanie kompletne) – od 1000 zł,</li><li>wystawianie dokumentów dla pracowników (w firmach nie płacących ryczałtowo za obsługę kadrową pracowników):<ul><li>umów i świadectw pracy – od 35 zł,</li><li>innych zaświadczeń – od 30 zł,</li></ul></li><li>korekty deklaracji z winy Klienta – od 70 zł,</li><li>wykonanie plików JPK – od 50 zł,</li><li>sporządzanie pism do urzędów i instytucji za Klienta, jeśli potrzeba owego pisma nie wynika z zakresu umowy- od 50 zł,</li><li>wypełnienie druków typu EDG 1 i NIP 2 po zmianach przeprowadzonych przez Klienta – od 100 zł,</li><li>złożenie i odbiór wniosku o niezaleganiu z podatkami – od 200 zł,</li><li>złożenie i odbiór wniosku o niezaleganiu z ZUS – od 200 zł,</li><li>załatwianie innych spraw w urzędach typu NIP, REGON, – od 150 zł za jednorazowe wyjście pracownika,</li><li>opłata podwyższona za każdy dzień zwłoki w dostarczeniu dokumentów – od 1% opłaty za miesiąc poprzedni,</li><li>skanowanie lub kserowanie dokumentów i deklaracji na życzenie Klienta lub uprawnionych instytucji – 2,50 zł za stronę dokumentu,</li><li>drukowanie dokumentu do formy papierowej – 5,00 zł za stronę dokumentu,</li><li>niszczenie dokumentów – od 150 zł za jeden metr bieżący,</li><li>przechowywanie (archiwizacja) dokumentów po zamknięciu roku – od 120 zł za jeden metr bieżący za każdy rok przechowywania,</li><li>komplet opłat związanych z rejestrowaniem nowego podmiotu gospodarczego i uzyskaniem stosownych zaświadczeń tj. REGON, NIP – od 250 zł,</li><li>rejestracja (zakładanie) podmiotów prawa handlowego (w KRS) – od 1500 zł,</li><li>wysyłanie monitów i upomnień w sprawach zaległości płatniczych&nbsp;- od 50 zł,</li><li>wysyłanie wezwania do zapłaty&nbsp;- od 250 zł,</li><li>wysyłanie korespondencji listowej do Klienta, lub w imieniu Klienta – opłata pocztowa + 20 zł za 1 list,</li><li>przesyłanie dokumentów taksówką lub kurierem – wyłącznie na koszt klienta.</li></ul>"
+        },
+        {
+          "HEADER": "Usługi stałe",
+          "CONTENT": " <p>Minimalne miesięczne ceny za prowadzenie:</p><ul><li>prowadzenia ksiąg rachunkowych:<ul><li>spółki usługowe&nbsp;- od 850 zł,</li><li>spółki handlowe&nbsp;- od 1000 zł,</li><li>spółki produkcyjne – od 1500 zł,</li></ul></li><li>prowadzenia książki przychodów i rozchodów z VAT-em – od 250 zł,</li><li>prowadzenia książki przychodów i rozchodów bez VAT-u i prowadzenia ewidencji ryczałtowych z VAT-em – od 150 zł,</li><li>prowadzenia ewidencji ryczałtowych bez VAT-u – od 100 zł,</li><li>prowadzenie spraw pracowniczych od 29 zł za pracownika,</li><li>prowadzenie spraw kadrowych i pracowniczych od 39 zł za pracownika.</li><li>świadczenie usług w językach obcych każdorazowo indywidualnie uzgadniane w umowie z Klientem.</li></ul><p>Ww. ceny nie zawierają podatku od towarów i usług (VAT – 23%).</p><p>Cennik aktualny od 01.01.2020 r. na I półrocze 2021 r.</p>"
+        }
+      ]
+    },
+    "NEWS": {
+      "ELEMENTS": [
+        {
+          "HEADER": "Obowiązek zgłaszania do ZUS umów o dzieło od 1 stycznia 2021 r.",
+          "CONTENT": " <p><span style=\"font-size: small\">Od 1 stycznia 2021 r. istnieje obowiązek informowania ZUS o zawartych umowach o dzieło. Obowiązek ten dotyczy płatników składek oraz osób fizycznych, które zlecają wykonanie dzieła. Oznacza to, że:</span></p><ul><li><span style=\"font-size: small\">te podmioty lub jednostki organizacyjne (np. fundacje, spółki prawa handlowego), które nie muszą rejestrować się do ZUS jako płatnicy składek, gdyż nie zgłaszają nikogo (w tym siebie) do ubezpieczeń społecznych, nie muszą informować ZUS o zawieranych umowach o dzieło;</span></li><li><span style=\"font-size: small\">jeśli wykonanie dzieła zleca osoba fizyczna, to ma ona obowiązek dokonać zgłoszenia zawartej umowy o dzieło bez względu na to, czy jest zarejestrowana w ZUS jako płatnik składek. </span></li></ul><p>&nbsp;</p><p><span style=\"font-size: small\">Od powyższego obowiązku przewidziane są wyjątki. Nie podlegają obowiązkowi zgłoszenia do ZUS umowy o dzieło:</span></p><ul><li><span style=\"font-size: small\">zawarte z własnym pracownikiem;</span></li><li><span style=\"font-size: small\">wykonywane na rzecz własnego pracodawcy, ale zawarte z innym podmiotem; </span></li><li><span style=\"font-size: small\">zawarte z osobami prowadzącymi działalność gospodarczą na wykonanie przez nie usług, które wchodzą w zakres prowadzonej działalności.</span></li></ul><p>&nbsp;</p><p><span style=\"font-size: small\">Zgłoszenia należy dokonać w terminie 7 dni od dnia zawarcia umowy o dzieło.</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"font-size: small\">Źródło: Infor.pl</span></p>"
+        }
+      ]
+    },
+    "STAFF": {
+      "ELEMENTS": [
+        {
+          "HEADER": "Personel",
+          "CONTENT": "<p><span style=\"color: #000080\">Zarząd</span>:</p><ul> <li style=\"text-align: justify\"><strong>Monika Kuśmider</strong> – mgr nauk ekonomicznych, wiceprezes zarządu, pełni funkcję głównej księgowej, nadzoruje merytorycznie prowadzenie wszystkich ksiąg handlowych, jest doradcą podatkowym; angielski – biegle, włoski – biegle, francuski, hiszpański, niemiecki.</li> <li style=\"text-align: justify\"><strong>Paweł K. Koźmiński</strong> – prezes zarządu, prowadzi dział wydawniczy, reprezentuje firmę na zewnątrz, załatwia trudne sprawy urzędowe -&nbsp; włoski, angielski.</li> <li style=\"text-align: justify\"><strong>Piotr K. Koźmiński</strong> – wiceprezes zarządu, angielski – biegle, włoski – biegle, francuski. Pełnomocnik Zarządu ds. ISO</li></ul><p><span style=\"color: #000080\">Prokurenci</span>:</p><ul> <li><strong>Alicja Koźmińska </strong>- angielski <em>- biegle</em>, włoski, francuski <em>- biegle</em>, niemiecki, rosyjski. Inspektor Danych Osobowych.</li> <li><strong>Małgorzata Koźmińska </strong>- angielski <em>- biegle</em>, włoski<em> – biegle</em>, hiszpański, niemiecki.</li></ul><p><span style=\"color: #000080\">Księgowi i asystenci:</span></p><ul> <li><strong><strong>Iza</strong>&nbsp;Basińska </strong>- angielski,</li> <li><strong>Monika Faliszek</strong>- angielski,</li> <li><strong>Justyna</strong> <strong>Gliwa&nbsp;</strong>- angielski<strong><strong><strong>,</strong></strong></strong></li> <li><strong><strong><strong></strong></strong>Joanna&nbsp;Kasza&nbsp;</strong><span style=\"font-style: italic\">- angielski,</span></li> <li><strong><strong>Natalia</strong>&nbsp;Kłoczkowa </strong>- angielski,</li> <li><strong>Paweł Koś</strong> – angielski</li> <li><strong>Pola&nbsp;Maj</strong><span style=\"font-style: italic\"><strong>&nbsp;</strong>- angielski,</span></li> <li><strong><strong><strong><strong>Kasia</strong></strong>&nbsp;Muller </strong></strong>- angielski,</li> <li><strong><strong>Ewa</strong>&nbsp;Pawlik </strong>- angielski, równocześnie&nbsp;pełni funkcję kierownika administracyjnego,</li> <li><strong><strong>Anna </strong>Pogan</strong> – angielski,</li> <li><strong>Elżbieta Rzepczyńska</strong> – angielski,</li> <li><strong>Jolanta Skowron</strong>&nbsp;- angielski,</li> <li><strong>Targosz Anna</strong>&nbsp;- angielski,</li> <li><strong><strong>Justyna&nbsp;</strong>Wasilewska&nbsp;</strong>- angielski,</li> <li><strong>Piotr Wereszczyński</strong> -angielski</li> <li><b>Jadwiga Zabawa</b>– angielski,</li> <li><strong>Wioletta Żak</strong>- angielski.</li></ul><p>&nbsp;</p><p><span style=\"color: #000080\">Sekretariat:</span></p><ul> <li><strong>Furmaniak Anna </strong>-&nbsp;angielski,</li> <li><b>Różycka&nbsp;<b>Izabella&nbsp;</b></b>- angielski,</li></ul><p>Samodzielni księgowi posiadają licencje Ministra Finansów do prowadzenia usługowego ksiąg rachunkowych.</p><p>Ponadto na stałe współpracujemy z biegłymi rewidentami, rejentami, prawnikami, doradcami ubezpieczeniowymi i finansowymi, informatykami, inżynierami oraz technikami sprzętu komputerowego.</p>"
+        }
+      ]
+    },
+    "BRANCHES": {
+      "ELEMENTS": [
+        {
+          "HEADER": "FILIE",
+          "CONTENT": "<p>Kancelaria prowadzi, nieprzerwanie od 1992 roku, filię w Szczawnicy obsługującą Klientów powiatu nowotarskiego.<br>Pracownik odpowiedzialny: Patrycja Biernacka.</p><p>Prowadziliśmy również w latach 90-tych filę w Zakopanem z której po likwidacji pozostali z nami Klienci obsługiwani obecnie w Krakowie.</p>"
+        }
+      ]
+    },
+    "SOFTWARE": {
+      "ELEMENTS": [
+        {
+          "HEADER": "Oprogramowanie komputerowe",
+          "CONTENT": "<p>Świadczymy usługi w oparciu o oprogramowanie komputerowe firmy Sage z&nbsp;pakietu System Zarządzania <a href=\"http://www.symfonia.pl/\" target=\"_blank\">SYMFONIA<sup>®</sup></a></p><p>Od 2015 wprowadziliśmy skanowanie oraz udostępnianie faktur dla Klientów za pomocą aplikacji Saldeo Smart firmy BrainSHARE Sp. z o.o.</p><p>Naszym Klientom udostępniamy w strefie Klienta (SWI) program do fakturowania Argo zgodny z nowym rozporządzeniem mf wyprodukowany na naszą rzecz przez firmę Softnautica Sp. z o.o.</p><p style=\"text-align: right\">"
+        }
+      ]
+    }
+  },
+  "MAINPAGE": {
+    "CONTACT": {
+      "LABEL": "KONTAKT",
+      "CALL_LABEL": "zadzwoń:",
+      "ADRESS_LABEL": "centrala i biuro zarządu:",
+      "EMAIL_LABEL": "email:"
+    },
+    "ABOUTE": "<p>Kancelaria Rachunkowa istnieje nieprzerwanie od marca 1992 r. jako biuro rachunkowe, do końca 1995 r. w formie spółki cywilnej, następnie od 01.01.1996. jako spółka z ograniczoną odpowiedzialnością, a od 09.2012 jako spółka komandytowo-akcyjna.</p><p>Licencja Ministerstwa Finansów do usługowego prowadzenia ksiąg rachunkowych (nr licencji 1856/96).</p><p>Faber Sp. z o.o. wpisana do Krajowego Rejestru Sądowego – Rejestru Przedsiębiorców pod numerem KRS 0000144853 prowadzonym przez Sąd Rejonowy dla Krakowa – Śródmieścia w Krakowie, Wydział XI Gospodarczy, z kapitałem zakładowym w wysokości 50 000,00 PLN (opłaconym w całości), i zarządem w składzie: Monika Kuśmider, Piotr Koźmiński, Paweł K. Koźmiński – prezes.</p>",
+    "INFO_FIELDS": {
+      "RANGE_OF_SERVICES": {
+        "LABEL": "Zakres usług",
+        "CONTENT": "Świadczymy kompleksową obsługę firm w zakresie: rachunkowości, podatków, ubezpieczeń społecznych oraz kadr i płac"
+      },
+      "DISTRIBUTION": {
+        "LABEL": "Odpowiedzialność i dyskrecja",
+        "CONTENT": "Podstawową cechą naszej Kancelarii jest rzetelność, pełna dyskrecja, solidność oraz odpowiedzialność za prawidłowe prowadzenie księgowości Klienta oraz za rzetelne i terminowe naliczanie kwot podatków,"
+      },
+      "UPDATES": {
+        "LABEL": "Aktualności finansowe",
+        "CONTENT": "Wszelakie aktualności związane z księgowością, które dotycza naszych klientów, są publikowane na platformie."
+      },
+      "OUR_CLIENTS": {
+        "LABEL": "Nasi klienci",
+        "CONTENT": "W swojej historii obsługiwaliśmy przedsiębiorstwa od maleńkich jednoosobowych na karcie podatkowej po duże przedsiębiorstwa z kapitałem zagranicznym"
+      }
+    },
+    "REAGISTER": "Zarejestruj się by uzyskać Ofertę"
+  },
+  "AUTHENTICATION": {
+    "EMAIL_CONFIRMATION": {
+      "LABEL": "Potwierdenie maila",
+      "EMAIL_CONFIRMED": "Twój mail został potwierdzony. ",
+      "CLICK": "Kliknij by sie zalogować"
+    },
+    "FORGOT_PASSWORD": {
+      "LABEL": "Potwierdenie maila",
+      "EMAIL": "Email:",
+      "EMAIL_REQUIRED": "Potwierdenie maila",
+      "SEND": "Wyślij link do zmiany hasła"
+    },
+    "LOGIN": {
+      "LABEL": "Logowanie",
+      "FORM": {
+        "LOGIN_REQUIRED": "Login wymagany",
+        "LOGIN": "Login",
+        "PASSWORD_REQUIRED": "Hasło wymagane",
+        "PASSWORD": "Hasło"
+      },
+      "FORGOT_PASSWORD": "Zapomniałes hasła ?",
+      "LOGIN": "Zaloguj"
+    },
+    "LOGOUT": {
+      "LABEL": "Wylogowano"
+    },
+    "REGISTER": {
+      "LABEL": "Zarejestruj się",
+      "FORM": {
+        "NAME": "Imię:",
+        "SURNAME": "Nazwisko:",
+        "LOGIN": "Login:",
+        "EMAIL_NOT_VALID": "Wprowadź poprawny adres email",
+        "EMAIL_REQUIRED": "Email wymagany",
+        "EMAIL": "Email:",
+        "PASSWORD_REQUIRED": "Hasło wymagane",
+        "PASSWORD": "Hasło:",
+        "PASSWORD_CONFIRM": "Potwierdź hasło:",
+        "LANGUAGE": "Język:"
+      },
+      "REGISTER": "Zarejestruj"
+    },
+    "RESET_PASSWORD": {
+      "LABEL": "Zresetuj hasło",
+      "PASSWORD_RESET": "Hasło zresetowane. ",
+      "CLICK": "Kliknij by sie zalogować",
+      "FORM": {
+        "PASSWORD_REQUIRED": "Hasło wymagane",
+        "PASSWORD": "Hasło:",
+        "PASSWORD_CONFIRM": "Potwierdź hasło:",
+        "PASSWORD_CONFIRM_NOT_VALID": "Różne hasła",
+        "PASSWORD_CONFIRM_REQUIRED": "Hasło potwierdzające wymagane"
+      },
+      "REGISTER": "Resetuj"
+    }
+  },
+  "ADMIN": {
+    "ADMIN_PANEL": {
+      "LABEL": "Panel Administratora",
+      "USERS_LINK": "Użytkownicy",
+      "FILES_LINK": "Pliki Systemowe"
+    },
+    "CHANGE_ROLE": {
+      "LABEL": "Zmień rolę użytkownika ",
+      "CHNAGE_ROLE_USER": "Zmień rolę na klienta",
+      "CHNAGE_ROLE_EMPLOYEE": "Zmień rolę na pracownika"
+    },
+    "GIVE_ACCESS_CLIENT": {
+      "LABEL": "Wybierz firmy",
+      "SELECT_COMPANYS": "Wybierz firmy, które chcesz przydzielić użytkownikowi ",
+      "COMPANYS_TABLE_NAME_DESCRIPTION": "Nazwa",
+      "SAVE": "Zapisz"
+    },
+    "GIVE_ACCESS_EMPLOYEE": {
+      "LABEL": "Wybierz firmy",
+      "SELECT_COMPANYS": "Wybierz firmy, które chcesz przydzielić użytkownikowi ",
+      "COMPANYS_TABLE_COMPANY_DESCRIPTION": "Firma",
+      "COMPANYS_TABLE_NAME_DESCRIPTION": "Nazwa",
+      "SAVE": "Zapisz"
+    },
+    "REMOVE_ACCES_CLIENT": {
+      "LABEL": "Wybierz firmy",
+      "SELECT_COMPANYS": "Wybierz firmy, do których chcesz odebrać dostęp użytkownikowi ",
+      "COMPANYS_TABLE_NAME_DESCRIPTION": "Nazwa",
+      "SAVE": "Zapisz"
+    },
+    "REMOVE_ACCESS_EMPLOYEE": {
+      "LABEL": "Wybierz departamenty",
+      "SELECT_COMPANYS": "Wybierz departamenty, do których chcesz odebrać dostęp użytkownikowi ",
+      "COMPANYS_TABLE_COMPANY_DESCRIPTION": "Firma",
+      "COMPANYS_TABLE_NAME_DESCRIPTION": "Nazwa",
+      "SAVE": "Zapisz"
+    },
+    "USERS": {
+      "TABLE_ID_DESCRIPTION": "Id",
+      "TABLE_USERNAME_DESCRIPTION": "Nazwa użytkownika",
+      "TABLE_ROLE_DESCRIPTION": "Rola",
+      "TABLE_PHONENUMBER_DESCRIPTION": "Numer telefonu",
+      "TABLE_EMAIL_DESCRIPTION": "Email",
+      "TABLE_CREATED_DESCRIPTION": "Data utworzenia"
+    },
+    "USER_VIEW": {
+      "USER_ROLE": "Rola Użytkownika",
+      "USER_PHONENUMBER": "Numer telefonu",
+      "USER_EMIAL": "Email",
+      "USER_CREATION_DATE": "Data utworzenia",
+      "GIVE_ACCESS": "Przydziel dostęp",
+      "REMOVE_ACCESS": "Zabierz dostęp",
+      "CHANGE_ROLE": "Zmień rolę",
+      "LOCK_USER": "Zablokuj użytkownika",
+      "UNLOCK_USER": "Odblokuj użytkownika"
+    }
+  },
+  "COMPANY": {
+    "COMPANIES": {
+      "TABLE_NAME_DESCRIPTION": "Nazwa",
+      "TABLE_NIP_DESCRIPTION": "Nip",
+      "TABLE_ADRESS_INPUT_DESCRIPTION": "Adres",
+      "TABLE_CODECOUNTRY_INPUT_DESCRIPTION": "Kod pocztowy Poczta Kraj",
+      "TABLE_DEFAULTWNAACCOUNT_DESCRIPTION": "Konto WNA",
+      "TABLE_DEFAULTMAACCOUNT_DESCRIPTION": "Konto MAA",
+      "TABLE_DEFAULTMAVATACCOUNT_DESCRIPTION": "Konto MAVat",
+      "TABLE_CREATED_DESCRIPTION": "Data utworzenia"
+    },
+    "COMPANY": {
+      "LABEL": "Dane Firmy",
+      "ADRESS_LABEL": "Adres",
+      "COUNTRY_LABEL": "Kraj",
+      "CITY_LABEL": "Adres",
+      "STREET_LABEL": "Ulica",
+      "POSTCODE_LABEL": "Kod pocztowy",
+      "NIP_LABEL": "NIP",
+      "CREATION_PLACE_LABEL": "Miejsce Założenia",
+      "WNA_ACCOUNT_LABEL": "Konto WNA",
+      "MA_ACCOUNT_LABEL": "Konto MA",
+      "MAVAT_ACCOUNT_LABEL": "Konto MAVAT",
+      "EDIT": "Edytuj",
+      "PAYMENT_METHODS_LABEL": "Metody płatności",
+      "PAYMENT_METHODS_ADD": "Dodaj",
+      "PAYMENT_METHODS_LIST": "Przejdź do listy",
+      "DEPARTAMENTS": "Departamenty",
+      "DEPARTAMENTS_ADD": "Dodaj",
+      "DEPARTAMENTS_LIST": " Przejdź do listy"
+    },
+    "COMPANY_EDIT": {
+      "LABEL": "Edytuj dane firmy",
+      "LABEL_CREATE": "Dodaj nową firmę",
+      "NAME_LABEL": "Nazwa",
+      "COUNTRY_LABEL": "Kraj lokalizacji",
+      "ADRESS_LABEL": "Adres",
+      "CITY_LABEL": "Miasto",
+      "POSTOFFICE_LABEL": "Lokalizacja poczty",
+      "POSTOFFICE_CODE_LABEL": "Kod Pocztowy",
+      "STREET_LABEL": "Ulica",
+      "HOUSE_NUMBER_LABEL": "Numer budynku",
+      "APARTAMENT_NUMBER_LABEL": "Number mieszkania",
+      "NIP_LABEL": "NIP",
+      "WNA_ACCOUNT_LABEL": "Konto WNA",
+      "MA_ACCOUNT_LABEL": "Konto MA",
+      "MAVAT_ACCOUNT_LABEL": "Konto MAVAT",
+      "SAVE_CREATE": "Stwórz",
+      "CREATION_PLACE": "Miejsce założenia"
+    },
+    "PAYMENT_METHOD_CREATE": {
+      "LABEL": "Dodaj Metodę płatności",
+      "NAME_LABEL": "Nazwa",
+      "ACCOUNT_NUMBER_LABEL": "Numer konta",
+      "CURRENCY_LABEL": "Waluta",
+      "ADD": "Dodaj"
+    },
+    "PAYMENT_METHOD_EDIT": {
+      "LABEL": "Edytuj Metodę płatności",
+      "NAME_LABEL": "Nazwa",
+      "ACCOUNT_NUMBER_LABEL": "Numer konta",
+      "CURRENCY_LABEL": "Waluta",
+      "SAVE": "Zapisz"
+    },
+    "PAYMENT_METHODS": {
+      "TABLE_NAME_DESCRIPTION": "Nazwa",
+      "TABLE_ACCOUNT_NUMBER_DESCRIPTION": "Numer Konta",
+      "TABLE_CURRENCY_DESCRIPTION": "Currency",
+      "TABLE_CREATION_DATE_DESCRIPTION": "Data utworzenia"
+    },
+    "PAYMENT_METHOD_VIEW": {
+      "ACCOUNT_NUMBER_LABEL": "Numer konta",
+      "CURRENCY_LABEL": "Waluta",
+      "EDIT": "Edytuj",
+      "DELETE": "Usuń"
+    }
+  },
+  "CONTRACTORS": {
+    "CONTRACTORBANKACCOUNTTABLE": {
+      "ADD": "Dodaj dla wybranego kontrahenta",
+      "ADD_SUCCESS": "Konto bankowe kontrahenta dodane pomyslnie",
+      "ADD_ERROR": "Błąd podczas dodawania konta bankowego",
+      "EDIT": "Edytuj",
+      "EDIT_SUCCESS": "Konto bankowe kontrahenta zaktulaizowane pomyślnie",
+      "EDIT_ERROR": "Błąd podczas aktualizacji konta bankowego",
+      "ASK_DELETE": "Czy na pewno chesz usunąć konto bankowe kontrahenta, tracąnc przy tym wszystkie przypisane wpłaty kontrahenta ?",
+      "DELETE": "Usuń",
+      "DELETE_SUCCESS": "Konto bankowe usunięte pomyślnie",
+      "DELETE_ERROR": "Błąd podczas usuwania konta bankowego",
+      "TABLE_CONTRACTOR_NAME_DESCRIPTION": "Nazwa kontrahenta",
+      "TABLE_BANK_NAME_DESCRIPTION": "Nazwa banku",
+      "TABLE_ACCOUNT_NUMBER_DESCRIPTION": "Numer bankowy",
+      "TABLE_CREATED_DESCRIPTION": "Data utworzenia",
+      "ADD_BANK_ACCOUNT_DESCRIPTION": "Edytuj konto bankowe kontrahenta",
+      "EDIT_BANK_ACCOUNT_DESCRIPTION": "Edytuj konto bankowe kontrahenta"
+    },
+    "CONTRACTORTABLE": {
+      "ADD": "Dodaj",
+      "ADD_SUCCESS": "Kontrahent dodany pomyślnie",
+      "ADD_ERROR": "Błąd podczas dodawania kontrachenta",
+      "MODIFY": "Modyfikuj",
+      "EDIT": "Edytuj",
+      "EDIT_SUCCESS": "Kontrahent zaktulaizowany pomyslnie",
+      "EDIT_ERROR": "Błąd podczas aktualizacji kontrachenta",
+      "ASK_DELETE": "Czy na pewno chesz usunąć kontrahenta, tracąnc przy tym wszystkie przypisane konta bankowe i wpłaty kontrahenta ?",
+      "DELETE": "Usuń",
+      "DELETE_SUCCESS": "Kontrachent usunięty pomyślnie",
+      "DELETE_SUCCESS_MENY": "kontrahenci usunięci pomyślnie",
+      "DELETE_ERROR": "Błąd podczas usuwania kontrachenta",
+      "DELETE_ERROR_MENY": "Błąd podczas usuwania kontrachentów",
+      "CONTARCTOR_BANK_ACCOUTS_LABEL": "Konta bankowe kontrahentów",
+      "TABLE_CONTRACTOR_NAME_DESCRIPTION": "Nazwa",
+      "TABLE_NIP_DESCRIPTION": "Nip",
+      "TABLE_ADRESS_DESCRIPTION": "Adres",
+      "TABLE_CODECOUNTRY_DESCRIPTION": "Kod pocztowy Poczta Kraj",
+      "TABLE_WNA_ACCOUNT_DESCRIPTION": "Konto WNA",
+      "TABLE_EMAIL_DESCRIPTION": "Email",
+      "TABLE_EMAIL_LANGUAGE_DESCRIPTION": "Język maila",
+      "TABLE_CREATION_DATE_DESCRIPTION": "Data utworzenia",
+      "EDIT_CONTRACTOR_DESCRIPTION": "Edytuj kontrahenta",
+      "ADD_CONTRACTOR_DESCRIPTION": "Dodaj kontrahenta"
+    }
+  },
+  "DEPARTMENTS": {
+    "DEPARTMENT_CREATE": {
+      "LABEL": "Dodaj Departament",
+      "FORM": {
+        "NAME": "Nazwa",
+        "TYPE": "Typ",
+        "FOLDER_NAME": "Nazwa folderu"
+      }
+    },
+    "DEPARTMENT_EDIT": {
+      "LABEL": "Edytuj Departament",
+      "FORM": {
+        "NAME": "Nazwa",
+        "TYPE": "Typ",
+        "FOLDER_NAME": "Nazwa folderu"
+      }
+    },
+    "DEPARTMENTS": {
+      "TABLE_TYPE_DESCRIPTION": "Typ",
+      "TABLE_FOLDER_NAME_DESCRIPTION": "Nazwa folderu"
+
+    },
+    "DEPARTMENT_VIEW": {
+      "FOLDER_NAME_LABEL": "Nazwa Folderu",
+      "TYPE_LABEL": "Typ"
+    }
+  },
+  "DOCUMENTS": {
+    "DOCUMENTS": {
+      "TABLE_OUTDOCUMENT_DESCRIPTION": "Czy od/do",
+      "TABLE_NOTES_DESCRIPTION": "Notatki",
+      "TABLE_COMMENT_DESCRIPTION": "Komentarz",
+      "TABLE_DOCUMENT_TYPE_DESCRIPTION": "Typ Dokumentu",
+      "TABLE_COMPANY_DESCRIPTION": "Firma",
+      "TABLE_HAS_DOCUMENT_FILE_DESCRIPTION": "Czy ma plik",
+      "TABLE_IS_PROTOCOL_DESCRIPTION": "Czy polecony"
+    },
+    "DOCUMENT_CREATE": {
+      "LABEL": "Dodaj Dokument",
+      "FORM": {
+        "NOTES_LABEL": "Notatki",
+        "COMMENT_LABEL": "Komentarz",
+        "COMPANY_PLACEHOLDER": "Wpisz nazwę firmy",
+        "DOCUMENT_TYPE_LABEL": "Typ Dokumentu",
+        "NEW_DOCUMENT_TYPE_LABEL": "Nowy Typ Dokumentu",
+        "PROTOCOL_LABEL": "Protokół",
+        "FROM_TO_LABEL": "Od/do",
+        "DOCUMENT_FILES_LABEL": "Plik Dokumentu",
+        "SERCH_FILES_CLICK": "Przeszukaj pliki"
+      }
+    },
+    "DOCUMENT_VIEW": {
+      "DOCUMENT_LABEL": "Dokument ",
+      "NOTES_LABEL": "Notatki",
+      "COMMENT_LABEL": "Komentarz",
+      "ISPROTOCOL_LABEL": "Czy polecony",
+      "OUT_DOCUMENT_LABEL": "Od/do",
+      "CREATED_LABEL": "Utworzono",
+      "DOWNLOAD_LABEL": "Pobierz dokument"
+    }
+  },
+  "FTP": {
+    "FTP_ADMIN": {
+      "LABEL": "Pliki Systemu",
+      "USERS_FILES_LABEL": "Pliki użytkowników",
+      "SERCH_USER_LABEL": "Znajdź użytkowników",
+      "COMPANY_FILES_LABEL": "Pliki firm",
+      "SERCH_COMPANYS_LABEL": "Znajdź firmy"
+    },
+    "FTP_DIRECTORY": {},
+    "FTP_FILE": {
+      "CREATE_FOLDER_LABLE": "Stwórz folder",
+      "ADD_FILE_LABLE": "Dodaj plik",
+      "CHANGE_NAME_LABLE": "Zmień nazwę",
+      "FOLDER_LABEL": "folder",
+      "FILE_LABEL": "plik"
+    },
+    "FTP_FILE_VIEW": {
+      "FOLDER_PATH_LABEL": "Ścieżka do pliku",
+      "MODIFICATION_DATE_LABEL": "Data modyfikacji",
+      "SIZE_LABEL": "Rozmiar"
+    },
+    "FTP_FILE_UPLOAD": {
+      "LABEL": "Dodaj plik do folderu ",
+      "PUT_FILES_HER_LABEL": "Upuść pliki tutaj lub ",
+      "SERCH_FILES_LABEL": " Przeszukaj pliki"
+    },
+    "FTP_VIEW": {
+      "LABEL": "Pliki",
+      "USER_FOLDER_LABEL": "Folder użytkownika",
+      "OTHERS_LABEL": "Pozostałe"
+    }
+  },
+  "INVOICES": {
+    "INVOICE_EDIT": {
+      "INVICE_NUMBER_LABEL": "Faktura nr",
+      "CORRECT_LABEL": "KOREKTA",
+      "FORM": {
+        "NUMBER_LABEL": "Numer faktury",
+        "CORRECT_LABEL": "Korekta faktury",
+        "CREATION_PLACE_LABEL": "Miejscie wystawienia",
+        "CREATION_DATE_LABEL": "Data wystawienia",
+        "CREATION_DATE_NAME_LABEL": "Nazwa daty Wystawienia",
+        "PAYMENT_DATE_LABEL": "Termin płatności",
+        "ISTRANSFER_LABEL": "Metoda płatności:",
+        "PAYMENT_BY_CARD_LABEL": "Płatność przelewem",
+        "PAYMENT_BY_CASH_LABEL": "Płatność gotowką",
+        "BANK_LABEL": "Bank",
+        "ACCOUNT_NUMBER_LABEL": "Numer konta",
+        "CURRENCY_LABEL": "Waluta",
+        "RATE_LABEL": "Kurs",
+        "NOTE_LABEL": "Notatka",
+        "CHOOSE_CONTRACTOR_LABEL": "Wybierz kontrahenta",
+        "ENTRIES": {
+          "LABEL": "Wpisy",
+          "QUANTITY_LABEL": "Ilość",
+          "NETTO_PRICE_LABEL": "Cena netto",
+          "VAT_RATE_LABEL": "Stawka Vat",
+          "NOT_SUBJECTED_LABEL": "Nie Podlega",
+          "FREE_LABEL": "Zwolniony",
+          "GTU_LABEL": "GTU",
+          "ADD_LABEL": "Dodaj wpis",
+          "ADD_TO_DICTIONARY_LABEL": "Dodaj wpis do słownika",
+          "EDIT_LABEL": "Edytuj wpis słownika"
+
+        },
+        "ADD_AS_CORRECT_LABEL": "Wystaw Korektę",
+        "ADD_AS_NEW_LABEL": "Wystaw jako nową"
+      },
+      "EDIT_SUCCESS": "Faktura zaktualizowana pomyslnie",
+      "EDIT_SUCCESS_MENY": "Faktury zaktualizowane pomyslnie",
+      "ADD_SUCCESS": "Faktura dodana pomyslnie",
+      "ADD_SUCCESS_MENY": "Faktury dodane pomyslnie",
+      "EDIT_ERROR": "Wystąpił błąd podczas edycji faktury",
+      "EDIT_ERROR_MENY": "Wystąpił błąd podczas edycji faktur",
+      "ADD_ERROR": "Wystąpił błąd podczas dodawania faktury",
+      "ADD_ERROR_MENY": "Wystąpił błąd podczas dodawania faktur",
+      "ADD_NEW_CONTRACTOR": "Dodaj nowego kontrahenta",
+      "AS_IF_ADD_NEW_CONTRACTOR": "Nazwa kontrachenta uległa zmianie. Czy chcesz dodac nowego kontrahenta ?"
+    },
+    "INVOICE_MAIL_TEMPLATE": {
+      "LABEL": "Szablony wysyłki mailowej",
+      "LANGUAGE_LABEL": "Język",
+      "TITLE_LABEL": "Tytuł",
+      "MARKERS": {
+        "LABEL": "Dostępne znaczniki",
+        "COMPANY_NAME_LABEL": "nazwa firmy (moja)",
+        "CONTRACTOR_NAME_LABEL": "nazwa kontrahenta",
+        "CONTRACTOR_BALANCE_LABEL": "stan konta kontrahenta",
+        "INVOICE_NUMBER_LABEL": "numer faktury",
+        "ISSUE_PLACE_LABEL": "miejsce wystawienia faktury",
+        "CREATION_DATE_LABEL": "data wystawienia faktury",
+        "PAYMENT_DATE_LABEL": "termin płatności faktury",
+        "CURRENCY_LABEL": "waluta",
+        "BRUTTO_VALUE_LABEL": "wartość całkowita faktury",
+        "NETTO_VALUE_LABEL": "wartość netto faktury"
+      }
+    },
+    "INVOICE_PDF": {},
+    "INVOICE_SEND": {
+      "LABEL": "Historia wysyłki faktur",
+      "INVOICE_NUMBER_LABEL": "Numer Faktury",
+      "SENDING_USER_LABEL": "Urzykownik Wysyłający",
+      "SEND_DATE_LABEL": "Data wysłania"
+    },
+    "INVOICE_SEND_ALL": {},
+    "INVOICE_TABLE": {
+      "LOOKUP_CLICK": "Podglodaj",
+      "JPK_CLICK": "JPK",
+      "SENDING_HISTORY_CLICK": "Historia wysyłki faktur",
+      "INVOICE_SENDING_SELECTED_HISTORY_CLICK": "Historia wysyłki wybranych faktur",
+      "INVOICE_SENDING_TEMPLATES_EDIT_CLICK": "Edytuj Szablony mailowe",
+      "INVOICE_SENDING_HISTORY_CLICK": "Historia wysyłki wszystkich faktur",
+      "PAYMENT_STATUS_LABEL": "Status płatności",
+      "UNPAID_LABEL": "Nieopłacono",
+      "PAID_LABEL": "Opłacono",
+      "OWERPAID_LABEL": "Nadpłacono",
+      "PAYMENTS_VALUES_LABEL": " Wartość wpłat",
+      "TO_PAY_LABEL": " Do zapłaty",
+      "DELETE_SUCCESS": "Faktura usunieta pomyslnie",
+      "DELETE_SUCCESS_MENY": "Faktury usunięte pomyslnie",
+      "DELETE_ERROR": "Wystąpił błąd podczas usuwania faktury",
+      "DELETE_ERROR_MENY": "Wystąpił błąd podczas usuwania faktur"
+    }
+  },
+  "LETTERS": {
+    "LETTERS": {
+      "TABLE_FROM_TO": "Czy od/do",
+      "TABLE_NOTES": "Notatki",
+      "TABLE_REAGISTERD_NUMBER": "Zarejestrowany numer",
+      "TABLE_IF_PAID": "Czy zapłacony",
+      "TABLE_IS_REAGISTERD": "Czy zarejestrowany",
+      "TABLE_IS_EMAIL": "Przesłany mailem",
+      "TABLE_IS_NORMAL": "Normalny",
+      "TABLE_ISCOURIER": "Przesłany kurierem",
+      "TABLE_WITH_CONFIRM": "Z potwierdzeniem",
+      "TABLE_ADDED_DATE": "Data przyjęcia"
+    },
+    "LETTERS_CREATE": {
+      "LABEL": "Dodaj Dokument",
+      "SENDER_RECIPER_LABEL": "Odbiorca/Nadawca",
+      "RECIPIENT": "Odbiorca",
+      "SENDER": "Nadawca",
+      "RECIPIENT_NAME_LABEL": "odbiorcy",
+      "SENDER_NAME_LABEL": "nadawcy",
+      "NOTES_LABEL": "Notatki",
+      "LETTER_NUMBER_LABEL": "Numer Listu Polecającego",
+      "ADDED_DATE_LABEL": "Data przyjęcia korespondencji",
+      "NEW_ADRESSAT_LABEL": "Nowy Adresat",
+      "PAYED_LABEL": "Zapłacony",
+      "REAGISTERD_LABEL": "Zarejestrowany",
+      "IS_EMALI_LABEL": "Przesłany mailem",
+      "IS_NORMAL_LABEL": "Normalny",
+      "IS_COURIER_LABEL": "Przesłany kurierem",
+      "WITH_CONFIRM_LABEL": "Z potwierdzeniem",
+      "FILE_LABEL": "Plik Dokumentu",
+      "SERCH_FILES_CLICK": "Przeszukaj pliki"
+    },
+    "LETTERS_VIEW": {
+      "LABEL": "List ",
+      "NOTES_LABEL": "Notatki",
+      "FROM_TO_LABEL": "Od/do",
+      "REAGISTERD_NUMBER_LABEL": "Zarejestrowany numer",
+      "PAYED_LABEL": "Czy zapłacony",
+      "REAGISTERD_LABEL": "Czy zarejestrowany",
+      "IS_EMALI_LABEL": "Przesłany mailem",
+      "IS_NORMAL_LABEL": "Normalny",
+      "IS_COURIER_LABEL": "Przesłany kurierem",
+      "WITH_CONFIRM_LABEL": "Z potwierdzeniem",
+      "CREATED_LABEL": "Utworzono",
+      "DOWNLAOD_FILE_CLICK": "Pobierz dokument"
+    }
+  },
+  "MESSAGES": {
+    "MESSAGES": {
+      "NEW_MESSAGE_LABEL": "Nowa wiadomość",
+      "RECOVER_LABEL": "Odzyskaj",
+      "MESSAGES_LABEL": "Wiadomości",
+      "RECIVED_LABEL": "Odebrane",
+      "SENDED_LEABLE": "Wysłane",
+      "BIN_LABEL": "W koszu",
+      "TABLE_TITLE": "Tutuł",
+      "TABLE_RECIVER": "Odbiorca",
+      "TABLE_SENDER": "Nadawca",
+      "TABLE_SEND_DATE": "Data wysłania",
+      "ASK_BIN": "Czy na pewno chesz umieścić wybrane wiadomości w koszu ?",
+      "DELETED_MESSAGES_TITLE_ALERT": "Poprawnie usunięto",
+      "DELETED_MESSAGES_ALERT": "Poprawnie usunięto {{length}} wiadomości",
+      "ASK_RECOVER_BIN": "Czy na pewno chesz odzyskać wybrane wiadomości ?",
+      "RECOVERD_MESSAGES_TITLE_ALERT": "Poprawnie przywrócono",
+      "RECOVERD_MESSAGES_ALERT": "Poprawnie przywrócono {{length}} wiadomości"
+    },
+    "MESSAGE_CREATE": {
+      "NEW_MESSAGE_LABEL": "Nowa wiadomość",
+      "TEMLATE_CHOOSED_LABEL": "Wybrano szablon numer",
+      "CHOOSE_TEMPLATE_LABEL": "Wybierz szblon",
+      "TITLE_LABEL": "Tytuł",
+      "SEND_CLICK": "Wyślij",
+      "ADD_TEMPLATE_CLICK": "Dodaj Formularz",
+      "EDIT_TEMPALTE_CLICK": "Edytuj Formularz"
+    },
+    "MESSAGE_TEMPLATE": {
+      "LABEL": "Szablony wiadomości",
+      "TABLE_TITLE": "Tytuł",
+      "TABLE_CONTENT": "Treść",
+      "TABLE_CREATED": "Utworzono"
+    },
+    "MESSAGE_VIEW": {
+      "SENDED_LABEL": "Wysłano",
+      "READED_LABEL": "Odczytano",
+      "NOT_READED_LABEL": "Nie odczytano"
+    }
+  },
+  "PEYMENTS": {
+    "PAYMENT_CSV": {
+      "LABEL": "Rozlicz wpłaty z pliku",
+      "SPECIFICATION_FORM_LABEL": "Konfiguracja wyszukiwania pasujących faktur",
+      "IF_SERIES_LABEL": "Rozlicz faktury :",
+      "SETTELMENT_BY_SERIES_LABEL": "Po kolei",
+      "SETTELMENT_BY_FILTRATION_LABEL": "Za pomoca filtracjii",
+      "SETTELMENT_FROM_LAST_SETTELD_INVOICE_LABEL": "Rozlicz od ostatniej rozliczonej faktury",
+      "SERCH_BY_TITLE_LABEL": "szukaj po tytule wpłaty",
+      "SERCH_BY_ADREESE_LABEL": "szukaj po adresacie wpłąty",
+      "SERCH_BY_PAYENT_VALUE_LABEL": "szukaj po wartosci wpłaty",
+      "IF_ADD_NEW_CONTRACTOR_BANK_ACCOUNTS": "dodaj nieodnalezione konta bankowe kontrahentów:",
+      "ASSIGN_TO_UNKNOWN_LABEL": "dopisz do nieznanych",
+      "ACCOUNT_NUMBER_LABEL": "Numer konta firmy",
+      "RAPORT_START_DATE_LABEL": "Data początkowa raportu",
+      "RAPORT_END_DATE_LABEL": "Data końcowa raportu",
+      "PAYMENT_TITLE": "Tytuł przelewu",
+      "PAYMENT_ADRESSE_LABEL": "Adresat przelewu",
+      "PAYMENT_VALUE_LABEL": "Wartość przelewu",
+      "PAYMENT_CURRENCY_LABEL": "Waluta przelewu",
+      "PAYMENT_DATE_LABEL": "Data wpłaty",
+      "CONTRACTOR_ACCOUNT_NUMBER_LABEL": "Numer konta bankowego kontrahenta",
+      "INVOICE_NUMBER_LABEL": "Numer faktury",
+      "PAYMANT_VALUE_FOR_INVOICE_LABEL": "Wartość wpłaty dla faktury",
+      "FILE_READ_ERROR": "Błąd w trakcie przetwarzania pliku. Skontaktój sie z administratorem w celu rozwiązania problemu",
+      "READ_FILE_CLICK": "Wczytaj dane z pliku",
+      "SERCH_MACHING_INVOICES_CLICK": "Znajdź pasujące faktury",
+      "ADD_PAYMENT_CLICK": "Dodaj wpłaty",
+      "PAYMENT_ADDED_SUCCES": "Płatności dodane pomyślnie",
+      "PAYMENT_ADDED_ERROR": "Wystąpił błąd przy dodawaniu płatności"
+    },
+    "PAYMENT_EDIT": {
+      "EDIT_PAYMENT_LABE": "Edytuj wpłatę",
+      "ADD_PAYMENT_LABE": "Dodaj wpłatę",
+      "BANK_ACCOUNT_LABEL": "Konto bankowe",
+      "INVOICES_LABEL": "Faktury",
+      "INVOICE_NUMBER_LABEL": "Numer faktury",
+      "PAYMENT_VALUE_FOR_INVOICE_LABEL": "Wartość wpłaty dla faktury",
+      "ADD_APPEAL_LABEL": "Dodaj odwołanie do faktury",
+      "PAYMENT_TITLE_LABEL": "Tytuł przelewu",
+      "PAYMENT_VALUE_LABEL": "Wartość wpłaty",
+      "PAYMENT_DATE_LABEL": "Data wpłaty",
+      "PAYMENT_ADDED_SUCCES": "Wpłaty dodana pomyślnie",
+      "PAYMENT_ADDED_ERROR": "Błąd podczas dodawania",
+      "PAYMENT_EDIT_SUCCES": "Wpłaty zaktualizowane pomyślnie",
+      "PAYMENT_EDIT_ERROR": "Błąd podczas aktualizacji wpłat"
+    },
+    "PAYMENT_TABLE": {
+      "SETTELD_BY_CSV_LABEL": "Rozliczanie kontrachentów przez csv",
+      "TABLE_COTRACTOR_NAME": "Nazwa kontrahenta",
+      "TABLE_INVOICE_NUMBER": "Numery faktur",
+      "TABLE_CONTRACTOR_NIP": "Nip kontrahenta",
+      "TABLE_COTRACTOR_BANK_NAME": "Nazwa banku kontrahenta",
+      "TABLE_COTRACTOR_BANK_ACCOUNT": "Numer banku kontrahenta",
+      "TABLE_TITLE": "Tytuł przelewu",
+      "TABLE_PAYMENT_VALUE": "Wartość przelewu",
+      "TABLE_PAYMENT_CURRENCY": "Waluta przelewu",
+      "TABLE_PAYMENT_DATE": "Data Płatności",
+      "TABLE_NAME_ADDED_DATE": "Data wprowadzenia",
+      "ASK_IF_DELETE": "Czy napewno chesz usunać wpłatę",
+      "ASK_IF_DELETE_MENY": "Czy napewno chesz usunać wpłatY"
+
+    }
+  },
+  "USER_PANEL": {
+    "USER_CHANGE_PASSWORD": {
+      "CHANGE_PASSWORD_LABEL": "Zmień hasło",
+      "CURRENT_PASSWORD_LABEL": "Aktualne hasło",
+      "NEW_PASSWORD_LABEL": "Nowe hasło",
+      "CONFIERMD_PASSWORD_LABEL": "Potwierdź hasło",
+      "CHANGE_PASSWORD_FINISHED": "Poprawnie zmieniono hasło"
+    },
+    "USER_EDIT": {
+      "EDIT_USER_LABEL": "Edytuj dane użytkownika",
+      "USER_NAME_LABEL": "Imie",
+      "USER_SURNAME_LABEL": "Nazwisko",
+      "FOLDER_NAME_LABEL": "Nazwa folderu"
+    },
+    "USER_EMAIL_CHANGE": {
+      "CHANGE_PASSWORD_LABEL": "Zmień hasło",
+      "CURRENT_PASSWORD_LABEL": "Aktualne hasło",
+      "NEW_EMAIL_ADRESS_LABEL": "Nowy adres email"
+    },
+    "USER_PANEL": {
+      "EMAIL_ADRESS_LABEL": "Email",
+      "LANGUAGE_LABEL": "Jezyk",
+      "FOLDER_NAME_LABEL": " Nazwa Folderu",
+      "LAST_SEEN_LABEL": "Ostatnio widziany",
+      "REAGISTERD_LABEL": "Zarejestrowany",
+      "EDIT_DATA_CLICK": "Edytuj dane",
+      "EDIT_PASSWORD_CLICK": "Zmień hasło",
+      "EDIT_EMAIL_CLICK": "Zmień email",
+      "EMAIL_CHANGED_TITLE_SUCCES": "Zmieniono mail",
+      "EMAIL_CHANGED_CONTENT_SUCCES": "Pomyślnie zmieniono mail na {{email}}"
+    }
+  },
+  "FILE_UPLOAD_LABEL": "Wybierz plik lub przeciągnij go tutaj",
+  "CLOSE": "Zamknij",
+  "NAME": "Nazwa",
+  "NIP": "NIP",
+  "COMPANY_LABEL": "Firma",
+  "ADRESS": "Adres",
+  "CODECOUNTRY": "Poczta, Kod pocztowy, Państwo",
+  "MAIL_LANGUAGE": "Wesja językowa maila",
+  "WN_ACCOUNT": "Konto WN",
+  "CREATION_DATE": "Data utworzenia",
+  "CONTRACTOR": "Kontrahent",
+  "BANK_NAME": "Nazwa banku",
+  "ACCOUNT_NUMBER": "Numer konta",
+  "EMAIL": "Email",
+  "NUMBER": "Numer",
+  "USER": "Użytkownik",
+  "CHOOSE": "Wybierz",
+  "SAVE": "Zapisz",
+  "CORRECTION": "Korekta",
+  "CURRENCY": "Waluta",
+  "COPY": "Kopiuj",
+  "MODIFY": "Modyfikuj",
+  "EDIT": "Edytuj",
+  "DELETE": "Usuń",
+  "BACK": "Cofnij",
+  "ADD": "Dodaj",
+  "YES": "Tak",
+  "NO": "Nie",
+  "FROM": "Od",
+  "TO": "Do",
+  "INTEREST_VALUE": "Wartość oprocentowania",
+  "NETTO_VALUE": " Wartość netto",
+  "BRUTTO_VALUE": "Wartość brutto",
+  "VAT_VALUE": "Wartość VAT"
+}

@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">{{ 'AUTHENTICATION.EMAIL_CONFIRMATION.LABEL' | translate }}</h1>
+
+    <div *ngIf="showError" class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+
+    <div *ngIf="showSuccess" class="alert alert-success" role="alert">
+      {{ 'AUTHENTICATION.EMAIL_CONFIRMATION.EMAIL_CONFIRMED' | translate }}
+      <a [routerLink]="['/authentication/login']">
+        {{ 'AUTHENTICATION.EMAIL_CONFIRMATION.CLICK' | translate }}
+      </a>
+    </div>
+  </div>
+</div>

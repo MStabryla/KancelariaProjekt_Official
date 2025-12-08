@@ -1,0 +1,204 @@
+@media (min-width: 1000px) {
+
+  #mainContent {
+    margin: -200px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 1000px;
+    max-width: 2500px;
+    height: auto;
+    justify-content: space-around;
+  }
+
+  #aboute, #informationFields, #reagister {
+    height: 390px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 20px;
+  }
+
+  #informationFields {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+    #informationFields > div {
+      width: 22%;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width:1400px) {
+  #aboute, #informationFields, #reagister {
+    font-size: 16px;
+  }
+
+    #informationFields > div > div {
+      font-size: 80%;
+      overflow: hidden;
+    }
+
+      #informationFields > div > div > app-svg-icon {
+        height: 90px !important;
+        width: 90px !important;
+        padding-left: 8px;
+      }
+}
+
+@media (max-width: 1000px) {
+  #mainContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+
+  #aboute {
+    margin-top: -200px;
+  }
+
+  #aboute, #reagister {
+/*    min-height: 1000px;*/
+    /*width: 622.5px;*/
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+  }
+
+  #informationFields {
+    color: white;
+    height: auto;
+    /*    width: 622.5px;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+    #informationFields > div {
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+
+  #informationFields > div {
+    width: 270px;
+    height: 270px;
+  }
+  #aboute, #reagister {
+    width: 270px;
+  }
+}
+
+
+#contact, #mobileContact {
+  margin-top: 310px;
+  width: calc((100vw - 300px));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -300px;
+  color: white;
+}
+
+  #mobileContact > div {
+    width: max-content;
+  }
+
+content {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+
+#contact {
+}
+
+.contactWidthOver3000 {
+  width: 2700px !important;
+}
+
+#mobileContact {
+  left: calc((350px - 100vw) / -2);
+}
+
+  #mobileContact > div {
+    font-size: medium;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+    #mobileContact > div:first-child {
+      margin-bottom: 20px;
+    }
+
+#contact > div:first-child {
+  width: 100%;
+  border-bottom: solid 1px white;
+  font-size: xx-large;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+#contact > div:last-child {
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: medium;
+}
+
+#informationFields > div {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+  #informationFields > div > div {
+    height: 50%;
+    font-size: 90%;
+  }
+
+    #informationFields > div > div > strong {
+      padding-top: 20px;
+      border-top: 1px solid white;
+    }
+
+  #informationFields > div > a {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+  }
+
+  #informationFields > div > div:first-child {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+    #informationFields > div > div:first-child > * {
+      width: 50%;
+      height: 100%;
+    }
+
+
+#informationFields > mat-icon {
+  position: absolute;
+}

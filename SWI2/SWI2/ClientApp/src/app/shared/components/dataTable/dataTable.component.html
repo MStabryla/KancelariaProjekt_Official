@@ -1,0 +1,15 @@
+<mat-table [dataSource]="dataSource">
+  <div *ngFor="let column of data[0] | keyvalue;let i = index">
+    <ng-container matColumnDef="{{column.key}}">
+      <mat-header-cell *matHeaderCellDef class="cell">{{descriptions[column.key] | translate}}</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="cell">{{(element[column.key] | instanceofDate) ? toISOSDateString(element[column.key]):element[column.key]}} </mat-cell>
+
+    </ng-container>
+  </div>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+  <mat-row *matRowDef="let row; columns: displayedColumns" (click)="markElement(row,$event.target)" class="row"></mat-row>
+</mat-table>
+
+<mat-paginator [length]="data.length" [pageSize]="5" [pageSizeOptions]="[5,10,20,50]" [showFirstLastButtons]="true"></mat-paginator>

@@ -1,0 +1,11 @@
+mat-form-field {
+  width: 100%;
+}
+textarea{
+    min-height:30vh;
+}
+.spinner {
+  position: absolute;
+  right: 20px;
+  top: -7px;
+}

@@ -1,0 +1,59 @@
+<mat-card>
+  <mat-card-title>{{ 'COMPANY.COMPANY_EDIT.LABEL' | translate }}</mat-card-title>
+  <form [formGroup]="editFG" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.COMPANY_EDIT.NAME_LABEL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.COMPANY_EDIT.COUNTRY_LABEL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="country" />
+    </mat-form-field>
+    <div formGroupName="address">
+      <h3>{{ 'COMPANY.COMPANY_EDIT.ADRESS_LABEL' | translate }}</h3>
+      <mat-form-field>
+        <mat-label>{{ 'COMPANY.COMPANY_EDIT.CITY_LABEL' | translate }}</mat-label>
+        <input type="text" matInput formControlName="city" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'COMPANY.COMPANY_EDIT.POSTOFFICE_LABEL' | translate }}</mat-label>
+        <input type="text" matInput formControlName="postoffice" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'COMPANY.COMPANY_EDIT.POSTOFFICE_CODE_LABEL' | translate }}</mat-label>
+        <input type="text" matInput formControlName="postalcode" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'COMPANY.COMPANY_EDIT.STREET_LABEL' | translate }}</mat-label>
+        <input type="text" matInput formControlName="street" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'COMPANY.COMPANY_EDIT.HOUSE_NUMBER_LABEL' | translate }}</mat-label>
+        <input type="text" matInput formControlName="housenumber" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'COMPANY.COMPANY_EDIT.APARTAMENT_NUMBER_LABEL' | translate }}</mat-label>
+        <input type="text" matInput formControlName="apartamentNumber" />
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.COMPANY_EDIT.NIP_LABEL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="nip" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.COMPANY_EDIT.WNA_ACCOUNT_LABEL' | translate }} </mat-label>
+      <input type="text" matInput formControlName="defaultWNAAccount" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.COMPANY_EDIT.MA_ACCOUNT_LABEL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="defaultMAAccount" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'COMPANY.COMPANY_EDIT.MAVAT_ACCOUNT_LABEL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="defaultMAVatAccount" />
+    </mat-form-field>
+    <div>
+      <button mat-dialog-close mat-raised-button class="btn text-center" type="submit">{{ 'COMPANY.COMPANY_EDIT.SAVE' | translate }}</button>
+    </div>
+  </form>
+</mat-card>

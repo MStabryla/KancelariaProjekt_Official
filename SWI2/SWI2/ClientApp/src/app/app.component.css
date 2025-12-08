@@ -1,0 +1,106 @@
+.container {
+  max-width: 90%;
+  min-height: 350px;
+  position: relative;
+  padding:0;
+}
+:host ::ng-deep .container > * {
+    min-width:1000px;
+    display:block;
+}
+:host ::ng-deep .container > swi-main, :host ::ng-deep .container > main-subpage {
+  min-width: unset;
+  display: initial;
+}
+#app {
+  /*  background-image: linear-gradient(to right, #02050A, black, black, black, black,black,black ,#02050A);
+*/ width: 100%;
+  height: auto;
+  min-height: 100vh;
+  max-width: 3000px;
+  margin: 0 auto;
+}
+
+#footerContent {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#ouerClients {
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+
+.outerClientsMarginUpTo3000 {
+  margin-left: -5vw;
+  width: 100vw !important;
+}
+
+footer {
+  overflow: hidden;
+}
+
+#footerInfo {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: white;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+  #footerInfo > div {
+    margin: 20px 10px 20px 10px;
+    width: 305px;
+    height: 100px;
+  }
+@media (max-width : 1000px) {
+  .container {
+    overflow: auto;
+  }
+  #ouerClientsHeader {
+    border-bottom: 1px solid white;
+    width: 100vw;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: white;
+    padding-bottom: 15px;
+    margin-left: -5vw;
+    margin-top:50px;
+  }
+  #footerLogo {
+    margin-left: -160px;
+  }
+}
+
+
+
+@media (min-width : 1001px) {
+
+  #ouerClientsHeader {
+    border-bottom: 1px solid white;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: white;
+    padding-bottom: 15px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 360px) {
+  #footerInfo {
+      font-size:small;
+  }
+  #footerLogo {
+    transform: scale(0.6,0.6);
+    margin-left: -800px;
+  }
+}

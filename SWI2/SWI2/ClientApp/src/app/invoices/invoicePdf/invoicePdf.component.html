@@ -1,0 +1,183 @@
+<div class="loading" *ngIf="isLoadingResults">
+  <mat-spinner></mat-spinner>
+</div>
+<mat-card>
+  <mat-card-title>
+
+    <mat-paginator [hidden]="dataSource.data.length==1" [pageSize]="1" [hidePageSize]="true"></mat-paginator>
+
+  </mat-card-title>
+
+  <mat-card-content>
+    <div class="turnPageBtn">
+      <button mat-button (click)="TurnPage(invoicePage-1)" [disabled]="invoicePage != 1?null : true" cdkFocusInitial><mat-icon>navigate_before</mat-icon></button>
+    </div>
+    <div id="invoice" #Invoice>
+      <div>
+        <h1>Faktura nr {{data[page].number + (data[page].correcting == '' ? '' : ' KOREKTA')}}</h1>
+        <address class="adress">
+          <strong>Sprzedawca</strong>
+          <p>{{data[page].invoiceIssuer.name}}</p>
+          <p>
+            {{data[page].invoiceIssuer.street}}&nbsp;{{data[page].invoiceIssuer.houseNumber}}/{{data[page].invoiceIssuer.houseNumber}}
+            <br>{{data[page].invoiceIssuer.city}}
+            <br>{{data[page].invoiceIssuer.postalcode}}&nbsp;{{data[page].invoiceIssuer.postoffice}}
+            <br>{{data[page].invoiceIssuer.country}}
+          </p>
+          <p>NIP: {{data[page].invoiceIssuer.nip}}</p>
+        </address>
+<!--        <span>
+          <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAASMAAAA+CAIAAADvfeqLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACHElEQVR4nO3Z0W6jMBAF0GHV//9l9iFqi7BjTFJuK3HOU0TGE4f6YkhrHaqq3ev61L4+rNn16dYPPuvwyKD/9t1xz7MzH5+rybP3g/3H33fyu//4fMad21nNz/9s/12Hmfnsag67df0r4HqSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgmSBgnLuq6/PQeqqpZlqaqZP8d85RXDec3Hb0/gL3qsxa3Hutweb49sj+9aPRs+M4EXKq8Y/qyn3E5y9/i9hnaxWTdqs6S6sdlWtp3Hw6sXyJcrrxj+rGd7oTl897bsabWu6xUX5ja38/N553Nj28uyLF+nbjcBG13r7knrbju7tw5XTFv51art3/Zs1+XZW7XuxnU4/M072O7Bwfm8ubsnbWC3RB6x6d4RDZ7NumWPPrtbuNcqq7e3nB3efovufjV/6aF196SNV2G3uOaeQGJPKe+s+8OLwmFld6DdrHX3pNXn9Xv74llZza2e7n1gd/ibB+fneUXPQfHM+bwb56Jj5nGo+8teO2r8K//ZD5qpnB/+5j8zDr87W5IGCf6fBgn/AV/BLtdO6ZEoAAAAAElFTkSuQmCC" alt="F3/03/2021">
+        </span>-->
+      </div>
+
+      <div>
+        <address class="adress">
+          <strong>Nabywca </strong>
+          <p>{{data[page].invoiceContractor.name}}</p>
+          <p>
+            {{data[page].invoiceContractor.street}}&nbsp;{{data[page].invoiceContractor.houseNumber}}/{{data[page].invoiceContractor.houseNumber}}
+            <br>{{data[page].invoiceContractor.city}}
+            <br>{{data[page].invoiceContractor.postalcode}}&nbsp;{{data[page].invoiceContractor.postoffice}}
+            <br>{{data[page].invoiceContractor.country}}
+          </p>
+          <p>NIP: {{data[page].invoiceContractor.nip}}</p>
+        </address>
+
+        <table aria-label="InvocieInformationData" class="meta">
+          <tbody>
+            <tr>
+              <th scope="col"><span>Miejscie wystawienia</span></th>
+              <td><span>{{data[page].creationPlace}}</span></td>
+            </tr>
+            <tr>
+              <th scope="col"><span>Data wystawienia</span></th>
+              <td><span>{{data[page].created | date:'dd/MM/yyyy'}}</span></td>
+            </tr>
+            <tr>
+              <th scope="col"><span>{{data[page].sellDateName.name}}</span></th>
+              <td><span>{{data[page].sellDate | date:'dd/MM/yyyy'}}</span></td>
+            </tr>
+            <tr>
+              <th scope="col"><span>Data płatności</span></th>
+              <td><span>{{data[page].sellDate | date:'dd/MM/yyyy'}}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="entrysHeader">
+        <div class="th"><span>L.p.</span></div>
+        <div class="th"><span>Nazwa</span></div>
+        <div class="th"><span>Ilość</span></div>
+        <div class="th"><span>Cena netto</span></div>
+        <div class="th"><span>Stawka VAT</span></div>
+        <div class="th"><span>GTU</span></div>
+        <div class="th"><span>Wartość netto</span></div>
+        <div class="th"><span>Wartość VAT</span></div>
+      </div>
+
+      <div class="entry" *ngFor="let entry of data[page].invoiceEntries; let i=index">
+        <div class="td position">
+          {{i + 1}}
+        </div>
+        <div class="td name">
+          {{entry.name}}
+        </div>
+        <div class="td quantity centered">
+          {{entry.quantity}}
+        </div>
+        <div class="td price centered">
+          {{entry.price}}
+        </div>
+        <div class="td vat centered">
+          {{entry.vat == -100 ? 'zw' : entry.vat == -200 ? 'np' : entry.vat + '%'}}
+        </div>
+        <div class="td gtu centered">
+          {{entry.gtu}}
+        </div>
+        <div class="td netWorth centered">
+          {{entry.price*entry.quantity| number:'1.0-2'}}
+        </div>
+        <div class="td vatWorth centered">
+          {{entry.price*entry.quantity*(entry.vat == -100 ? 0 : entry.vat == -200 ? 0 : entry.vat )/100| number:'1.0-2'}}
+        </div>
+      </div>
+
+      <div id="balanceTable">
+        <table aria-label="calculatorTable" mat-table [dataSource]="calculator" class="balance nobreak"> 
+          <ng-container matColumnDef="vatRate">
+            <th scope="col"  *matHeaderCellDef class="empty-header"></th>
+            <td mat-cell *matCellDef="let element"> {{element.vatRate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="nettoValue">
+            <th scope="col" *matHeaderCellDef> Wartość netto </th>
+            <td mat-cell *matCellDef="let element"> {{element.nettoValue}}&nbsp;<span *ngIf="element.vatRate!='Suma w PLN';else curPLN">{{data[page].paymentCurrency}}</span></td>
+          </ng-container>
+
+          <ng-container matColumnDef="vatValue">
+            <th scope="col" *matHeaderCellDef> Wartość VAT </th>
+            <td mat-cell *matCellDef="let element"> {{element.vatValue}}&nbsp;<span *ngIf="element.vatRate!='Suma w PLN';else curPLN">{{data[page].paymentCurrency}}</span></td>
+          </ng-container>
+
+          <ng-container matColumnDef="bruttoValue">
+            <th scope="col" *matHeaderCellDef> Wartość brutto </th>
+            <td mat-cell *matCellDef="let element"> {{element.bruttoValue}}&nbsp;<span *ngIf="element.vatRate!='Suma w PLN';else curPLN">{{data[page].paymentCurrency}}</span></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedCalculatorColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedCalculatorColumns;" [class]="{boldRow:row.vatRate == 'Suma w PLN'||row.vatRate == 'Suma'}"></tr>
+        </table>
+        <ng-template #curPLN>PLN</ng-template>
+                                                                                                                                                                                                                                                                                                                                                            
+<!--        <table class="balance nobreak">
+          <thead>
+            <tr>
+              <th class="empty-header">&nbsp;</th>
+              <th>Wartość netto</th>
+              <th>Wartość VAT</th>
+              <th>Wartość brutto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cRow of calculator">
+              <td>{{cRow.vatRate}}</td>
+              <td>{{cRow.nettoValue}}&nbsp;<div *ngIf="cRow.vatRate!='Suma w PLN';else curPLN">{{data[page].paymentCurrency}}</div></td>
+              <td>{{cRow.vatValue}}&nbsp;<div *ngIf="cRow.vatRate!='Suma w PLN';else curPLN">{{data[page].paymentCurrency}}</div></td>
+              <td>{{cRow.bruttoValue}}&nbsp;<div *ngIf="cRow.vatRate!='Suma w PLN';else curPLN">{{data[page].paymentCurrency}}</div></td>
+            </tr>
+            <ng-template #curPLN>PLN</ng-template>
+          </tbody>
+        </table>-->
+
+        <div *ngIf="data[page].isTransferType;else cashType">
+          <strong>Bank i numer konta</strong>
+          <p>{{data[page].paymentBank}}</p>
+          <p>{{data[page].paymentAccountNumber}}</p>
+        </div>
+        <ng-template #cashType><strong>Płatność gotowką</strong></ng-template>
+      </div>
+      <div>
+        <aside class="nobreak">
+          <div class="contractor">
+            <p>Imię,nazwisko i podpis osoby upoważnionej do odebrania dokumentu</p>
+          </div>
+          <div class="user">
+            <p>Imię,nazwisko i podpis osoby upoważnionej do wystawienia dokumentu</p>
+          </div>
+        </aside>
+      </div>
+      <!--    <div ngif="h2cfix" #h2cfixa></div>-->
+    </div>
+    <div class="turnPageBtn">
+      <button mat-button (click)="TurnPage(invoicePage+1)" [disabled]="invoicePage != invoicePages?null : true" cdkFocusInitial><mat-icon>navigate_next</mat-icon></button>
+    </div>
+  </mat-card-content>
+  <div mat-dialog-actions style="position: absolute; bottom: 0; right: 0;">
+    <button mat-button [mat-dialog-close]="null" cdkFocusInitial>Zamknij<mat-icon>close</mat-icon></button>
+    <button mat-button (click)="DownloadInvoicesInOneFile()" [disabled]="data.length>1 ? null : true"><div>Pobierz faktury w jednym pliku</div><mat-icon>print</mat-icon></button>
+    <button mat-button (click)="DownloadInvoicesInZip()"><div *ngIf="data.length>1;else generateNumber">Pobierz faktury</div><ng-template #generateNumber>Pobierz Fakturę</ng-template><mat-icon>download</mat-icon></button>
+    <button mat-button (click)="SendInvoices()"><div *ngIf="data.length>1;else sendOneInvoice">Wyślij faktury</div><ng-template #sendOneInvoice>Wyślij fakturę</ng-template><mat-icon>send</mat-icon></button>
+  </div>
+</mat-card>

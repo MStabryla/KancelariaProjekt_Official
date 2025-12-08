@@ -1,0 +1,36 @@
+<div role="group" class="adressInputContainer" [formGroup]="parts">
+  <input class="adressInput"
+         formControlName="street"
+         aria-label="street"
+         #street
+         (keyup.arrowright)="FocusInput(houseNumber)"
+         (input)="handleInput(parts.controls.street)"
+         [style.width.ch]="(street.value.length>5?street.value.length:5)">
+  <span class="inputSpacer">&nbsp;</span>
+  <input class="adressInput"
+         formControlName="houseNumber"
+         aria-label="houseNumber"
+         #houseNumber
+         (keyup.arrowright)="FocusInput(apartamentNumber)"
+         (keyup.arrowleft)="FocusInput(street)"
+         (input)="handleInput(parts.controls.houseNumber)"
+         [style.width.ch]="(houseNumber.value.length>3?houseNumber.value.length:3)">
+  <span>&nbsp;</span>
+  <span class="inputSpacer" *ngIf="parts.controls.apartamentNumber.value !=''">/</span>
+  <input class="adressInput"
+         formControlName="apartamentNumber"
+         aria-label="apartamentNumber"
+         #apartamentNumber
+         (keyup.arrowleft)="FocusInput(houseNumber)"
+         (keyup.arrowright)="FocusInput(city)"
+         (input)="handleInput(parts.controls.city)"
+         [style.width.ch]="apartamentNumber.value.length>3?apartamentNumber.value.length:3">
+  <span class="inputSpacer">&nbsp;</span>
+  <input class="adressInput"
+         formControlName="city"
+         aria-label="city"
+         #city
+         (keyup.arrowleft)="FocusInput(apartamentNumber)"
+         (input)="handleInput(parts.controls.city)"
+         [style.width.ch]="city.value.length>3?city.value.length:3">
+</div>

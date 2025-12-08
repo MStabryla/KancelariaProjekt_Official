@@ -1,0 +1,116 @@
+<content>
+  <div id="contact" *ngIf="(screenWidth > 1000);else mobileContact" [ngClass]="{'contactWidthOver3000': screenWidth > 3000}">
+    <div>{{ 'MAINPAGE.CONTACT.LABEL' | translate }}</div>
+    <div>
+      <div>
+        {{ 'MAINPAGE.CONTACT.CALL_LABEL' | translate }}<br />
+        <strong>tel.+48(12)422 75 20,</strong><br />
+        <strong>faks +48(12)376 46 71</strong><br />
+      </div>
+      <div>
+        {{ 'MAINPAGE.CONTACT.ADRESS_LABEL' | translate }}<br />
+        <strong>ul.Zygmunta Mysłakowskiego 9</strong><br />
+      </div>
+      <div>
+        {{ 'MAINPAGE.CONTACT.EMAIL_LABEL' | translate }}<br />
+        <strong>biuro@faber-kancelaria.pl</strong>
+      </div>
+    </div>
+  </div>
+  <section id="mainContent">
+    <div id="aboute" class="bgColorBlackNavyBlue sectionMarginBottom">
+      <img src="/assets/images/1a.jpg" alt="Happy smile :)"/>
+      <div style="margin:30px;margin-top:50px">
+        <strong style="padding:10px 20px 0 0;border-top:solid 1px white; font-size:26px">O firmie</strong><br />
+        <div style="padding-top: 20px;" [innerHTML]="'MAINPAGE.ABOUTE' | translate">
+<!--          <p>Kancelaria Rachunkowa istnieje nieprzerwanie od marca 1992 r. jako biuro rachunkowe, do końca 1995 r. w formie spółki cywilnej, następnie od 01.01.1996. jako spółka z ograniczoną odpowiedzialnością, a od 09.2012 jako spółka komandytowo-akcyjna.</p>
+          <p>Licencja Ministerstwa Finansów do usługowego prowadzenia ksiąg rachunkowych (nr licencji 1856/96).</p>
+          <p>
+            Faber Sp. z o.o. wpisana do Krajowego Rejestru Sądowego – Rejestru Przedsiębiorców pod numerem KRS 0000144853 prowadzonym przez Sąd Rejonowy dla Krakowa – Śródmieścia w Krakowie, Wydział XI Gospodarczy, z kapitałem zakładowym w wysokości 50 000,00 PLN (opłaconym w całości), i zarządem w składzie: Monika Kuśmider, Piotr Koźmiński, Paweł K. Koźmiński – prezes.
+          </p>-->
+        </div>
+      </div>
+    </div>
+    <section id="informationFields">
+      <div class="bgColorBlackNavyBlue elementMarginBottom">
+        <div>
+          <strong>{{ 'MAINPAGE.INFO_FIELDS.RANGE_OF_SERVICES.LABEL' | translate }}</strong>
+          <app-svg-icon [name]="'4.svg'" class="marginRight" style=" height: 120px; width: 120px; padding-left: 10%;"></app-svg-icon>
+        </div>
+        <div>
+          <p>{{ 'MAINPAGE.INFO_FIELDS.RANGE_OF_SERVICES.CONTENT' | translate }}</p>
+        </div>
+        <a mat-menu-item  routerLink="/mainsubpage/0" class="button">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </a>
+      </div>
+      <div class="bgColorBlackNavyBlue elementMarginBottom">
+        <div>
+          <strong>{{ 'MAINPAGE.INFO_FIELDS.DISTRIBUTION.LABEL' | translate }}</strong>
+          <app-svg-icon [name]="'5.svg'" class="marginRight" style=" height: 120px; width: 120px; padding-left: 10%;"></app-svg-icon>
+        </div>
+        <div>
+          <p>
+            {{ 'MAINPAGE.INFO_FIELDS.DISTRIBUTION.CONTENT' | translate }}
+          </p>
+        </div>
+        <a mat-menu-item  routerLink="/mainsubpage/1" class="button">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </a>
+      </div>
+      <div class="bgColorBlackNavyBlue elementMarginBottom">
+        <div>
+          <strong>
+            {{ 'MAINPAGE.INFO_FIELDS.UPDATES.LABEL' | translate }}
+          </strong>
+          <app-svg-icon [name]="'6.svg'" class="marginRight" style=" height: 120px; width: 120px; padding-left: 10%;"></app-svg-icon>
+        </div>
+        <div>
+          <p>
+            {{ 'MAINPAGE.INFO_FIELDS.UPDATES.CONTENT' | translate }}
+          </p>
+        </div>
+        <a mat-menu-item  routerLink="/mainsubpage/2" class="button">
+          <mat-icon>arrow_forward_ios</mat-icon>  
+        </a>
+      </div>
+      <div class="bgColorBlackNavyBlue elementMarginBottom">
+        <div>
+          <strong>
+            {{ 'MAINPAGE.INFO_FIELDS.OUR_CLIENTS.LABEL' | translate }}
+          </strong>
+          <app-svg-icon [name]="'2.svg'" class="marginRight" style=" height: 120px; width: 120px; padding-left: 10%;"></app-svg-icon>
+        </div>
+        <div>
+          <p>
+            {{ 'MAINPAGE.INFO_FIELDS.OUR_CLIENTS.CONTENT' | translate }}
+          </p>
+        </div>
+        <a mat-menu-item  routerLink="/mainsubpage/3" class="button">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </a>
+      </div>
+    </section>
+    <div id="reagister" class="bgColorBlackNavyBlue sectionMarginBottom">
+      <img src="/assets/images/1b.jpg" alt="Sheak hend"/>
+      <div style="margin:30px;margin-top:50px">
+        <div style="padding:10px 20px 0 0;border-top:solid 1px white">
+          <strong style="font-size:26px"> {{ 'MAINPAGE.REAGISTER' | translate }}</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+</content>
+
+<ng-template #mobileContact>
+  <div id="mobileContact">
+    <div>
+      <app-svg-icon [name]="'3.svg'" class="marginRight" style="height:36px"></app-svg-icon>
+      <strong>ul.Zygmunta Mysłakowskiego 9</strong>
+    </div>
+    <div style="padding-left:5px;">
+      <app-svg-icon [name]="'7.svg'" class="marginRight" style="height:30px"></app-svg-icon>
+      <strong>+48 (12) 422 75 20</strong>
+    </div>
+  </div>
+</ng-template>

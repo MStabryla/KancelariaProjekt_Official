@@ -1,0 +1,16 @@
+<section id="subpage">
+  <div *ngFor="let element of (translationElements | translate); let i=index" class="bgColorBlackNavyBlue" style="margin-bottom:20px">
+    <div *ngIf="i == 0" class="icon">
+      <div *ngIf="subPageNumber.icon.type == 'icon';else svgIcon">
+        <mat-icon style="height: auto; width: auto; font-size: 5em; color: #5E686B; ">{{subPageNumber.icon.name}}</mat-icon>
+      </div>
+    </div>
+    <div style="display:block;">
+      <h1 style="font-size: 1.8em;">{{element.HEADER}}</h1>
+      <div [innerHTML]="element.CONTENT"></div>
+    </div>
+  </div>
+</section>
+<ng-template #svgIcon>
+  <app-svg-icon [name]="subPageNumber.icon.name" style="height: 120px; width: 120px;"></app-svg-icon>
+</ng-template>

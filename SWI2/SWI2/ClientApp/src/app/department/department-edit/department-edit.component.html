@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>{{'DEPARTMENTS.DEPARTMENT_EDIT.LABEL | translate'}}</mat-card-title>
+  <form [formGroup]="editForgGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>{{'DEPARTMENTS.DEPARTMENT_EDIT.FORM.NAME | translate'}}</mat-label>
+      <input type="text" matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'DEPARTMENTS.DEPARTMENT_EDIT.FORM.TYPE | translate'}}</mat-label>
+      <input type="text" matInput formControlName="type" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'DEPARTMENTS.DEPARTMENT_EDIT.FORM.FOLDER_NAME | translate'}}</mat-label>
+      <input type="text" matInput formControlName="folderName" />
+    </mat-form-field>
+    <div>
+      <button mat-raised-button class="btn text-center" type="submit">{{ 'SAVE' | translate}}</button>
+    </div>
+  </form>
+</mat-card>

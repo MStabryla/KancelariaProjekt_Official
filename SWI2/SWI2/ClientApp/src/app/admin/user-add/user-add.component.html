@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-title>Dodaj użytkownika</mat-card-title>
+  <form [formGroup]="createFormGroup" (ngSubmit)="onSubmit()">
+    <div>
+      <mat-form-field>
+        <mat-label>Login</mat-label>
+        <input type="text" id="login" matInput formControlName="login" class="mat-form-field" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="text" id="email" matInput formControlName="email" class="mat-form-field" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Imię</mat-label>
+        <input type="text" id="name" matInput formControlName="name" class="mat-form-field" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nazwisko</mat-label>
+        <input type="text" id="surname" matInput formControlName="surname" class="mat-form-field" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Język</mat-label>
+        <input type="text" id="language" matInput formControlName="language" class="mat-form-field" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Hasło</mat-label>
+        <input type="password" id="password" matInput formControlName="password" class="mat-form-field" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Potwierdź Hasło</mat-label>
+        <input type="password" id="confirmPassword" matInput formControlName="confirmPassword" class="mat-form-field" />
+      </mat-form-field>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button class="btn btn-primary text-center" type="submit">Zapisz</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

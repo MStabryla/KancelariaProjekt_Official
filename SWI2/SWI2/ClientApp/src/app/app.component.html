@@ -1,0 +1,59 @@
+<section id="app">
+  <swi-menu></swi-menu>
+  <section class="container">
+    <router-outlet></router-outlet>
+  </section>
+  <section id="footerContent">
+    <strong id="ouerClientsHeader">Nasi Klienci</strong>
+    <div id="ouerClients" class="bgColorBlackNavyBlue sectionMarginBottom" [ngClass]="{'outerClientsMarginUpTo3000': screenWidth < 3000}">
+      <img src="/assets/images/c01.jpg" alt="company"/>
+      <img src="/assets/images/c02.png" alt="company"/>
+      <img src="/assets/images/c03.png" alt="company"/>
+      <img src="/assets/images/c04.png" alt="company"/>
+      <img src="/assets/images/c05.png" alt="company"/>
+    </div>
+    <footer class="bgColorBlackNavyBlue">
+      <img src="/assets/images/logo.png" id="footerLogo" />
+      <div id="footerInfo">
+        <div>
+          <p>Centrala i biuro zarządu:</p>
+          <strong>ul. Zygmunta Mysłakowskiego 9, 30-136 Kraków</strong><br />
+        </div>
+        <div>
+          <p>
+            <app-svg-icon [name]="'7.svg'" style=" height: 30px; width: 30px;margin-right:15px"></app-svg-icon>
+            <strong>+48 (12) 422 75 20</strong>
+          </p>
+          <p>
+            <app-svg-icon [name]="'8.svg'" style=" height: 30px; width: 30px;margin-right:15px"></app-svg-icon>
+            <strong>+48 (12) 376 46 71</strong>
+          </p>
+        </div>
+        <div>
+          <p>
+            <app-svg-icon [name]="'9.svg'" style=" height: 30px; width: 30px;margin-right:15px;"></app-svg-icon>
+            <strong>
+              biuro@faber-kancelaria.pl
+            </strong>
+          </p>
+          <p style="margin-left:50px;margin-top: -15px;">
+            <strong>
+              NIP PL6761027406;
+            </strong><br />
+            <strong>
+              REGON 350892160;
+            </strong><br />
+            <strong>
+              KRS 144853
+            </strong>
+          </p>
+
+        </div>
+      </div>
+    </footer>
+  </section>
+</section>
+
+
+
+

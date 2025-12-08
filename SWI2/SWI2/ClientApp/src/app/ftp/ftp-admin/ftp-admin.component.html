@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-title>
+    {{ 'FTP.FTP_ADMIN.LABEL' | translate}}
+  </mat-card-title>
+  <div>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <span>{{ 'FTP.FTP_ADMIN.USERS_FILES_LABEL' | translate}}</span>
+      </mat-expansion-panel-header>
+      <div class="search">
+        <mat-form-field>
+          <mat-label for="userSearch">{{ 'FTP.FTP_ADMIN.SERCH_USER_LABEL' | translate}}</mat-label>
+          <input type="text" matInput name="userSearch" [(ngModel)]="userSearch" (keypress)="onKeyPressEvent(userSearch, $event,'/users/')" />
+        </mat-form-field>
+        <mat-icon class="cancel" *ngIf="userSearchFiles" (click)="cancelSearch('/users/')">clear</mat-icon>
+      </div>
+      <div class="system-folder" *ngIf="!userSearchFiles">
+        <swi-ftp-directory [dirModel]="users" [root]='true' [folderState]="0"></swi-ftp-directory>
+      </div>
+      <div class="system-folder" *ngIf="userSearchFiles">
+        <swi-ftp-directory *ngFor="let user of userSearchFiles" [dirModel]="user" [folderState]="1"></swi-ftp-directory>
+      </div>
+    </mat-expansion-panel>
+  </div>
+  <div>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <span>{{ 'FTP.FTP_ADMIN.COMPANY_FILES_LABEL' | translate}}</span>
+      </mat-expansion-panel-header>
+      <div class="search">
+        <mat-form-field>
+          <mat-label for="companySearch">{{ 'FTP.FTP_ADMIN.SERCH_COMPANYS_LABEL' | translate}}</mat-label>
+          <input type="text" matInput name="companySearch" [(ngModel)]="companiesSearch" (keypress)="onKeyPressEvent(companiesSearch, $event,'/companies/')" />
+        </mat-form-field>
+        <mat-icon class="cancel" *ngIf="companySearchFiles" (click)="cancelSearch('/companies/')">clear</mat-icon>
+      </div>
+      <div class="system-folder" *ngIf="!companySearchFiles">
+        <swi-ftp-directory [dirModel]="companies" [root]='true' [folderState]="-1"></swi-ftp-directory>
+      </div>
+      <div class="system-folder" *ngIf="companySearchFiles">
+        <swi-ftp-directory *ngFor="let company of companySearchFiles" [dirModel]="company" [folderState]="0"></swi-ftp-directory>
+      </div>
+    </mat-expansion-panel>
+  </div>
+  
+</mat-card>

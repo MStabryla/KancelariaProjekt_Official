@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <mat-toolbar-row style="justify-content: space-around;background-color:lightgray">
+    <button class="toolbarButton" mat-icon-button (click)="add()">
+      {{'CONTRACTORS.CONTRACTORTABLE.ADD' | translate }}<mat-icon>post_add</mat-icon>
+    </button>
+    <button class="toolbarButton" [matMenuTriggerFor]="editMenu" mat-icon-button>
+      {{'CONTRACTORS.CONTRACTORTABLE.MODIFY' | translate }}<mat-icon>create</mat-icon>
+    </button>
+    <mat-menu #editMenu>
+      <button mat-menu-item (click)="edit()" [disabled]="selection.selected.length >1">
+        <mat-icon>edit_note</mat-icon>
+        <span>{{'CONTRACTORS.CONTRACTORTABLE.EDIT' | translate }}</span>
+      </button>
+      <button mat-menu-item (click)="delate()">
+        <mat-icon>remove_circle</mat-icon>
+        <span>{{'CONTRACTORS.CONTRACTORTABLE.DELETE' | translate }}</span>
+      </button>
+    </mat-menu>
+    <button class="toolbarButton" mat-icon-button (click)="manageContractorsBankAccounts()" [disabled]="selection.selected.length <1">
+      {{'CONTRACTORS.CONTRACTORTABLE.CONTARCTOR_BANK_ACCOUTS_LABEL' | translate }}<mat-icon>credit_card</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<swi-table (elementDblClick)="dblClickContractor($event)" [selection]="selection" [refreshTable]="refreshTable.asObservable()" [sortActive]="sortActive" [requestUrl]="requestUrl" [headerRow]="headerRow" [validators]="validators" [displaySelections]="true" [displayFilters]="true"></swi-table>

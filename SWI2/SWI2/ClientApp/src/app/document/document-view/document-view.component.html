@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>{{ 'DOCUMENTS.DOCUMENT_VIEW.DOCUMENT_LABEL' | translate}} {{data.id}}</mat-card-title>
+  <label>{{ 'DOCUMENTS.DOCUMENT_VIEW.NOTES_LABEL' | translate}}</label>
+  <p>{{data.notes}}</p>
+  <label>{{ 'DOCUMENTS.DOCUMENT_VIEW.COMMENT_LABEL' | translate}}</label>
+  <p>{{data.comment}}</p>
+  <label>{{ 'DOCUMENTS.DOCUMENT_VIEW.ISPROTOCOL_LABEL' | translate}}</label>
+  <p>{{data.isProtocol ? "tak" : "nie"}}</p>
+  <label>{{ 'DOCUMENTS.DOCUMENT_VIEW.OUT_DOCUMENT_LABEL' | translate}}</label>
+  <p>{{data.outDocument ? "do" : "od"}}</p>
+  <label>{{ 'DOCUMENTS.DOCUMENT_VIEW.CREATED_LABEL' | translate}}</label>
+  <p>{{data.created}}</p> 
+  <mat-card-actions>
+    <button mat-button (click)="download()" [disabled]="!checkIfFileExist" [title]="checkIfFileExist ? data.id + '.' + data.documentFileType : 'Dokument nie zawiera pliku'"><mat-icon class="int-item">get_app</mat-icon>{{ 'DOCUMENTS.DOCUMENT_VIEW.DOWNLOAD_LABEL' | translate}}</button>
+    <button *ngIf="userRole === 'Administrator'" mat-button (click)="delete()"><mat-icon class="int-item">delete</mat-icon>{{ 'DELETE' | translate}}</button>
+  </mat-card-actions>
+
+</mat-card>

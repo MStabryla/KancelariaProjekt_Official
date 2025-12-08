@@ -1,0 +1,15 @@
+.adressInputContainer {
+  display: flex;
+}
+
+.adressInput{
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  font: inherit
+}
+
+.inputSpacer {
+  transition: opacity 200ms;
+}
