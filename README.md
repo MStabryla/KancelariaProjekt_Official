@@ -8,7 +8,7 @@ Projekt został zaprojektowanych w technologiach ASP.NET Core, Angular 2 i Entit
 
 ## Status
 
-### <span style='color: red;'>Niedokończony</span>
+:x: Niedokończony
 
 Koniec prac w drugiej połowie 2021 roku.
 
@@ -22,6 +22,6 @@ The project was designed using ASP.NET Core, Angular 2, and Entity Framework Cor
 
 ## Status
 
-### <span style='color: red;'>Unfinished</span>
+:x: Unfinished
 
 The project is expected to be completed in the second half of 2021.
