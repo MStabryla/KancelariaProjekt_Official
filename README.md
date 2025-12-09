@@ -24,4 +24,4 @@ The project was designed using ASP.NET Core, Angular 2, and Entity Framework Cor
 
 :x: Unfinished
 
-The project is expected to be completed in the second half of 2021.
+Work on this project has been halted in the second half of 2021.
