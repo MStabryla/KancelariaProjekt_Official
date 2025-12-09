@@ -1,5 +1,6 @@
 ![main image](https://github.com/MStabryla/KancelariaProjekt_Official/blob/master/main.png?raw=true)
 # PL - Projekt dla kancelarii podatkowej
+
 Niedokończony projekt systemu dla kancelarri podatkowej. Miał on być systemem obsługi faktur lda klientów kancelarii. Projekt został rozpoczęty w 2021 roku, ale nie został dokończony ze względu na brak zainteresowania ze strony klienta.
 
 ## Technologia
